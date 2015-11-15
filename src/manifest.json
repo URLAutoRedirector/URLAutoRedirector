@@ -1,0 +1,16 @@
+{
+    "name": "Url Auto Redirector",
+    "version": "0.0.1",
+    "description": "Auto redirect page by pre-configured patterns",
+    "homepage_url": "http://crispgm.com/chrome/UrlAutoRedirector.html",
+    "options_page": "options.html",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "manifest_version": 2
+}

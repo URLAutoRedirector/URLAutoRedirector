@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Options - UrlAutoRedirector</title>
+    <link href="options.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div>
+            <h3>General</h3>
+            <div>
+                <input type="radio" name="new_tab" value="1">Redirect in new tab
+            </div>
+            <div>
+                <input type="radio" name="cur_tab" value="0">Redirect in current tab
+            </div>
+        </div>
+        <div>
+            <h3>Rules</h3>
+            <div>
+            </div>
+            <div>
+                <div>
+                    <input type="button" id="new_rule" value="New Rule">
+                </div>
+                <div id="new_rule_input">
+                    Source Url
+                    <input type="text" id="src">
+                    Redirect To
+                    <input type="text" id="target">
+                    <input type="checkbox" value="1">RegExp
+                    <input type="button" id="save_rule" value="Save">
+                    <input type="button" id="discard_rule" value="Discard">
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>About</h3>
+            <p>Share to...</p>
+        </div>
+        <footer>Copyright &copy; <a href="http://crispgm.com/">David Zhang</a>, 2015.</footer>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

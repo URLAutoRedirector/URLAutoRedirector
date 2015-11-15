@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    text-align: center;
+    font-family: Helvetica, Arial, Courier;
+    -webkit-font-smoothing: antialiased;
+}
+
+#wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: left;
+}
+
+footer{
+    text-align: center;
+}
