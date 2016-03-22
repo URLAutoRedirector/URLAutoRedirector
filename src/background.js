@@ -1,5 +1,5 @@
 var options = {
-    "is_new_tab": false,
+    "is_new_tab": true,
     "rules": []
 };
 
@@ -23,15 +23,11 @@ function redirect(newUrl) {
     if (options["is_new_tab"] == false) {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var updatedTabId = tabs[0].id;
-            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {
-                //chrome.pageAction.show(updatedTabId);
-            });
+            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {});
         });
     }
     else{
-        chrome.tabs.create({url: newUrl}, function(tab){
-            //chrome.pageAction.show(updatedTabId);
-        });
+        chrome.tabs.create({url: newUrl}, function(tab){});
     }
 }
 
