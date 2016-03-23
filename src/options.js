@@ -27,7 +27,13 @@ $(document).ready(function(){
     $("#discardRule").click(function(){
         $(".rule_item").remove();
         getOptions(showOptions);
-    })
+    });
+
+    $("#rule_list").sortable({
+        revert: true
+    });
+
+    $("ul,li").disableSelection();
 });
 
 function setOptions()
@@ -65,12 +71,12 @@ function showOptions()
 
 function newRuleItem(name, src, dst, isRegex)
 {
-    var ruleItemHTML = "<tr class=\"rule_item\">" + 
-                       "<td><input type=\"text\" class=\"name\" value=" + name + "></td>" +
-                       "<td><input type=\"text\" class=\"src\" value=" + src + "></td>" +
-                       "<td><input type=\"text\" class=\"dst\" value=" + dst + "></td>" +
-                       "<td><input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + "></td>" +
-                       "</tr>";
+    var ruleItemHTML = "<li class=\"ui-state-default rule_item\">" + 
+                       "<input type=\"text\" class=\"name\" value=" + name + ">" +
+                       "<input type=\"text\" class=\"src\" value=" + src + ">" +
+                       "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
+                       "<input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + ">" +
+                       "</li>";
    return ruleItemHTML;
 }
 

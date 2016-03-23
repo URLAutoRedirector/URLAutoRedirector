@@ -3,6 +3,7 @@
 <head>
     <title>Options - UrlAutoRedirector</title>
     <link href="options.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/jquery-ui.min.css">
 </head>
 <body>
     <div id="wrapper">
@@ -18,14 +19,16 @@
         <div>
             <h3>Rules</h3>
             <div id="rule_wrapper">
-                <table id="rule_list">
-                    <tr id="rule_head">
-                        <th>Name</th>
-                        <th>Source</th>
-                        <th>Destination</th>
-                        <th>RegExp</th>
-                    </tr>
                 <table>
+                    <tr id="rule_head">
+                        <th class="name">Name</th>
+                        <th class="src">Source</th>
+                        <th class="dst">Destination</th>
+                        <th class="isRegex">RegExp</th>
+                    </tr>
+                </table>
+                <ul id="rule_list">
+                </ul>
             </div>
             <div>
                 <input type="button" class="ruleBtn" id="newRule" value="New">
@@ -55,6 +58,7 @@
         <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
     </div>
     <script src="lib/jquery-1.12.2.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
     <script src="options.js"></script>
 </body>
 </html>

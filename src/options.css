@@ -6,6 +6,18 @@ body{
     font-size: 14px;
 }
 
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+li{
+    margin: 5px;
+    padding: 5px;
+}
+
 #wrapper{
     margin-left: auto;
     margin-right: auto;
