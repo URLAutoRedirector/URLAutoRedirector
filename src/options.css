@@ -1,7 +1,7 @@
 body{
     margin: 0;
     text-align: center;
-    font-family: Monaco, Helvetica, Arial, Courier;
+    font-family: Helvetica, Arial, Courier;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
 }
@@ -9,7 +9,7 @@ body{
 #wrapper{
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 800px;
     text-align: left;
 }
 
@@ -28,4 +28,39 @@ a:hover{
 
 h3{
     font-size: 24px;
+}
+
+.name{
+    margin-right: 12px;
+    width: 100px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.src{
+    margin-right: 12px;
+    width: 200px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.dst{
+    margin-right: 12px;
+    width: 200px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.isRegex{
+    width: 24px;
+    height: 24px;
+}
+
+.ruleBtn{
+    margin-top: 12px;
+    margin-left: 12px;
+    height: 30px;
+    width: 80px;
+    border-radius: 6px;
+    font-size: 14px;
 }

@@ -4,9 +4,11 @@ This is a simple demo of UrlAutoRedirector, which redirects mid-page of JD and m
 
 ## Implemented
 
-* JD Mid-page redirection
-* Mobile Dianping redirection
+* Redirection
+* Tab Option
 
 ## TODO
 
-* Options page to configure url patterns and redirect mode(new tab or not)
+* Rule Option
+* Draggable Rule List
+* Share to WeiXin/Twitter/Weibo

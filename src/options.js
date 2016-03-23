@@ -3,7 +3,7 @@ var rules;
 
 $(document).ready(function(){
     
-    getOptions();
+    getOptions(showOptions);
     
     $(".tabOption").change(function(){
         var tabOption = $("input[name='tabOption']:checked").val();
@@ -17,6 +17,17 @@ $(document).ready(function(){
         }
     });
 
+    $("#newRule").click(function(){
+        $("#rule_list").append(newRuleItem("", "", "", false));
+    });
+
+    $("#saveRule").click(function(){
+    });
+
+    $("#discardRule").click(function(){
+        $(".rule_item").remove();
+        getOptions(showOptions);
+    })
 });
 
 function setOptions()
@@ -30,12 +41,12 @@ function setOptions()
     chrome.storage.local.set(newOptions);
 }
 
-function getOptions()
+function getOptions(callback)
 {
     chrome.storage.local.get("options", function(data){
         isNewTab = data.options.isNewTab;
         rules = data.options.rules;
-        showOptions();
+        callback();
     });
 }
 
@@ -47,6 +58,20 @@ function showOptions()
     else {
         $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");   
     }
+    for (var i=0; i<rules.length; i++) {
+        $("#rule_list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex));
+    }
+}
+
+function newRuleItem(name, src, dst, isRegex)
+{
+    var ruleItemHTML = "<tr class=\"rule_item\">" + 
+                       "<td><input type=\"text\" class=\"name\" value=" + name + "></td>" +
+                       "<td><input type=\"text\" class=\"src\" value=" + src + "></td>" +
+                       "<td><input type=\"text\" class=\"dst\" value=" + dst + "></td>" +
+                       "<td><input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + "></td>" +
+                       "</tr>";
+   return ruleItemHTML;
 }
 
 document.addEventListener("DOMContentLoaded", getOptions);
