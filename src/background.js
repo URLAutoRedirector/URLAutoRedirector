@@ -2,10 +2,15 @@
 // Copyright (c) David Zhang, 2016
 // Idea inspired by Albert Li.
 
-var options = {
-    "is_new_tab": true,
-    "rules": []
+var defaultOptions = {
+    "options": {
+        "isNewTab": true,
+        "rules": []
+    }
 };
+
+var isNewTab;
+var rules;
 
 function getNewUrl(url) {
     if (url.search(/^http:\/\/re.jd.com\/cps\/item\/([0-9]*).html/) != -1) {
@@ -24,7 +29,8 @@ function getNewUrl(url) {
 }
 
 function redirect(newUrl) {
-    if (options["is_new_tab"] == false) {
+    getOptions();
+    if (isNewTab == false) {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var updatedTabId = tabs[0].id;
             chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {});
@@ -35,6 +41,14 @@ function redirect(newUrl) {
     }
 }
 
+function getOptions()
+{
+    chrome.storage.local.get("options", function(data){
+        isNewTab = data.options.isNewTab;
+        rules = data.options.rules;
+    });
+}
+
 chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
     if (change.status == "loading") {
         console.log(change.url);
@@ -43,4 +57,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
             redirect(newUrl)
         }
     }
+});
+
+chrome.runtime.onInstalled.addListener(function(){
+    chrome.storage.local.set(defaultOptions);
 });

@@ -1,8 +1,9 @@
 body{
     margin: 0;
     text-align: center;
-    font-family: Helvetica, Arial, Courier;
+    font-family: Monaco, Helvetica, Arial, Courier;
     -webkit-font-smoothing: antialiased;
+    font-size: 14px;
 }
 
 #wrapper{
@@ -14,4 +15,17 @@ body{
 
 footer{
     text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+h3{
+    font-size: 24px;
 }

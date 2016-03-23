@@ -9,14 +9,14 @@
         <div>
             <h3>General</h3>
             <div>
-                <input type="radio" name="new_tab" value="1">Redirect in new tab
-            </div>
-            <div>
-                <input type="radio" name="cur_tab" value="0">Redirect in current tab
+                <form>
+                    <input type="radio" class="tabOption" name="tabOption" value="newTab">Redirect in new tab<br>
+                    <input type="radio" class="tabOption" name="tabOption" value="curTab">Redirect in current tab
+                </form>
             </div>
         </div>
-        <div>
-            <h3>Rules</h3>
+        <!-- <div>
+            <h3>Rules(NOT IMPLEMENTED YET)</h3>
             <div>
             </div>
             <div>
@@ -29,17 +29,25 @@
                     Redirect To
                     <input type="text" id="target">
                     <input type="checkbox" value="1">RegExp
+                </div>
+                <div>
                     <input type="button" id="save_rule" value="Save">
                     <input type="button" id="discard_rule" value="Discard">
                 </div>
             </div>
-        </div>
+        </div> -->
         <div>
             <h3>About</h3>
-            <p>Share to...</p>
+            <p>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
+            <p>Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
+            <p>Idea inspired by Albert Li.</p>
         </div>
-        <footer>Copyright &copy; <a href="http://crispgm.com/">David Zhang</a>, 2015.</footer>
+        <div>
+            <h3>Share</h3>
+        </div>
+        <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
     </div>
+    <script src="lib/jquery-1.12.2.min.js"></script>
     <script src="options.js"></script>
 </body>
 </html>
