@@ -1,3 +1,7 @@
+// UrlAutoRedirector
+// Copyright (c) David Zhang, 2016
+// Idea inspired by Albert Li.
+
 var options = {
     "is_new_tab": true,
     "rules": []
