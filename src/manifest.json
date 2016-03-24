@@ -4,7 +4,7 @@
     "description": "Auto redirect page by preset url patterns",
     "homepage_url": "http://crispgm.com/page/url-auto-redirector.html",
     "options_page": "options.html",
-    "icon": {
+    "icons": {
         "128":"icon_128.png"
     },
     "permissions": [
