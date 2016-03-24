@@ -8,12 +8,12 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 
 * Redirection
 * Tab Option
+* Rule Option
 * Draggable Rule List
 * Icon
 
 ## TODO
 
-* Rule Option
 * Share to WeiXin/Twitter/Weibo
 * User Manual
 
