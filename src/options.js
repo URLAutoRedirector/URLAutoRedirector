@@ -1,10 +1,33 @@
+var defaultOptions = {
+    "options": {
+        "isNewTab": true,
+        "rules": [
+            {
+                "name": "京东中间页",
+                "src": "^http:\/\/re.jd.com\/cps\/item\/([0-9]*).html",
+                "dst": "http://item.jd.com/$1.html",
+                "isRegex": true
+            },
+            {
+                "name": "点评无线端",
+                "src": "^http://m.dianping.com/appshare/shop/([0-9]*)$",
+                "dst": "http://www.dianping.com/shop/$1",
+                "isRegex": true
+            },
+            {
+                "name": "BaiduToGoogle :)",
+                "src": "https://www.baidu.com/",
+                "dst": "https://www.google.com/",
+                "isRegex": false
+            }
+        ]
+    }
+};
+
 var isNewTab;
 var rules;
 
 $(document).ready(function(){
-    
-    getOptions(showOptions);
-    
     $(".tabOption").change(function(){
         var tabOption = $("input[name='tabOption']:checked").val();
         if (tabOption == 'newTab') {
@@ -22,10 +45,27 @@ $(document).ready(function(){
     });
 
     $("#saveRule").click(function(){
+        var numOfRules = $(".rule_item").length;
+        rules = [];
+        for (var i=0; i<numOfRules; i++) {
+            var name = $(".name:eq("+i+")").val();
+            var src = $(".src:eq("+i+")").val();
+            var dst = $(".dst:eq("+i+")").val();
+            var isRegex = $(".isRegex:eq("+i+")").prop("checked");
+            rules.push({"name": name, "src":src, "dst": dst, "isRegex": isRegex});
+        }
+        setOptions();
     });
 
     $("#discardRule").click(function(){
         $(".rule_item").remove();
+        getOptions(showOptions);
+    });
+
+    $("#resetRule").click(function(){
+        $(".rule_item").remove();
+        rules = defaultOptions.options.rules;
+        setOptions();
         getOptions(showOptions);
     });
 
@@ -76,8 +116,9 @@ function newRuleItem(name, src, dst, isRegex)
                        "<input type=\"text\" class=\"src\" value=" + src + ">" +
                        "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
                        "<input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + ">" +
+                       "<input type=\"checkbox\" class=\"isDelete\">" +
                        "</li>";
    return ruleItemHTML;
 }
 
-document.addEventListener("DOMContentLoaded", getOptions);
+document.addEventListener("DOMContentLoaded", getOptions(showOptions));
