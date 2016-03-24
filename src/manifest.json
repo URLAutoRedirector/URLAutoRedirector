@@ -5,7 +5,7 @@
     "homepage_url": "http://crispgm.com/page/url-auto-redirector.html",
     "options_page": "options.html",
     "icon": {
-        "128":"uar_icon_3.png"
+        "128":"icon_128.png"
     },
     "permissions": [
         "storage",
