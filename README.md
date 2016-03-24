@@ -2,6 +2,8 @@
 
 This is a simple demo of UrlAutoRedirector, which redirects mid-page of JD and mobile page of dianping to pc version.
 
+Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crispgm.com/page/url-auto-redirector.html)
+
 ## Implemented
 
 * Redirection
