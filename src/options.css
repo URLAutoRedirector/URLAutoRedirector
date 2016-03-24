@@ -25,6 +25,16 @@ li{
     text-align: left;
 }
 
+#logo{
+    text-align: center;
+    padding-top: 20px;
+}
+
+#logo img{
+    width: 128px;
+    height: 128px;
+}
+
 footer{
     text-align: center;
 }

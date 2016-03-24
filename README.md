@@ -9,15 +9,15 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 * Redirection
 * Tab Option
 * Draggable Rule List
+* Icon
 
 ## TODO
 
 * Rule Option
 * Share to WeiXin/Twitter/Weibo
-* Icon
 * User Manual
 
 ## Credit
 
-* Idea inspired by [Albert Li](https://github.com/lzb)
+* Idea inspired and icon designed by [Albert Li](https://github.com/lzb)
 
