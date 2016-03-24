@@ -15,6 +15,7 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 * Rule Option
 * Share to WeiXin/Twitter/Weibo
 * Icon
+* User Manual
 
 ## Credit
 
