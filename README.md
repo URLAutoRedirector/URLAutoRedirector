@@ -6,9 +6,15 @@ This is a simple demo of UrlAutoRedirector, which redirects mid-page of JD and m
 
 * Redirection
 * Tab Option
+* Draggable Rule List
 
 ## TODO
 
 * Rule Option
-* Draggable Rule List
 * Share to WeiXin/Twitter/Weibo
+* Icon
+
+## Credit
+
+* Idea inspired by [Albert Li](https://github.com/lzb)
+
