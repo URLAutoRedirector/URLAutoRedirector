@@ -52,9 +52,15 @@ $(document).ready(function(){
             var src = $(".src:eq("+i+")").val();
             var dst = $(".dst:eq("+i+")").val();
             var isRegex = $(".isRegex:eq("+i+")").prop("checked");
-            rules.push({"name": name, "src":src, "dst": dst, "isRegex": isRegex});
+            var isDelete = $(".isDelete:eq("+i+")").prop("checked");
+            if (!isDelete) {
+                rules.push({"name": name, "src":src, "dst": dst, "isRegex": isRegex});
+            }
         }
         setOptions();
+        alert("Saved successfully");
+        $(".rule_item").remove();
+        getOptions(showOptions);
     });
 
     $("#discardRule").click(function(){
