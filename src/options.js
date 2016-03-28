@@ -1,3 +1,8 @@
+// UrlAutoRedirector
+// Copyright (c) David Zhang, 2016
+// Idea inspired by Albert Li.
+
+// default options
 var defaultOptions = {
     "options": {
         "isNewTab": true,
