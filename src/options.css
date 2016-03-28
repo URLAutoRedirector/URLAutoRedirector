@@ -16,6 +16,7 @@ li{
     margin: 4px;
     padding: 4px;
     height: 30px;
+    width: 720px;
 }
 
 #wrapper{
@@ -103,23 +104,22 @@ h3{
 
 .isDelete{
     padding-left: 12px;
+    padding-top: 2px;
     width: 50px;
 }
 
 .isDelete_title{
-    padding-left: 12px;
-    width: 50px;
+    padding-left: 22px;
+    width: 24px;
     height: 24px;
 }
 
 .drag_title{
-    padding-left: 8px;
-    height: 24px;
+    padding-left: 28px;
 }
 
 .drag_item{
-    padding-left: 60px;
-    height: 24px;
+    padding-left: 20px;
 }
 
 .ruleBtn{
