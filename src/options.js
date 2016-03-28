@@ -81,7 +81,8 @@ $(document).ready(function(){
     });
 
     $("#rule_list").sortable({
-        revert: true
+        revert: true,
+        cursor: 'move'
     });
 
     $("ul,li").disableSelection();
@@ -128,6 +129,7 @@ function newRuleItem(name, src, dst, isRegex)
                        "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
                        "<input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + ">" +
                        "<input type=\"checkbox\" class=\"isDelete\">" +
+                       "<i class=\"fa fa-bars drag_item\"></i>" + 
                        "</li>";
    return ruleItemHTML;
 }
