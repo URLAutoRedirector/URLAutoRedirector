@@ -8,19 +8,25 @@ var defaultOptions = {
         "isNewTab": true,
         "rules": [
             {
-                "name": "京东中间页",
-                "src": "^http:\/\/re.jd.com\/cps\/item\/([0-9]*).html",
+                "name": "京东中间页跳过",
+                "src": "^http://re.jd.com/cps/item/([0-9]*).html",
                 "dst": "http://item.jd.com/$1.html",
                 "isRegex": true
             },
             {
-                "name": "点评无线端",
+                "name": "点评无线转PC",
                 "src": "^http://m.dianping.com/appshare/shop/([0-9]*)$",
                 "dst": "http://www.dianping.com/shop/$1",
                 "isRegex": true
             },
             {
-                "name": "BaiduToGoogle :)",
+                "name": "微博无线转PC",
+                "src": "^http://m.weibo.cn/(.*)$",
+                "dst": "http://weibo.com/$1",
+                "isRegex": true
+            },
+            {
+                "name": "BaiduToGoogle",
                 "src": "https://www.baidu.com/",
                 "dst": "https://www.google.com/",
                 "isRegex": false
