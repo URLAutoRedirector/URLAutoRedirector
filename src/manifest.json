@@ -2,7 +2,7 @@
     "name": "Url Auto Redirector",
     "version": "0.0.5",
     "description": "Auto redirect page by preset url patterns",
-    "homepage_url": "http://crispgm.com/page/url-auto-redirector.html",
+    "homepage_url": "https://crispgm.com/page/url-auto-redirector.html",
     "options_page": "options.html",
     "icons": {
         "128":"icon_128.png"
