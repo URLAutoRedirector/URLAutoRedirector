@@ -8,11 +8,6 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 
 [https://github.com/crispgm/UrlAutoRedirector/wiki](https://github.com/crispgm/UrlAutoRedirector/wiki)
 
-## TODO
-
-* Share to WeiXin/Twitter/Weibo
-* User Manual
-
 ## Credit
 
 * Idea inspired and icon designed by [Albert Li](https://github.com/lzb)
