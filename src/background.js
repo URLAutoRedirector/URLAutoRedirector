@@ -11,24 +11,28 @@ var defaultOptions = {
         "name": "京东中间页跳过",
         "src": "^http://re.jd.com/cps/item/([0-9]*).html",
         "dst": "http://item.jd.com/$1.html",
+        "isEnabled": true,
         "isRegex": true
       },
       {
         "name": "点评无线转PC",
         "src": "^http://m.dianping.com/appshare/shop/([0-9]*)$",
         "dst": "http://www.dianping.com/shop/$1",
+        "isEnabled": true,
         "isRegex": true
       },
       {
         "name": "微博无线转PC",
         "src": "^http://m.weibo.cn/(.*)$",
         "dst": "http://weibo.com/$1",
+        "isEnabled": true,
         "isRegex": true
       },
       {
         "name": "BaiduToGoogle",
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
+        "isEnabled": true,
         "isRegex": false
       }
     ]
@@ -41,20 +45,23 @@ var lastTabId = 0;
 
 function matchUrl(url) {
   for (var i=0; i<rules.length; i++) {
+    var isEnabled = rules[i].isEnabled;
     var isRegex = rules[i].isRegex;
     var src = rules[i].src;
     var dst = rules[i].dst;
 
-    if (isRegex) {
-      var re = new RegExp(src);
-      if (url.search(re) != -1) {
-        newUrl = url.replace(re, dst);
-        return newUrl;
+    if (isEnabled) {
+      if (isRegex) {
+        var re = new RegExp(src);
+        if (url.search(re) != -1) {
+          newUrl = url.replace(re, dst);
+          return newUrl;
+        }
       }
-    }
-    else {
-      if (url == src) {
-        return dst;
+      else {
+        if (url == src) {
+          return dst;
+        }
       }
     }
   }

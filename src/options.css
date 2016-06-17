@@ -57,12 +57,6 @@ h3{
 input{
   padding-left: 4px;
 }
-.rule-head{
-  width: 100%;
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: bold;
-}
 .btn-rule{
   margin-top: 12px;
   height: 30px;
@@ -77,80 +71,103 @@ ul{
   margin: 0;
   padding: 0;
 }
-li{
-  margin: 4px;
-  padding: 4px;
-  height: 30px;
-}
 li.rule-item{
   background-color: #ffffff;
   border: 0;
   margin: 0;
   padding: 0;
 }
-.name{
-  margin-right: 12px;
-  width: 100px;
-  height: 24px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid #ff5a5f;
+.rule-head{
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
 }
-.name-title{
-  margin-right: 12px;
-  width: 100px;
-  height: 24px;
-}
-.src{
-  margin-right: 12px;
-  width: 240px;
-  height: 24px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid #ff5a5f;
-}
-.src-title{
-  margin-right: 12px;
-  width: 240px;
-  height: 24px;
-}
-.dst{
-  margin-right: 12px;
-  width: 200px;
-  height: 24px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid #ff5a5f;
-}
-.dst-title{
-  margin-right: 12px;
-  width: 200px;
-  height: 24px;
-}
-.is-regex{
-  width: 50px;
-}
-.is-regex-title{
-  padding-left: 12px;
-  width: 50px;
-  height: 24px;
-}
-.is-delete{
-  padding-left: 12px;
-  padding-top: 2px;
-  width: 50px;
-}
-.is-delete-title{
-  padding-left: 22px;
+.drag-title{
+  float: left;
+  margin-right: 4px;
   width: 24px;
   height: 24px;
 }
-.drag-title {
-  padding-left: 28px;
+.name-title{
+  float: left;
+  margin-right: 16px;
+  width: 120px;
+  height: 24px;
 }
-.drag-item {
-  padding-left: 20px;
+.src-title{
+  float: left;
+  margin-right: 16px;
+  width: 240px;
+  height: 24px;
+}
+.dst-title{
+  float: left;
+  margin-right: 8px;
+  width: 200px;
+  height: 24px;
+}
+.is-regex-title{
+  float: left;
+  padding-right: 8px;
+  width: 60px;
+  height: 24px;
+}
+.enable-title{
+  float: left;
+  margin-right: 4px;
+  width: 24px;
+  height: 24px;
+}
+.is-delete-title{
+  float: left;
+  width: 24px;
+  height: 24px;
+}
+.drag-item{
+  width: 24px;
+  height: 24px;
+}
+.name{
+  font-size: 16px;
+  margin-right: 12px;
+  width: 120px;
+  height: 24px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
+}
+.src{
+  font-size: 16px;
+  margin-right: 12px;
+  width: 240px;
+  height: 24px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
+}
+.dst{
+  font-size: 16px;
+  margin-right: 20px;
+  width: 200px;
+  height: 24px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
+}
+.is-regex{
+  width: 50px;
+  height: 24px;
+}
+.is-enabled{
+  width: 24px;
+  height: 24px;
+  margin-right: 29px;
+}
+.is-delete{
+  width: 50px;
+  height: 24px;
 }
