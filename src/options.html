@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Options - UrlAutoRedirector</title>
-    <link href="options.css" rel="stylesheet">
-    <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="lib/font-awesome-4.5.0/css/font-awesome.min.css">
-    <meta charset="utf8">
-    <meta name="twitter:widgets:csp" content="on">
+  <title>Options - UrlAutoRedirector</title>
+  <link href="options.css" rel="stylesheet">
+  <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="lib/font-awesome-4.5.0/css/font-awesome.min.css">
+  <meta charset="utf8">
+  <meta name="twitter:widgets:csp" content="on">
 </head>
 <body>
-    <div id="wrapper">
-        <div id="logo">
-            <img src="icon_128.png">
-        </div>
-        <div>
-            <h3>General</h3>
-            <div>
-                <form>
-                    <input type="radio" class="tabOption" name="tabOption" value="newTab">Redirect in new tab<br>
-                    <input type="radio" class="tabOption" name="tabOption" value="curTab">Redirect in current tab
-                </form>
-            </div>
-        </div>
-        <div>
-            <h3>Rules</h3>
-            <div id="rule_wrapper">
-                <table>
-                    <tr id="rule_head">
-                        <th class="name_title">Name</th>
-                        <th class="src_title">Source</th>
-                        <th class="dst_title">Destination</th>
-                        <th class="isRegex_title">RegExp</th>
-                        <th class="isDelete_title"><i class="fa fa-times"></i></th>
-                        <th class="drag_title"><i class="fa fa-sort"></i></th>
-                    </tr>
-                </table>
-                <ul id="rule_list">
-                </ul>
-            </div>
-            <div>
-                <input type="button" class="ruleBtn" id="newRule" value="New">
-                <input type="button" class="ruleBtn" id="saveRule" value="Save">
-                <input type="button" class="ruleBtn" id="discardRule" value="Discard">
-                <input type="button" class="ruleBtn" id="resetRule" value="Reset">
-            </div>
-        </div>
-        <div>
-            <h3>About</h3>
-            <p>
-                Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.
-                <a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Home Page</a>
-            </p>
-            <p>Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
-            <p>Idea inspired and icon designed by Albert Li.</p>
-        </div>
-        <div>
-            <h3>Share</h3>
-            <p>
-                <div id="twitter-share">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://crispgm.com/page/url-auto-redirector.html" data-via="crispgm" data-size="large">Tweet</a>
-                </div>
-            </p>
-        </div>
-        <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
+  <div id="wrapper">
+
+    <div id="logo">
+      <img src="icon_128.png">
     </div>
-    <script src="lib/jquery-1.12.2.min.js"></script>
-    <script src="lib/jquery-ui/jquery-ui.min.js"></script>
-    <script src="options.js"></script>
+
+    <div>
+      <h3>General</h3>
+      <div>
+        <form>
+          <input type="radio" class="tabOption" name="tabOption" value="newTab">Redirect in new tab<br>
+          <input type="radio" class="tabOption" name="tabOption" value="curTab">Redirect in current tab
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <h3>Rules</h3>
+      <div id="rule_wrapper">
+        <table>
+          <tr id="rule_head">
+            <th class="name_title">Name</th>
+            <th class="src_title">Source</th>
+            <th class="dst_title">Destination</th>
+            <th class="isRegex_title">RegExp</th>
+            <th class="isDelete_title"><i class="fa fa-times"></i></th>
+            <th class="drag_title"><i class="fa fa-sort"></i></th>
+          </tr>
+        </table>
+        <ul id="rule_list">
+        </ul>
+      </div>
+      <div>
+        <input type="button" class="ruleBtn" id="newRule" value="New">
+        <input type="button" class="ruleBtn" id="saveRule" value="Save">
+        <input type="button" class="ruleBtn" id="discardRule" value="Discard">
+        <input type="button" class="ruleBtn" id="resetRule" value="Reset">
+      </div>
+    </div>
+
+    <div>
+      <h3>About</h3>
+      <p>
+        Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.
+        <a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Home Page</a>
+      </p>
+      <p>Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
+      <p>Idea inspired and icon designed by Albert Li.</p>
+    </div>
+
+    <div>
+      <h3>Share</h3>
+      <p>
+        <div id="twitter-share">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://crispgm.com/page/url-auto-redirector.html" data-via="crispgm" data-size="large">Tweet</a>
+        </div>
+      </p>
+    </div>
+
+    <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
+  </div>
+  <script src="lib/jquery-1.12.2.min.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.min.js"></script>
+  <script src="options.js"></script>
 </body>
 </html>
