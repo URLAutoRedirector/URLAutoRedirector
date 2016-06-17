@@ -65,9 +65,7 @@ function redirect(newUrl) {
     if (isNewTab == false) {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var updatedTabId = tabs[0].id;
-            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {
-                chrome.tabs.executeScript(tab.id, {code: 'alert(1);'});
-            });
+            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {});
         });
     }
     else{
