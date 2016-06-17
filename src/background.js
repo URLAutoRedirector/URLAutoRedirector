@@ -37,6 +37,7 @@ var defaultOptions = {
 
 var isNewTab;
 var rules;
+var lastTabId = 0;
 
 function matchUrl(url) {
   for (var i=0; i<rules.length; i++) {
@@ -61,22 +62,6 @@ function matchUrl(url) {
   return false;
 }
 
-function redirect(newUrl) {
-  if (isNewTab == false) {
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      var updatedTabId = tabs[0].id;
-      chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {});
-    });
-  }
-  else {
-    chrome.tabs.create({url: newUrl}, function(tab){
-      chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
-      chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
-      chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
-    });
-  }
-}
-
 function getOptions(callback)
 {
   chrome.storage.local.get("options", function(data){
@@ -88,14 +73,28 @@ function getOptions(callback)
 
 chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   if (change.status == "loading") {
-    console.log("Captured Url: " + change.url);
     getOptions(function(){
       newUrl = matchUrl(change.url);
-      console.log("New Url: " + newUrl);
       if (newUrl) {
-        redirect(newUrl)
+        if (isNewTab == false) {
+          lastTabId = tabId;
+          chrome.tabs.update({url: newUrl});
+        }
+        else {
+          chrome.tabs.create({url: newUrl}, function(tab){
+            chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
+            chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
+            chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+          });
+        }
       }
     });
+  }
+  if (change.status == 'complete' && tabId == lastTabId) {
+    chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
+    chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
+    chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+    lastTabId = 0;
   }
 });
 
