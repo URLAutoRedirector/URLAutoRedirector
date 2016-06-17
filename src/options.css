@@ -1,132 +1,156 @@
 body{
   margin: 0;
-  text-align: center;
-  font-family: Helvetica, Arial, Courier;
-  -webkit-font-smoothing: antialiased;
+  font-family: Menlo, Helvetica, Arial;
   font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  color: #484848;
+  word-wrap: break-word;
+  text-align: center;
+  background-color: white;
 }
-
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-radius: 4px;
+  background-color: #ff5a5f;
+  color: #fff;
+}
+#banner {
+  height: 70px;
+  font-size: 40px;
+  font-weight: bold;
+}
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 800px;
+  color: #484848;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.general {
+  text-align: left;
+  width: 100%;
+}
+a{
+  text-decoration: none;
+  color: #ff5a5f;
+}
+a:hover{
+  text-decoration: underline;
+}
+footer {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ff5a5f;
+}
+h3{
+  font-size: 24px;
+}
+input{
+  padding-left: 4px;
+}
+.rule-head{
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn-rule{
+  margin-top: 12px;
+  height: 30px;
+  width: 80px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #ff5a5f;
+}
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
 li{
   margin: 4px;
   padding: 4px;
   height: 30px;
-  width: 720px;
 }
-
-#wrapper{
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  text-align: left;
+li.rule-item{
+  background-color: #ffffff;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
-
-#logo{
-  text-align: center;
-  padding-top: 20px;
-}
-
-#logo img{
-  width: 128px;
-  height: 128px;
-}
-
-footer{
-  text-align: center;
-}
-
-a{
-  text-decoration: none;
-  color: #333;
-}
-
-a:hover{
-  text-decoration: underline;
-}
-
-h3{
-  font-size: 24px;
-}
-
 .name{
   margin-right: 12px;
   width: 100px;
   height: 24px;
-  border-radius: 4px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
 }
-
-.name_title{
-  padding-left: 12px;
+.name-title{
+  margin-right: 12px;
   width: 100px;
   height: 24px;
 }
-
 .src{
   margin-right: 12px;
-  width: 200px;
+  width: 240px;
   height: 24px;
-  border-radius: 4px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
 }
-
-.src_title{
-  padding-left: 12px;
-  width: 200px;
+.src-title{
+  margin-right: 12px;
+  width: 240px;
   height: 24px;
 }
-
 .dst{
   margin-right: 12px;
   width: 200px;
   height: 24px;
-  border-radius: 4px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ff5a5f;
 }
-
-.dst_title{
-  padding-left: 12px;
+.dst-title{
+  margin-right: 12px;
   width: 200px;
   height: 24px;
 }
-
-.isRegex{
+.is-regex{
   width: 50px;
 }
-
-.isRegex_title{
+.is-regex-title{
   padding-left: 12px;
   width: 50px;
   height: 24px;
 }
-
-.isDelete{
+.is-delete{
   padding-left: 12px;
   padding-top: 2px;
   width: 50px;
 }
-
-.isDelete_title{
+.is-delete-title{
   padding-left: 22px;
   width: 24px;
   height: 24px;
 }
-
-.drag_title{
+.drag-title {
   padding-left: 28px;
 }
-
-.drag_item{
+.drag-item {
   padding-left: 20px;
-}
-
-.ruleBtn{
-  margin-top: 12px;
-  margin-left: 12px;
-  height: 30px;
-  width: 80px;
-  border-radius: 6px;
-  font-size: 14px;
 }

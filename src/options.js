@@ -5,7 +5,7 @@
 // default options
 var defaultOptions = {
   "options": {
-    "isNewTab": true,
+    "isNewTab": false,
     "rules": [
       {
         "name": "京东中间页跳过",
@@ -51,42 +51,42 @@ $(document).ready(function(){
     }
   });
 
-  $("#newRule").click(function(){
-    $("#rule_list").append(newRuleItem("", "", "", false));
+  $("#new-rule").click(function(){
+    $("#rule-list").append(newRuleItem("", "", "", false));
   });
 
-  $("#saveRule").click(function(){
-    var numOfRules = $(".rule_item").length;
+  $("#save-rule").click(function(){
+    var numOfRules = $(".rule-item").length;
     rules = [];
     for (var i=0; i<numOfRules; i++) {
       var name = $(".name:eq("+i+")").val();
       var src = $(".src:eq("+i+")").val();
       var dst = $(".dst:eq("+i+")").val();
-      var isRegex = $(".isRegex:eq("+i+")").prop("checked");
-      var isDelete = $(".isDelete:eq("+i+")").prop("checked");
+      var isRegex = $(".is-regex:eq("+i+")").prop("checked");
+      var isDelete = $(".is-delete:eq("+i+")").prop("checked");
       if (!isDelete) {
         rules.push({"name": name, "src":src, "dst": dst, "isRegex": isRegex});
       }
     }
     setOptions();
     alert("Saved successfully");
-    $(".rule_item").remove();
+    $(".rule-item").remove();
     getOptions(showOptions);
   });
 
-  $("#discardRule").click(function(){
-    $(".rule_item").remove();
+  $("#discard-rule").click(function(){
+    $(".rule-item").remove();
     getOptions(showOptions);
   });
 
-  $("#resetRule").click(function(){
-    $(".rule_item").remove();
+  $("#reset-rule").click(function(){
+    $(".rule-item").remove();
     rules = defaultOptions.options.rules;
     setOptions();
     getOptions(showOptions);
   });
 
-  $("#rule_list").sortable({
+  $("#rule-list").sortable({
     revert: true,
     cursor: 'move'
   });
@@ -120,18 +120,18 @@ function showOptions() {
     $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");
   }
   for (var i=0; i<rules.length; i++) {
-    $("#rule_list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex));
+    $("#rule-list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex));
   }
 }
 
 function newRuleItem(name, src, dst, isRegex) {
-  var ruleItemHTML = "<li class=\"ui-state-default rule_item\">" +
+  var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
                      "<input type=\"text\" class=\"name\" value=" + name + ">" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<input type=\"checkbox\" class=\"isRegex\"" + (isRegex == true ? "checked" : "") + ">" +
-                     "<input type=\"checkbox\" class=\"isDelete\">" +
-                     "<i class=\"fa fa-bars drag_item\"></i>" +
+                     "<input type=\"checkbox\" class=\"is-regex\"" + (isRegex == true ? "checked" : "") + ">" +
+                     "<input type=\"checkbox\" class=\"is-delete\">" +
+                     "<i class=\"fa fa-bars drag-item\"></i>" +
                      "</li>";
   return ruleItemHTML;
 }

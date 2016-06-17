@@ -5,7 +5,7 @@
 // default options
 var defaultOptions = {
   "options": {
-    "isNewTab": true,
+    "isNewTab": false,
     "rules": [
       {
         "name": "京东中间页跳过",
@@ -58,7 +58,7 @@ function matchUrl(url) {
       }
     }
   }
-    
+
   return false;
 }
 

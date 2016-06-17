@@ -9,13 +9,14 @@
   <meta name="twitter:widgets:csp" content="on">
 </head>
 <body>
-  <div id="wrapper">
-
-    <div id="logo">
-      <img src="icon_128.png">
+  <nav>
+    <div id="banner">
+      URL Auto Redirector
     </div>
+  </nav>
 
-    <div>
+  <div id="content">
+    <div class="general">
       <h3>General</h3>
       <div>
         <form>
@@ -25,51 +26,45 @@
       </div>
     </div>
 
-    <div>
+    <div class="general">
       <h3>Rules</h3>
-      <div id="rule_wrapper">
-        <table>
-          <tr id="rule_head">
-            <th class="name_title">Name</th>
-            <th class="src_title">Source</th>
-            <th class="dst_title">Destination</th>
-            <th class="isRegex_title">RegExp</th>
-            <th class="isDelete_title"><i class="fa fa-times"></i></th>
-            <th class="drag_title"><i class="fa fa-sort"></i></th>
-          </tr>
-        </table>
-        <ul id="rule_list">
+
+      <div class="rule-head">
+        <span class="name-title">Name</span>
+        <span class="src-title">Source</span>
+        <span class="dst-title">Destination</span>
+        <span class="is-regex-title">RegExp</span>
+        <span class="is-delete-title"><i class="fa fa-times"></i></span>
+        <span class="drag-title"><i class="fa fa-sort"></i></span>
+      </div>
+
+      <div>
+        <ul id="rule-list">
         </ul>
       </div>
       <div>
-        <input type="button" class="ruleBtn" id="newRule" value="New">
-        <input type="button" class="ruleBtn" id="saveRule" value="Save">
-        <input type="button" class="ruleBtn" id="discardRule" value="Discard">
-        <input type="button" class="ruleBtn" id="resetRule" value="Reset">
+        <input type="button" class="btn-rule" id="new-rule" value="New">
+        <input type="button" class="btn-rule" id="save-rule" value="Save">
+        <input type="button" class="btn-rule" id="discard-rule" value="Discard">
+        <input type="button" class="btn-rule" id="reset-rule" value="Reset">
       </div>
     </div>
 
-    <div>
+    <div class="general">
       <h3>About</h3>
-      <p>
-        Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.
-        <a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Home Page</a>
-      </p>
+      <p>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
+      <p><a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Official Home Page</a>.</p>
       <p>Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
       <p>Idea inspired and icon designed by Albert Li.</p>
-    </div>
-
-    <div>
-      <h3>Share</h3>
       <p>
         <div id="twitter-share">
           <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://crispgm.com/page/url-auto-redirector.html" data-via="crispgm" data-size="large">Tweet</a>
         </div>
       </p>
     </div>
-
-    <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
   </div>
+  <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
+
   <script src="lib/jquery-1.12.2.min.js"></script>
   <script src="lib/jquery-ui/jquery-ui.min.js"></script>
   <script src="options.js"></script>
