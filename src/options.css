@@ -1,132 +1,132 @@
 body{
-    margin: 0;
-    text-align: center;
-    font-family: Helvetica, Arial, Courier;
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
+  margin: 0;
+  text-align: center;
+  font-family: Helvetica, Arial, Courier;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
 }
 
 ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 li{
-    margin: 4px;
-    padding: 4px;
-    height: 30px;
-    width: 720px;
+  margin: 4px;
+  padding: 4px;
+  height: 30px;
+  width: 720px;
 }
 
 #wrapper{
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  text-align: left;
 }
 
 #logo{
-    text-align: center;
-    padding-top: 20px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 #logo img{
-    width: 128px;
-    height: 128px;
+  width: 128px;
+  height: 128px;
 }
 
 footer{
-    text-align: center;
+  text-align: center;
 }
 
 a{
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 a:hover{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 h3{
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .name{
-    margin-right: 12px;
-    width: 100px;
-    height: 24px;
-    border-radius: 4px;
+  margin-right: 12px;
+  width: 100px;
+  height: 24px;
+  border-radius: 4px;
 }
 
 .name_title{
-    padding-left: 12px;
-    width: 100px;
-    height: 24px;
+  padding-left: 12px;
+  width: 100px;
+  height: 24px;
 }
 
 .src{
-    margin-right: 12px;
-    width: 200px;
-    height: 24px;
-    border-radius: 4px;
+  margin-right: 12px;
+  width: 200px;
+  height: 24px;
+  border-radius: 4px;
 }
 
 .src_title{
-    padding-left: 12px;
-    width: 200px;
-    height: 24px;
+  padding-left: 12px;
+  width: 200px;
+  height: 24px;
 }
 
 .dst{
-    margin-right: 12px;
-    width: 200px;
-    height: 24px;
-    border-radius: 4px;
+  margin-right: 12px;
+  width: 200px;
+  height: 24px;
+  border-radius: 4px;
 }
 
 .dst_title{
-    padding-left: 12px;
-    width: 200px;
-    height: 24px;
+  padding-left: 12px;
+  width: 200px;
+  height: 24px;
 }
 
 .isRegex{
-    width: 50px;
+  width: 50px;
 }
 
 .isRegex_title{
-    padding-left: 12px;
-    width: 50px;
-    height: 24px;
+  padding-left: 12px;
+  width: 50px;
+  height: 24px;
 }
 
 .isDelete{
-    padding-left: 12px;
-    padding-top: 2px;
-    width: 50px;
+  padding-left: 12px;
+  padding-top: 2px;
+  width: 50px;
 }
 
 .isDelete_title{
-    padding-left: 22px;
-    width: 24px;
-    height: 24px;
+  padding-left: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .drag_title{
-    padding-left: 28px;
+  padding-left: 28px;
 }
 
 .drag_item{
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .ruleBtn{
-    margin-top: 12px;
-    margin-left: 12px;
-    height: 30px;
-    width: 80px;
-    border-radius: 6px;
-    font-size: 14px;
+  margin-top: 12px;
+  margin-left: 12px;
+  height: 30px;
+  width: 80px;
+  border-radius: 6px;
+  font-size: 14px;
 }
