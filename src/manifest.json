@@ -1,31 +1,31 @@
 {
-    "name": "Url Auto Redirector",
-    "version": "0.0.5",
-    "description": "Auto redirect page by preset url patterns.",
-    "homepage_url": "https://crispgm.com/page/url-auto-redirector.html",
-    "options_page": "options.html",
-    "icons": {
-        "128":"icon_128.png"
-    },
-    "permissions": [
-        "storage",
-        "tabs",
-        "activeTab",
-        "http://*/",
-        "https://*/"
-    ],
-    "content_scripts": [
-        {
-            "matches": ["http://*/*", "https://*/*"],
-            "run_at": "document_idle",
-            "css": ["prompt.css"],
-            "js": ["prompt.js", "lib/jquery-1.12.2.min.js"]
-        }
-    ],
-    "background": {
-        "persistent": false,
-        "scripts": ["background.js"]
-    },
-    "content_security_policy": "script-src 'self' https://platform.twitter.com; object-src 'self'",
-    "manifest_version": 2
+  "name": "Url Auto Redirector",
+  "version": "0.0.5",
+  "description": "Auto redirect page by preset url patterns.",
+  "homepage_url": "https://crispgm.com/page/url-auto-redirector.html",
+  "options_page": "options.html",
+  "icons": {
+    "128":"icon_128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "http://*/",
+    "https://*/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_idle",
+      "css": ["prompt.css"],
+      "js": ["prompt.js", "lib/jquery-1.12.2.min.js"]
+    }
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_security_policy": "script-src 'self' https://platform.twitter.com; object-src 'self'",
+  "manifest_version": 2
 }
