@@ -65,11 +65,17 @@ function redirect(newUrl) {
     if (isNewTab == false) {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var updatedTabId = tabs[0].id;
-            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {});
+            chrome.tabs.update(updatedTabId, {url: newUrl}, function(tab) {
+                chrome.tabs.executeScript(tab.id, {code: 'alert(1);'});
+            });
         });
     }
     else{
-        chrome.tabs.create({url: newUrl}, function(tab){});
+        chrome.tabs.create({url: newUrl}, function(tab){
+            chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
+            chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
+            chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+        });
     }
 }
 

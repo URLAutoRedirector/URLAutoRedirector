@@ -9,7 +9,18 @@
     },
     "permissions": [
         "storage",
-        "tabs"
+        "tabs",
+        "activeTab",
+        "http://*/",
+        "https://*/"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "run_at": "document_idle",
+            "css": ["prompt.css"],
+            "js": ["prompt.js", "lib/jquery-1.12.2.min.js"]
+        }
     ],
     "background": {
         "persistent": false,
