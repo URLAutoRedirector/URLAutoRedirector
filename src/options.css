@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  font-family: Menlo, Helvetica, Arial;
+  font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   color: #484848;
@@ -167,7 +167,7 @@ li.rule-item{
   height: 24px;
   margin-right: 29px;
 }
-.is-delete{
+.is-deleted{
   width: 50px;
   height: 24px;
 }

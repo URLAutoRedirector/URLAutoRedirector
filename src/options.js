@@ -57,23 +57,11 @@ $(document).ready(function(){
   });
   // new rule button
   $("#new-rule").click(function(){
-    $("#rule-list").append(newRuleItem("", "", "", false));
+    $("#rule-list").append(newRuleItem("", "", "", false, true, true));
   });
   // save rule button
   $("#save-rule").click(function(){
-    var numOfRules = $(".rule-item").length;
-    rules = [];
-    for (var i=0; i<numOfRules; i++) {
-      var name = $(".name:eq("+i+")").val();
-      var src = $(".src:eq("+i+")").val();
-      var dst = $(".dst:eq("+i+")").val();
-      var isRegex = $(".is-regex:eq("+i+")").prop("checked");
-      var isDelete = $(".is-delete:eq("+i+")").prop("checked");
-      var isEnabled = $(".is-delete:eq("+i+")").prop("checked");
-      if (!isDelete) {
-        rules.push({"name": name, "src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
-      }
-    }
+    gatherRulesOnForm();
     setOptions();
     alert("Saved successfully");
     $(".rule-item").remove();
@@ -91,13 +79,63 @@ $(document).ready(function(){
     setOptions();
     getOptions(showOptions);
   });
+
   // rule list drag & sort
   $("#rule-list").sortable({
     revert: true,
-    cursor: 'move'
+    cursor: "move"
   });
   $("ul,li").disableSelection();
 });
+
+$(document).on("click", ".is-regex", function(){
+  if ($(this).data("is-regex") == true) {
+    $(this).data("is-regex", false);
+    $(this).attr("class", "fa fa-square-o fa-lg is-regex");
+  }
+  else if ($(this).data("is-regex") == false) {
+    $(this).data("is-regex", true);
+    $(this).attr("class", "fa fa-check-square-o fa-lg is-regex");
+  }
+});
+
+$(document).on("click", ".is-enabled", function(){
+  if ($(this).data("is-enabled") == true) {
+    $(this).data("is-enabled", false);
+    $(this).attr("class", "fa fa-toggle-off fa-lg is-enabled");
+  }
+  else if ($(this).data("is-enabled") == false) {
+    $(this).data("is-enabled", true);
+    $(this).attr("class", "fa fa-toggle-on fa-lg is-enabled");
+  }
+});
+
+$(document).on("click", ".is-deleted", function(){
+  var r = confirm("Are you sure to delete");
+  if (r == true) {
+    $(this).data("is-deleted", true);
+    gatherRulesOnForm();
+    setOptions();
+    $(".rule-item").remove();
+    getOptions(showOptions);
+  }
+});
+
+function gatherRulesOnForm() {
+  var numOfRules = $(".rule-item").length;
+  rules = [];
+  for (var i = 0; i < numOfRules; i++ ) {
+    var name = $(".name:eq("+i+")").val();
+    var src = $(".src:eq("+i+")").val();
+    var dst = $(".dst:eq("+i+")").val();
+    var isRegex = $(".is-regex:eq("+i+")").data("is-regex");
+    var isDeleted = $(".is-deleted:eq("+i+")").data("is-deleted");
+    var isEnabled = $(".is-enabled:eq("+i+")").data("is-enabled");
+    if (!isDeleted) {
+      rules.push({"name": name, "src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
+    }
+  }
+}
 
 function setOptions() {
   var newOptions = {
@@ -125,19 +163,19 @@ function showOptions() {
     $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");
   }
   for (var i=0; i<rules.length; i++) {
-    $("#rule-list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex, rules[i].isEnabled));
+    $("#rule-list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex, rules[i].isEnabled, false));
   }
 }
 
-function newRuleItem(name, src, dst, isRegex, isEnabled) {
+function newRuleItem(name, src, dst, isRegex, isEnabled, isNew) {
   var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
                      "<i class=\"fa fa-bars drag-item\"></i>" +
                      "<input type=\"text\" class=\"name\" value=" + name + ">" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<i class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
-                     "<i class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
-                     "<i class=\"fa fa-ban fa-lg is-delete\"></i>" +
+                     "<i data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
+                     "<i data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
+                     "<i data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
                      "</li>";
   return ruleItemHTML;
 }
