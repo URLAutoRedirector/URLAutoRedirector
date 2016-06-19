@@ -79,7 +79,53 @@ $(document).ready(function(){
     setOptions();
     getOptions(showOptions);
   });
+  // import rule button
+  $("#import-rule").click(function(){
+    var importedFile = $("#upload-rule").prop("files");
+    if (importedFile.length == 0) {
+      alert("Error: Please choose a file.");
+      return;
+    }
+    else {
+      var reader = new FileReader();
+      reader.readAsText(importedFile[0], "UTF-8");
+      reader.onload = function(evt) {
+        var rulesString = evt.target.result;
+        var rulesJSON = JSON.parse(rulesString);
+        var numOfRules = rulesJSON.length;
+        if (numOfRules == 0) {
+          alert("Error: No rules in files.");
+          return;
+        }
+        for (var i = 0; i < numOfRules; i++ ) {
+          var name = rulesJSON[i].name;
+          var src = rulesJSON[i].src;
+          var dst = rulesJSON[i].dst;
+          var isRegex = rulesJSON[i].isRegex;
+          var isDeleted = false;
+          var isEnabled = rulesJSON[i].isEnabled;
 
+          rules.push({"name": name, "src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
+        }
+        setOptions();
+        $(".rule-item").remove();
+        getOptions(showOptions);
+        alert("Import successfully.");
+      }
+    }
+  });
+  // export rule button
+  $("#export-rule").click(function(){
+    var rulesString = JSON.stringify(rules);
+    var blob = new Blob([rulesString]);
+
+    var aLink = document.createElement('a');
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent("click", false, false);
+    aLink.download = "redirecting-rules.json";
+    aLink.href = URL.createObjectURL(blob);
+    aLink.dispatchEvent(evt);
+  });
   // rule list drag & sort
   $("#rule-list").sortable({
     revert: true,
