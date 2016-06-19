@@ -174,3 +174,10 @@ li.rule-item{
 #upload-rule{
   width: 244px;
 }
+.btn-share{
+  margin-right: 10px;
+  float: left;
+}
+.weibo-share{
+  padding-top: 1px;
+}
