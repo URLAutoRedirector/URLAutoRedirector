@@ -122,7 +122,7 @@ $(document).ready(function(){
     var aLink = document.createElement('a');
     var evt = document.createEvent("HTMLEvents");
     evt.initEvent("click", false, false);
-    aLink.download = "UAR-config.json";
+    aLink.download = "redirecting-rules.json";
     aLink.href = URL.createObjectURL(blob);
     aLink.dispatchEvent(evt);
   });
