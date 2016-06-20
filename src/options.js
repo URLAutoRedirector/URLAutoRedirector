@@ -215,13 +215,13 @@ function showOptions() {
 
 function newRuleItem(name, src, dst, isRegex, isEnabled, isNew) {
   var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
-                     "<i class=\"fa fa-bars drag-item\"></i>" +
+                     "<i title=\"Drag item to reorder\" class=\"fa fa-bars drag-item\"></i>" +
                      "<input type=\"text\" class=\"name\" value=" + name + ">" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<i data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
-                     "<i data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
-                     "<i data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
+                     "<i title=\"Enable RegExp\" data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
+                     "<i title=\"Enable/Disable\" data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
+                     "<i title=\"Delete rule\" data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
                      "</li>";
   return ruleItemHTML;
 }
