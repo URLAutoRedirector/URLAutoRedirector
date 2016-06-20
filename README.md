@@ -10,6 +10,10 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 UrlAutoRedirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
 By doing so, it gets you directly to your destination page.
 
+### Mobile Adaption
+
+![](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promo.png)
+
 ## Installation
 
 UrlAutoRedirector will be published to Chrome WebStore with a stable version.
