@@ -5,9 +5,9 @@
   "homepage_url": "https://crispgm.com/page/url-auto-redirector.html",
   "options_page": "options.html",
   "icons": {
-    "128": "images/UrlAutoRedirector.png",
-    "48": "images/UrlAutoRedirector-48.png",
-    "32": "images/UrlAutoRedirector-32.png"
+    "128": "images/icon-128.png",
+    "48": "images/icon-48.png",
+    "32": "images/icon-32.png"
   },
   "permissions": [
     "storage",
