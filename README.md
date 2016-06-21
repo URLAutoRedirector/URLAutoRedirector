@@ -20,6 +20,8 @@ By doing so, it gets you directly to your destination page.
 
 ### Site Blocker
 
+![](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/site-blocker.png)
+
 ## Installation
 
 UrlAutoRedirector will be published to Chrome WebStore with a stable version.
