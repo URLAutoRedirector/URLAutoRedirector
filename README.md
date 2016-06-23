@@ -7,7 +7,7 @@ Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crisp
 
 ## Introduction
 
-UrlAutoRedirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
+URL Auto Redirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
 By doing so, it gets you directly to your destination page.
 
 ## Usage
@@ -26,7 +26,7 @@ By doing so, it gets you directly to your destination page.
 
 ## Installation
 
-UrlAutoRedirector will be published to Chrome WebStore with a stable version.
+URL Auto Redirector will be published to Chrome WebStore with a stable version.
 
 Currently, I have difficulty in activating Google developer account in China.
 
@@ -42,6 +42,6 @@ Thus, you have to try it in Chrome Developer Mode. :smile:
 
 ## Contribution
 
-* If you think you've found a bug with UrlAutoRedirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
-* If you have useful rules in getting convenience by UrlAutoRedictor, comment in the [Collection of awesome rules](https://github.com/crispgm/UrlAutoRedirector/issues/17).
+* If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
+* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/crispgm/UrlAutoRedirector/issues/17).
 * PR(Pull Request) is welcomed.
