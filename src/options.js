@@ -57,20 +57,7 @@ $(document).ready(function(){
   });
   // new rule button
   $("#new-rule").click(function(){
-    $("#rule-list").append(newRuleItem("", "", "", false, true, true));
-  });
-  // save rule button
-  $("#save-rule").click(function(){
-    gatherRulesOnForm();
-    setOptions();
-    alert("Saved successfully");
-    $(".rule-item").remove();
-    getOptions(showOptions);
-  });
-  // discard rule button
-  $("#discard-rule").click(function(){
-    $(".rule-item").remove();
-    getOptions(showOptions);
+    $("#rule-list").append(newRuleItem("Rule&nbsp;#" + ($("#rule-list>li").length + 1), "", "", false, true, true));
   });
   // reset rule button
   $("#reset-rule").click(function(){
@@ -129,7 +116,12 @@ $(document).ready(function(){
   // rule list drag & sort
   $("#rule-list").sortable({
     revert: true,
-    cursor: "move"
+    cursor: "move",
+    beforeStop: function(event, ui){
+      gatherRulesOnForm();
+      delete rules[rules.length - 1];
+      setOptions();
+    }
   });
   $("ul,li").disableSelection();
 });
@@ -143,6 +135,8 @@ $(document).on("click", ".is-regex", function(){
     $(this).data("is-regex", true);
     $(this).attr("class", "fa fa-check-square-o fa-lg is-regex");
   }
+  gatherRulesOnForm();
+  setOptions();
 });
 
 $(document).on("click", ".is-enabled", function(){
@@ -154,6 +148,8 @@ $(document).on("click", ".is-enabled", function(){
     $(this).data("is-enabled", true);
     $(this).attr("class", "fa fa-toggle-on fa-lg is-enabled");
   }
+  gatherRulesOnForm();
+  setOptions();
 });
 
 $(document).on("click", ".is-deleted", function(){
@@ -165,6 +161,11 @@ $(document).on("click", ".is-deleted", function(){
     $(".rule-item").remove();
     getOptions(showOptions);
   }
+});
+
+$(document).on("change", ".rule-item>input[type='text']", function(){
+  gatherRulesOnForm();
+  setOptions();
 });
 
 function gatherRulesOnForm() {
