@@ -80,7 +80,7 @@ function getOptions(callback)
 
 chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   if (change.status == "loading") {
-    getOptions(function(){
+    // getOptions(function(){
       newUrl = matchUrl(change.url);
       if (newUrl) {
         if (isNewTab == false) {
@@ -95,7 +95,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
           });
         }
       }
-    });
+    // });
   }
   if (change.status == 'complete' && tabId == lastTabId) {
     chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
@@ -103,6 +103,15 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
     chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
     lastTabId = 0;
   }
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+  isNewTab = request.options.isNewTab;
+  rules = request.options.rules;
+});
+
+getOptions(function(){
+  console.log("getOption Done");
 });
 
 chrome.runtime.onInstalled.addListener(function(){

@@ -192,6 +192,9 @@ function setOptions() {
     }
   }
   chrome.storage.local.set(newOptions);
+  chrome.runtime.sendMessage(newOptions, function(response){
+    console.log("Send Sync Options Msg");
+  });
 }
 
 function getOptions(callback) {
