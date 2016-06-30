@@ -80,22 +80,20 @@ function getOptions(callback)
 
 chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   if (change.status == "loading") {
-    // getOptions(function(){
-      newUrl = matchUrl(change.url);
-      if (newUrl) {
-        if (isNewTab == false) {
-          lastTabId = tabId;
-          chrome.tabs.update({url: newUrl});
-        }
-        else {
-          chrome.tabs.create({url: newUrl}, function(tab){
-            chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
-            chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
-            chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
-          });
-        }
+    newUrl = matchUrl(change.url);
+    if (newUrl) {
+      if (isNewTab == false) {
+        lastTabId = tabId;
+        chrome.tabs.update({url: newUrl});
       }
-    // });
+      else {
+        chrome.tabs.create({url: newUrl}, function(tab){
+          chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
+          chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
+          chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+        });
+      }
+    }
   }
   if (change.status == 'complete' && tabId == lastTabId) {
     chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
