@@ -30,7 +30,7 @@ By doing so, it gets you directly to your destination page.
 
 Download at [__Chrome WebStore__](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
 
-Alternative: Clone this project, compress files in ```src``` folder and then load in ```developer mode```.
+Alternative: Clone this project, then load ```src``` folder in ```developer mode```.
 
 ## User Manual
 
