@@ -1,11 +1,9 @@
-# URL Auto Redirector
+# [URL Auto Redirector](https://crispgm.com/page/url-auto-redirector.html)
 
 [![Join the chat at https://gitter.im/crispgm/UrlAutoRedirector](https://badges.gitter.im/crispgm/UrlAutoRedirector.svg)](https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Official Page: [https://crispgm.com/page/url-auto-redirector.html](https://crispgm.com/page/url-auto-redirector.html)
-
-Download at [__Chrome WebStore__](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
+[![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
 
 ## Introduction
 
