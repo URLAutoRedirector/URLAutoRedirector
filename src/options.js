@@ -6,6 +6,8 @@ var isNewTab;
 var rules;
 
 $(document).ready(function(){
+  // i18n UI
+  setInterface();
   // tab option
   $(".tabOption").change(function(){
     var tabOption = $("input[name='tabOption']:checked").val();
@@ -20,23 +22,28 @@ $(document).ready(function(){
   });
   // new rule button
   $("#new-rule").click(function(){
-    $("#rule-list").append(newRuleItem("Rule&nbsp;#" + ($("#rule-list>li").length + 1), "", "", false, true, true));
+    presetRuleName = chrome.i18n.getMessage("preset_rule_name");
+    $("#rule-list").append(newRuleItem(presetRuleName + "&nbsp;#" + ($("#rule-list>li").length + 1), "", "", false, true, true));
   });
   // reset rule button
   $("#reset-rule").click(function(){
-    $(".rule-item").remove();
-    var msg = {
-      type: "resetRules"
-    };
-    chrome.runtime.sendMessage(msg, function(response){
-      console.log("Send msg[resetRules]");
-    });
+    var confirmReset = chrome.i18n.getMessage("confirm_reset");
+    var r = confirm(confirmReset);
+    if (r == true) {
+      $(".rule-item").remove();
+      var msg = {
+        type: "resetRules"
+      };
+      chrome.runtime.sendMessage(msg, function(response){
+        console.log("Send msg[resetRules]");
+      });
+    }
   });
   // import rule button
   $("#import-rule").click(function(){
     var importedFile = $("#upload-rule").prop("files");
     if (importedFile.length == 0) {
-      alert("Error: Please choose a file.");
+      alert(chrome.i18n.getMessage("import_error_no_file"));
       return;
     }
     else {
@@ -47,7 +54,7 @@ $(document).ready(function(){
         var rulesJSON = JSON.parse(rulesString);
         var numOfRules = rulesJSON.length;
         if (numOfRules == 0) {
-          alert("Error: No rules in files.");
+          alert(chrome.i18n.getMessage("import_error_no_rule"));
           return;
         }
         for (var i = 0; i < numOfRules; i++ ) {
@@ -63,7 +70,7 @@ $(document).ready(function(){
         setOptions();
         $(".rule-item").remove();
         getOptions(showOptions);
-        alert("Import successfully.");
+        alert(chrome.i18n.getMessage("import_success"));
       }
     }
   });
@@ -119,7 +126,8 @@ $(document).on("click", ".is-enabled", function(){
 });
 
 $(document).on("click", ".is-deleted", function(){
-  var r = confirm("Are you sure to delete");
+  var confirmDelete = chrome.i18n.getMessage("confirm_delete");
+  var r = confirm(confirmDelete);
   if (r == true) {
     $(this).data("is-deleted", true);
     gatherRulesOnForm();
@@ -194,16 +202,68 @@ function showOptions() {
 }
 
 function newRuleItem(name, src, dst, isRegex, isEnabled, isNew) {
+  var title_enable = chrome.i18n.getMessage("title_enable");
+  var title_delete = chrome.i18n.getMessage("title_delete");
   var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
                      "<i title=\"Drag item to reorder\" class=\"fa fa-bars drag-item\"></i>" +
                      "<input type=\"text\" class=\"name\" value=" + name + ">" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<i title=\"Enable RegExp\" data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
-                     "<i title=\"Enable/Disable\" data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
-                     "<i title=\"Delete rule\" data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
+                     "<i data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
+                     "<i title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
+                     "<i title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
                      "</li>";
   return ruleItemHTML;
+}
+
+function setInterface() {
+  // general
+  var ext_name = chrome.i18n.getMessage("ext_name");
+  var title = chrome.i18n.getMessage("options_page_title") + " - " + ext_name;
+  // general options
+  var general = chrome.i18n.getMessage("options_general");
+  var general_new_tab = chrome.i18n.getMessage("options_new_tab");
+  var general_cur_tab = chrome.i18n.getMessage("options_cur_tab");
+  // rules
+  var rules = chrome.i18n.getMessage("options_rules");
+  // table
+  var rule_name = chrome.i18n.getMessage("rule_name");
+  var rule_src = chrome.i18n.getMessage("rule_src");
+  var rule_dst = chrome.i18n.getMessage("rule_dst");
+  var rule_regex = chrome.i18n.getMessage("rule_regexp");
+  // buttons
+  var btn_new = chrome.i18n.getMessage("btn_new");
+  var btn_reset = chrome.i18n.getMessage("btn_reset");
+  var btn_import = chrome.i18n.getMessage("btn_import");
+  var btn_export = chrome.i18n.getMessage("btn_export");
+  // about
+  var about = chrome.i18n.getMessage("about");
+  var copyright = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2016.";
+  var home = "<a target=\"_blank\" href=\"https://crispgm.com/page/url-auto-redirector.html\">" + chrome.i18n.getMessage("official_page") + "</a>";
+  var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/crispgm/UrlAutoRedirector\">GitHub - crispgm/UrlAutoRedirector</a>.";
+  var ideas = chrome.i18n.getMessage("ideas");
+
+  $(document).attr("title", title);
+  $(".general-label").text(general);
+  $(".general-newtab").text(general_new_tab);
+  $(".general-curtab").text(general_cur_tab);
+
+  $(".rules-label").text(rules);
+  $(".name-title").text(rule_name);
+  $(".src-title").text(rule_src);
+  $(".dst-title").text(rule_dst);
+  $(".is-regex-title").text(rule_regex);
+
+  $("#new-rule").val(btn_new);
+  $("#reset-rule").val(btn_reset);
+  $("#import-rule").val(btn_import);
+  $("#export-rule").val(btn_export);
+
+  $(".about-label").text(about);
+  $(".about-copyright").html(copyright);
+  $(".about-home").html(home);
+  $(".about-contribute").html(contribute);
+  $(".about-ideas").text(ideas);
 }
 
 document.addEventListener("DOMContentLoaded", getOptions(showOptions));

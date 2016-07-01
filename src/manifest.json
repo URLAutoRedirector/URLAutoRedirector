@@ -1,7 +1,7 @@
 {
   "name": "URL Auto Redirector",
   "version": "1.0.0",
-  "description": "To make browsing quicker and simpler: skip the guide page on certain sites.",
+  "description": "__MSG_ext_description__",
   "homepage_url": "https://crispgm.com/page/url-auto-redirector.html",
   "options_page": "options.html",
   "icons": {
@@ -29,5 +29,6 @@
     "scripts": ["background.js"]
   },
   "content_security_policy": "script-src 'self' https://platform.twitter.com; object-src 'self'",
+  "default_locale": "en",
   "manifest_version": 2
 }

@@ -17,24 +17,24 @@
 
   <div id="content">
     <div class="general">
-      <h3>General</h3>
+      <h3 class="general-label">General</h3>
       <div>
         <form>
-          <input type="radio" class="tabOption" name="tabOption" value="newTab">Redirect in new tab<br>
-          <input type="radio" class="tabOption" name="tabOption" value="curTab">Redirect in current tab
+          <input type="radio" class="tabOption" name="tabOption" value="newTab"><span class="general-newtab">Redirect in new tab</span><br>
+          <input type="radio" class="tabOption" name="tabOption" value="curTab"><span class="general-curtab">Redirect in current tab</span>
         </form>
       </div>
     </div>
 
     <div class="general">
-      <h3>Rules</h3>
+      <h3 class="rules-label">Rules</h3>
 
       <div class="rule-head">
         <div class="drag-title"></i></div>
-        <div class="name-title" title="Rule name">Name</div>
-        <div class="src-title" title="Source URL">Source</div>
-        <div class="dst-title" title="Destination URL">Destination</div>
-        <div class="is-regex-title" title="Enable RegExp">RegExp</div>
+        <div class="name-title">Name</div>
+        <div class="src-title">Source</div>
+        <div class="dst-title">Destination</div>
+        <div class="is-regex-title">RegExp</div>
         <div class="enable-title"></i></div>
         <div class="is-delete-title"></div>
       </div>
@@ -55,11 +55,11 @@
     </div>
 
     <div class="general">
-      <h3>About</h3>
-      <p>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
-      <p><a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Official Home Page</a>.</p>
-      <p>Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
-      <p>Idea inspired and icon designed by Albert Li.</p>
+      <h3 class="about-label">About</h3>
+      <p class="about-copyright">Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
+      <p class="about-home"><a target="_blank" href="https://crispgm.com/page/url-auto-redirector.html">Official Home Page</a>.</p>
+      <p class="about-contribute">Contribute on <a target="_blank" href="https://github.com/crispgm/UrlAutoRedirector">GitHub - crispgm/UrlAutoRedirector</a>.</p>
+      <p class="about-ideas">Idea inspired and icon designed by Albert Li.</p>
       <p>
         <div class="btn-share twitter-share">
           <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://crispgm.com/page/url-auto-redirector.html" data-via="crispgm" data-size="large">Tweet</a>
@@ -72,7 +72,6 @@
       </p>
     </div>
   </div>
-  <footer>Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</footer>
 
   <script src="lib/jquery-1.12.2.min.js"></script>
   <script src="lib/jquery-ui/jquery-ui.min.js"></script>

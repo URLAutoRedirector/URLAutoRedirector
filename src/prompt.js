@@ -4,7 +4,8 @@
 
 $(document).ready(function(){
   $(".uar-prompt-layer").detach();
-  $("body").append("<div class=\"uar-prompt-layer\">Redirected by URL Auto Redirector</div>");
+  var promptMsg = chrome.i18n.getMessage("prompt_msg");
+  $("body").append("<div class=\"uar-prompt-layer\">" + promptMsg + "</div>");
   setInterval(function(){
   	$(".uar-prompt-layer").detach();
   }, 3000);
