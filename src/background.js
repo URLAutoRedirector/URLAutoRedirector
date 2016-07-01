@@ -44,6 +44,9 @@ var rules;
 var lastTabId = 0;
 
 function matchUrl(url) {
+  if (rules == undefined || url == undefined) {
+    return false;
+  }
   for (var i=0; i<rules.length; i++) {
     var isEnabled = rules[i].isEnabled;
     var isRegex = rules[i].isRegex;
