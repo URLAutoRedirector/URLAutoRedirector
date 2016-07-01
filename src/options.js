@@ -2,43 +2,6 @@
 // Copyright (c) David Zhang, 2016
 // Idea inspired by Albert Li.
 
-// default options
-var defaultOptions = {
-  "options": {
-    "isNewTab": false,
-    "rules": [
-      {
-        "name": "京东中间页跳过",
-        "src": "^http://re.jd.com/cps/item/([0-9]*).html",
-        "dst": "http://item.jd.com/$1.html",
-        "isEnabled": true,
-        "isRegex": true
-      },
-      {
-        "name": "点评无线转PC",
-        "src": "^http://m.dianping.com/appshare/shop/([0-9]*)$",
-        "dst": "http://www.dianping.com/shop/$1",
-        "isEnabled": true,
-        "isRegex": true
-      },
-      {
-        "name": "微博无线转PC",
-        "src": "^http://m.weibo.cn/(.*)$",
-        "dst": "http://weibo.com/$1",
-        "isEnabled": true,
-        "isRegex": true
-      },
-      {
-        "name": "BaiduToGoogle",
-        "src": "https://www.baidu.com/",
-        "dst": "https://www.google.com/",
-        "isEnabled": true,
-        "isRegex": false
-      }
-    ]
-  }
-};
-
 var isNewTab;
 var rules;
 
@@ -62,9 +25,12 @@ $(document).ready(function(){
   // reset rule button
   $("#reset-rule").click(function(){
     $(".rule-item").remove();
-    rules = defaultOptions.options.rules;
-    setOptions();
-    getOptions(showOptions);
+    var msg = {
+      type: "resetRules"
+    };
+    chrome.runtime.sendMessage(msg, function(response){
+      console.log("Send msg[resetRules]");
+    });
   });
   // import rule button
   $("#import-rule").click(function(){
@@ -168,6 +134,12 @@ $(document).on("change", ".rule-item>input[type='text']", function(){
   setOptions();
 });
 
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+  if (request.type == "reloadOptions") {
+    getOptions(showOptions);
+  }
+});
+
 function gatherRulesOnForm() {
   var numOfRules = $(".rule-item").length;
   rules = [];
@@ -192,8 +164,12 @@ function setOptions() {
     }
   }
   chrome.storage.local.set(newOptions);
-  chrome.runtime.sendMessage(newOptions, function(response){
-    console.log("Send Sync Options Msg");
+  var msg = {
+    type: "syncOptions",
+    options: newOptions
+  };
+  chrome.runtime.sendMessage(msg, function(response){
+    console.log("Send msg[syncOptions]");
   });
 }
 

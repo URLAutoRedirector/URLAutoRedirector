@@ -88,24 +88,42 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
       }
       else {
         chrome.tabs.create({url: newUrl}, function(tab){
-          chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
-          chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
-          chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+          chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
+          chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
+          chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
         });
       }
     }
   }
-  if (change.status == 'complete' && tabId == lastTabId) {
-    chrome.tabs.insertCSS(tab.id, {file: 'prompt.css'});
-    chrome.tabs.executeScript(tab.id, {file: 'lib/jquery-1.12.2.min.js'});
-    chrome.tabs.executeScript(tab.id, {file: 'prompt.js'});
+  if (change.status == "complete" && tabId == lastTabId) {
+    chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
+    chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
+    chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
     lastTabId = 0;
   }
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-  isNewTab = request.options.isNewTab;
-  rules = request.options.rules;
+  if (request.type == "syncOptions") {
+    isNewTab = request["options"]["options"]["isNewTab"];
+    rules = request["options"]["options"]["rules"];
+  }
+  if (request.type == "resetRules") {
+    var newOptions = {
+      "options": {
+        "isNewTab": isNewTab,
+        "rules": defaultOptions["options"]["rules"]
+      }
+    }
+    rules = defaultOptions["options"]["rules"];
+    chrome.storage.local.set(newOptions);
+    var msg = {
+      type: "reloadOptions"
+    };
+    chrome.runtime.sendMessage(msg, function(response){
+      console.log("Send msg[reloadOptions]");
+    });
+  }
 });
 
 getOptions(function(){
