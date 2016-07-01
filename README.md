@@ -12,17 +12,9 @@ By doing so, it gets you directly to your destination page.
 
 ## Usage
 
-### Mid-Pages Skipping
-
-![](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/midpage-skipping.png)
-
-### Mobile Adaption
-
-![](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/mobile-adaption.png)
-
-### Site Blocker
-
-![](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/site-blocker.png)
+* Mid-Pages Skipping \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/midpage-skipping.png)\]
+* Mobile Adaption \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/mobile-adaption.png)\]
+* Site Blocker \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/site-blocker.png)\]
 
 ## Installation
 
