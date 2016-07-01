@@ -1,0 +1,89 @@
+{
+  "ext_name": {
+    "message": "URL Auto Redirector"
+  },
+  "ext_description": {
+    "message": "URL 网址快速跳转。自动适配移动端页面到PC版，跳过电商烦人的推广页面。"
+  },
+  "options_page_title": {
+    "message": "选项"
+  },
+  "options_general": {
+    "message": "通用"
+  },
+  "options_new_tab": {
+    "message": "在新的标签页中跳转"
+  },
+  "options_cur_tab": {
+    "message": "在当前标签页中跳转"
+  },
+  "options_rules": {
+    "message": "规则"
+  },
+  "rule_name": {
+    "message": "规则名"
+  },
+  "rule_src": {
+    "message": "匹配规则"
+  },
+  "rule_dst": {
+    "message": "目标规则"
+  },
+  "rule_regexp": {
+    "message": "正则"
+  },
+  "btn_new": {
+    "message": "新增"
+  },
+  "btn_reset": {
+    "message": "重置"
+  },
+  "btn_import": {
+    "message": "导入"
+  },
+  "btn_export": {
+    "message": "导出"
+  },
+  "import_error_no_file": {
+    "message": "错误：请选择一个文件。"
+  },
+  "import_error_no_rule": {
+    "message": "错误：文件里没有规则。"
+  },
+  "import_success": {
+    "message": "导入成功！"
+  },
+  "preset_rule_name": {
+    "message": "规则"
+  },
+  "title_enable": {
+    "message": "启用/禁用"
+  },
+  "title_delete": {
+    "message": "删除规则"
+  },
+  "prompt_msg": {
+    "message": "通过 URL Auto Redirector 跳转"
+  },
+  "confirm_delete": {
+    "message": "确认删除规则？"
+  },
+  "confirm_reset": {
+    "message": "确认重置全部规则？\n当您确认执行完本次操作后，所有现有规则将会被删除，并重置成初始安装的状态。"
+  },
+  "about": {
+    "message": "关于"
+  },
+  "copyright": {
+    "message": "版权所有"
+  },
+  "official_page": {
+    "message": "官方主页。"
+  },
+  "contribute": {
+    "message": "贡献"
+  },
+  "ideas": {
+  	"message": "本软件创意由 Albert Li 提供。"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "ext_name": {
+    "message": "URL Auto Redirector"
+  },
+  "ext_description": {
+    "message": "To make browsing quicker and simpler: skip the guide page on certain sites."
+  },
+  "options_page_title": {
+    "message": "Options"
+  },
+  "options_general": {
+    "message": "General"
+  },
+  "options_new_tab": {
+    "message": "Redirect in new tab"
+  },
+  "options_cur_tab": {
+    "message": "Redirect in current tab"
+  },
+  "options_rules": {
+    "message": "Rules"
+  },
+  "rule_name": {
+    "message": "Name"
+  },
+  "rule_src": {
+    "message": "Source"
+  },
+  "rule_dst": {
+    "message": "Destination"
+  },
+  "rule_regexp": {
+    "message": "RegExp"
+  },
+  "btn_new": {
+    "message": "New"
+  },
+  "btn_reset": {
+    "message": "Reset"
+  },
+  "btn_import": {
+    "message": "Import"
+  },
+  "btn_export": {
+    "message": "Export"
+  },
+  "import_error_no_file": {
+    "message": "Error: Please choose a file."
+  },
+  "import_error_no_rule": {
+    "message": "Error: No rules in files."
+  },
+  "import_success": {
+    "message": "Import successfully."
+  },
+  "preset_rule_name": {
+    "message": "Rule"
+  },
+  "title_enable": {
+    "message": "Enable/Disable"
+  },
+  "title_delete": {
+    "message": "Delete Rule"
+  },
+  "prompt_msg": {
+    "message": "Redirected by URL Auto Redirector"
+  },
+  "confirm_delete": {
+    "message": "Are you sure to delete?"
+  },
+  "confirm_reset": {
+    "message": "Are you sure to reset?\nIf you have confirmed the reset, all the rules would be deleted and reset to initial status."
+  },
+  "about": {
+    "message": "About"
+  },
+  "copyright": {
+    "message": "Copyright"
+  },
+  "official_page": {
+    "message": "Official Home Page"
+  },
+  "contribute": {
+    "message": "Contribute on "
+  },
+  "ideas": {
+  	"message": "Idea inspired and icon designed by Albert Li."
+  }
+}
