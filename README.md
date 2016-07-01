@@ -3,8 +3,6 @@
 [![Join the chat at https://gitter.im/crispgm/UrlAutoRedirector](https://badges.gitter.im/crispgm/UrlAutoRedirector.svg)](https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-[![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
-
 ## Introduction
 
 URL Auto Redirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
@@ -17,6 +15,8 @@ By doing so, it gets you directly to your destination page.
 * Site Blocker \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector/master/promotion/site-blocker.png)\]
 
 ## Installation
+
+[![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_496x150.png)](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
 
 Download at [__Chrome WebStore__](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
 
