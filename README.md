@@ -24,7 +24,7 @@ Alternative: Clone this project, then load ```src``` folder in ```developer mode
 
 ## User Manual
 
-[https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki](https://github.com/crispgm/UrlAutoRedirector/wiki)
+[https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki](https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki)
 
 ## Credit
 
