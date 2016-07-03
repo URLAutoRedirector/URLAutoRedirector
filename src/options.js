@@ -239,8 +239,8 @@ function setInterface() {
   // about
   var about = chrome.i18n.getMessage("about");
   var copyright = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2016.";
-  var home = "<a target=\"_blank\" href=\"https://crispgm.com/page/url-auto-redirector.html\">" + chrome.i18n.getMessage("official_page") + "</a>";
-  var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/crispgm/UrlAutoRedirector\">GitHub - crispgm/UrlAutoRedirector</a>.";
+  var home = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>";
+  var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/UrlAutoRedirector/UrlAutoRedirector\">GitHub - UrlAutoRedirector</a>.";
   var ideas = chrome.i18n.getMessage("ideas");
 
   $(document).attr("title", title);
