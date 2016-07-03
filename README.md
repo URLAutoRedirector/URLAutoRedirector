@@ -10,9 +10,9 @@ By doing so, it gets you directly to your destination page.
 
 ## Usage
 
-* Mid-Pages Skipping \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector-branding/master/promotion/midpage-skipping.png)\]
-* Mobile Adaption \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector-branding/master/promotion/mobile-adaption.png)\]
-* Site Blocker \[[Screenshot](https://raw.githubusercontent.com/crispgm/UrlAutoRedirector-branding/master/promotion/site-blocker.png)\]
+* Mid-Pages Skipping \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/midpage-skipping.png)\]
+* Mobile Adaption \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/mobile-adaption.png)\]
+* Site Blocker \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/site-blocker.png)\]
 
 ## Installation
 
@@ -24,7 +24,7 @@ Alternative: Clone this project, then load ```src``` folder in ```developer mode
 
 ## User Manual
 
-[https://github.com/crispgm/UrlAutoRedirector/wiki](https://github.com/crispgm/UrlAutoRedirector/wiki)
+[https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki](https://github.com/crispgm/UrlAutoRedirector/wiki)
 
 ## Credit
 
@@ -33,5 +33,5 @@ Alternative: Clone this project, then load ```src``` folder in ```developer mode
 ## Contribution
 
 * If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
-* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/crispgm/UrlAutoRedirector/issues/17).
+* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/UrlAutoRedirector/UrlAutoRedirector/issues/17).
 * PR(Pull Request) is welcomed.
