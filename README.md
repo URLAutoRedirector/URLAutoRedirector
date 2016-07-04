@@ -28,7 +28,7 @@ Alternative: Clone this project, then load ```src``` folder in ```developer mode
 
 ## Credit
 
-* Idea inspired and icon designed by [Albert Li](https://github.com/lzb)
+* Idea inspired by [Albert Li](https://github.com/lzb)
 
 ## Contribution
 
