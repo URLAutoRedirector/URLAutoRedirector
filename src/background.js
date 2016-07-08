@@ -32,7 +32,7 @@ var defaultOptions = {
         "name": "BaiduToGoogle",
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
-        "isEnabled": true,
+        "isEnabled": false,
         "isRegex": false
       }
     ]
