@@ -108,19 +108,17 @@ li.rule-item{
 }
 .is-regex-title{
   float: left;
-  padding-right: 8px;
   width: 60px;
   height: 24px;
 }
 .enable-title{
   float: left;
-  margin-right: 4px;
-  width: 24px;
+  width: 60px;
   height: 24px;
 }
 .is-delete-title{
   float: left;
-  width: 24px;
+  width: 50px;
   height: 24px;
 }
 .drag-item{
@@ -149,7 +147,6 @@ li.rule-item{
 }
 .dst{
   font-size: 16px;
-  margin-right: 20px;
   width: 200px;
   height: 24px;
   border-top: 0;
@@ -158,17 +155,19 @@ li.rule-item{
   border-bottom: 1px solid #ff5a5f;
 }
 .is-regex{
-  width: 50px;
+  width: 66px;
   height: 24px;
+  text-align: center;
 }
 .is-enabled{
-  width: 24px;
-  height: 24px;
-  margin-right: 29px;
-}
-.is-deleted{
   width: 50px;
   height: 24px;
+  text-align: center;
+}
+.is-deleted{
+  width: 60px;
+  height: 24px;
+  text-align: center;
 }
 #upload-rule{
   width: 244px;
