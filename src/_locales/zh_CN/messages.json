@@ -20,9 +20,6 @@
   "options_rules": {
     "message": "规则"
   },
-  "rule_name": {
-    "message": "规则名"
-  },
   "rule_src": {
     "message": "匹配规则"
   },
@@ -52,9 +49,6 @@
   },
   "import_success": {
     "message": "导入成功！"
-  },
-  "preset_rule_name": {
-    "message": "规则"
   },
   "title_enable": {
     "message": "启用/禁用"

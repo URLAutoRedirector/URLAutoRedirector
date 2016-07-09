@@ -20,9 +20,6 @@
   "options_rules": {
     "message": "Rules"
   },
-  "rule_name": {
-    "message": "Name"
-  },
   "rule_src": {
     "message": "Source"
   },
@@ -52,9 +49,6 @@
   },
   "import_success": {
     "message": "Import successfully."
-  },
-  "preset_rule_name": {
-    "message": "Rule"
   },
   "title_enable": {
     "message": "Enable/Disable"

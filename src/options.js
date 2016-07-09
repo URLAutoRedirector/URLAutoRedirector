@@ -22,8 +22,7 @@ $(document).ready(function(){
   });
   // new rule button
   $("#new-rule").click(function(){
-    presetRuleName = chrome.i18n.getMessage("preset_rule_name");
-    $("#rule-list").append(newRuleItem(presetRuleName + "&nbsp;#" + ($("#rule-list>li").length + 1), "", "", false, true, true));
+    $("#rule-list").append(newRuleItem("", "", false, true, true));
   });
   // reset rule button
   $("#reset-rule").click(function(){
@@ -58,14 +57,13 @@ $(document).ready(function(){
           return;
         }
         for (var i = 0; i < numOfRules; i++ ) {
-          var name = rulesJSON[i].name;
           var src = rulesJSON[i].src;
           var dst = rulesJSON[i].dst;
           var isRegex = rulesJSON[i].isRegex;
           var isDeleted = false;
           var isEnabled = rulesJSON[i].isEnabled;
 
-          rules.push({"name": name, "src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
+          rules.push({"src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
         }
         setOptions();
         $(".rule-item").remove();
@@ -152,14 +150,13 @@ function gatherRulesOnForm() {
   var numOfRules = $(".rule-item").length;
   rules = [];
   for (var i = 0; i < numOfRules; i++ ) {
-    var name = $(".name:eq("+i+")").val();
     var src = $(".src:eq("+i+")").val();
     var dst = $(".dst:eq("+i+")").val();
     var isRegex = $(".is-regex:eq("+i+")").data("is-regex");
     var isDeleted = $(".is-deleted:eq("+i+")").data("is-deleted");
     var isEnabled = $(".is-enabled:eq("+i+")").data("is-enabled");
     if (!isDeleted) {
-      rules.push({"name": name, "src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
+      rules.push({"src":src, "dst": dst, "isEnabled": isEnabled, "isRegex": isRegex});
     }
   }
 }
@@ -197,16 +194,15 @@ function showOptions() {
     $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");
   }
   for (var i=0; i<rules.length; i++) {
-    $("#rule-list").append(newRuleItem(rules[i].name, rules[i].src, rules[i].dst, rules[i].isRegex, rules[i].isEnabled, false));
+    $("#rule-list").append(newRuleItem(rules[i].src, rules[i].dst, rules[i].isRegex, rules[i].isEnabled));
   }
 }
 
-function newRuleItem(name, src, dst, isRegex, isEnabled, isNew) {
+function newRuleItem(src, dst, isRegex, isEnabled) {
   var title_enable = chrome.i18n.getMessage("title_enable");
   var title_delete = chrome.i18n.getMessage("title_delete");
   var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
                      "<i title=\"Drag item to reorder\" class=\"fa fa-bars drag-item\"></i>" +
-                     "<input type=\"text\" class=\"name\" value=" + name + ">" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
                      "<i data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
@@ -227,7 +223,6 @@ function setInterface() {
   // rules
   var rules = chrome.i18n.getMessage("options_rules");
   // table
-  var rule_name = chrome.i18n.getMessage("rule_name");
   var rule_src = chrome.i18n.getMessage("rule_src");
   var rule_dst = chrome.i18n.getMessage("rule_dst");
   var rule_regex = chrome.i18n.getMessage("rule_regexp");
@@ -249,7 +244,6 @@ function setInterface() {
   $(".general-curtab").text(general_cur_tab);
 
   $(".rules-label").text(rules);
-  $(".name-title").text(rule_name);
   $(".src-title").text(rule_src);
   $(".dst-title").text(rule_dst);
   $(".is-regex-title").text(rule_regex);

@@ -88,22 +88,16 @@ li.rule-item{
   width: 24px;
   height: 24px;
 }
-.name-title{
-  float: left;
-  margin-right: 16px;
-  width: 120px;
-  height: 24px;
-}
 .src-title{
   float: left;
   margin-right: 16px;
-  width: 240px;
+  width: 288px;
   height: 24px;
 }
 .dst-title{
   float: left;
   margin-right: 8px;
-  width: 200px;
+  width: 288px;
   height: 24px;
 }
 .is-regex-title{
@@ -125,20 +119,10 @@ li.rule-item{
   width: 24px;
   height: 24px;
 }
-.name{
-  font-size: 16px;
-  margin-right: 12px;
-  width: 120px;
-  height: 24px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid #ff5a5f;
-}
 .src{
   font-size: 16px;
   margin-right: 12px;
-  width: 240px;
+  width: 288px;
   height: 24px;
   border-top: 0;
   border-left: 0;
@@ -147,7 +131,7 @@ li.rule-item{
 }
 .dst{
   font-size: 16px;
-  width: 200px;
+  width: 288px;
   height: 24px;
   border-top: 0;
   border-left: 0;
