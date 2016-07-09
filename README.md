@@ -1,8 +1,8 @@
 # [URL Auto Redirector](https://urlautoredirector.github.io/)
 
 [![Join the chat at https://gitter.im/crispgm/UrlAutoRedirector](https://badges.gitter.im/crispgm/UrlAutoRedirector.svg)](https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Stories in Ready](https://badge.waffle.io/UrlAutoRedirector/UrlAutoRedirector.svg?label=ready&title=Ready)](http://waffle.io/UrlAutoRedirector/UrlAutoRedirector)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Stories in Ready](https://badge.waffle.io/UrlAutoRedirector/UrlAutoRedirector.svg?label=ready&title=Ready)](http://waffle.io/UrlAutoRedirector/UrlAutoRedirector)
 
 ## Introduction
 
