@@ -8,28 +8,30 @@ var defaultOptions = {
     "isNewTab": false,
     "rules": [
       {
-        "name": "京东中间页跳过",
         "src": "^http://re.jd.com/cps/item/([0-9]*).html",
         "dst": "http://item.jd.com/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "name": "点评无线转PC",
         "src": "^http://m.dianping.com/appshare/shop/([0-9]*)$",
         "dst": "http://www.dianping.com/shop/$1",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "name": "微博无线转PC",
         "src": "^http://m.weibo.cn/(.*)$",
         "dst": "http://weibo.com/$1",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "name": "BaiduToGoogle",
+        "src": "^http://xw.qq.com/sports/(\\d{8})(\\d{6})/(.*)$",
+        "dst": "http://sports.qq.com/a/$1/$2.htm",
+        "isEnabled": true,
+        "isRegex": true,
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
@@ -52,6 +54,8 @@ function matchUrl(url) {
     var isRegex = rules[i].isRegex;
     var src = rules[i].src;
     var dst = rules[i].dst;
+    console.log(src);
+    console.log(dst);
 
     if (isEnabled) {
       if (isRegex) {
