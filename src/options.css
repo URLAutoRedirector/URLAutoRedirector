@@ -82,36 +82,33 @@ li.rule-item{
   font-size: 16px;
   font-weight: bold;
 }
-.drag-title{
+.rule-title{
   float: left;
+}
+.drag-title{
   margin-right: 4px;
   width: 24px;
   height: 24px;
 }
 .src-title{
-  float: left;
   margin-right: 16px;
   width: 288px;
   height: 24px;
 }
 .dst-title{
-  float: left;
   margin-right: 8px;
   width: 288px;
   height: 24px;
 }
 .is-regex-title{
-  float: left;
   width: 60px;
   height: 24px;
 }
 .enable-title{
-  float: left;
   width: 60px;
   height: 24px;
 }
 .is-delete-title{
-  float: left;
   width: 50px;
   height: 24px;
 }
