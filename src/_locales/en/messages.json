@@ -29,6 +29,12 @@
   "rule_regexp": {
     "message": "RegExp"
   },
+  "rule_enable": {
+    "message": "Enable"
+  },
+  "rule_delete": {
+    "message": "Delete"
+  },
   "btn_new": {
     "message": "New"
   },
@@ -72,7 +78,7 @@
     "message": "Copyright"
   },
   "official_page": {
-    "message": "Official Home Page"
+    "message": "Official Home Page."
   },
   "contribute": {
     "message": "Contribute on "

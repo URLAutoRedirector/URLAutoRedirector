@@ -3,7 +3,7 @@
     "message": "URL Auto Redirector"
   },
   "ext_description": {
-    "message": "URL 网址快速跳转。自动适配移动端页面到PC版，跳过电商烦人的推广页面。"
+    "message": "URL 网址快速跳转。自动适配移动端页面到PC版，跳过电商烦人的推广页面等。通过自定义规则（支持正则表达式匹配），可获得更强大的能力。节省时间，提升你的生产力。"
   },
   "options_page_title": {
     "message": "选项"
@@ -28,6 +28,12 @@
   },
   "rule_regexp": {
     "message": "正则"
+  },
+  "rule_enable": {
+    "message": "启用"
+  },
+  "rule_delete": {
+    "message": "删除"
   },
   "btn_new": {
     "message": "新增"
@@ -72,7 +78,7 @@
     "message": "版权所有"
   },
   "official_page": {
-    "message": "官方主页。"
+    "message": "访问我们的官方主页。"
   },
   "contribute": {
     "message": "贡献"

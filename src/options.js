@@ -226,6 +226,8 @@ function setInterface() {
   var rule_src = chrome.i18n.getMessage("rule_src");
   var rule_dst = chrome.i18n.getMessage("rule_dst");
   var rule_regex = chrome.i18n.getMessage("rule_regexp");
+  var rule_enable = chrome.i18n.getMessage("rule_enable");
+  var rule_delete = chrome.i18n.getMessage("rule_delete");
   // buttons
   var btn_new = chrome.i18n.getMessage("btn_new");
   var btn_reset = chrome.i18n.getMessage("btn_reset");
@@ -234,7 +236,7 @@ function setInterface() {
   // about
   var about = chrome.i18n.getMessage("about");
   var copyright = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2016.";
-  var home = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>.";
+  var home = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>";
   var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/UrlAutoRedirector/UrlAutoRedirector\">GitHub - UrlAutoRedirector</a>.";
   var ideas = chrome.i18n.getMessage("ideas");
 
@@ -247,6 +249,8 @@ function setInterface() {
   $(".src-title").text(rule_src);
   $(".dst-title").text(rule_dst);
   $(".is-regex-title").text(rule_regex);
+  $(".enable-title").text(rule_enable);
+  $(".is-delete-title").text(rule_delete);
 
   $("#new-rule").val(btn_new);
   $("#reset-rule").val(btn_reset);
