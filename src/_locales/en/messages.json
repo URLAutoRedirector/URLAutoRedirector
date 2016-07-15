@@ -56,12 +56,6 @@
   "import_success": {
     "message": "Import successfully."
   },
-  "title_enable": {
-    "message": "Enable/Disable"
-  },
-  "title_delete": {
-    "message": "Delete Rule"
-  },
   "prompt_msg": {
     "message": "Redirected by URL Auto Redirector"
   },
