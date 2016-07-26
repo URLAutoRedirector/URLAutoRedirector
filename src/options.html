@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html id="main">
 <head>
-  <title>Options - UrlAutoRedirector</title>
+  <title>{{title}} - {{ extName }}</title>
   <link href="options.css" rel="stylesheet">
   <link href="font/opensans.css" rel="stylesheet">
   <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
@@ -9,33 +9,42 @@
   <meta charset="utf8">
   <meta name="twitter:widgets:csp" content="on">
 </head>
-<body id="main">
+<body>
   <nav>
     <div id="banner">
-      URL Auto Redirector
+      {{ extName }}
     </div>
   </nav>
 
   <div id="content">
     <div class="general">
-      <h3 class="general-label">General</h3>
-      <div>
-        <form>
-          <input type="radio" class="tabOption" name="tabOption" value="newTab"><span class="general-newtab">Redirect in new tab</span><br>
-          <input type="radio" class="tabOption" name="tabOption" value="curTab"><span class="general-curtab">Redirect in current tab</span>
-        </form>
+      <h3 class="general-label">{{ general }}</h3>
+      <div v-if="isNewTab">
+        <input type="radio" class="tabOption" name="tabOption" value="newTab" checked>
+        <span class="general-newtab">{{ newTab }}</span>
+        <br>
+        <input type="radio" class="tabOption" name="tabOption" value="curTab">
+        <span class="general-curtab">{{ curTab }}</span>
+      </div>
+      <div v-else>
+        <input type="radio" class="tabOption" name="tabOption" value="newTab">
+        <span class="general-newtab">{{ newTab }}</span>
+        <br>
+        <input type="radio" class="tabOption" name="tabOption" value="curTab" checked>
+        <span class="general-curtab">{{ curTab }}</span>
       </div>
     </div>
 
     <div class="general">
-      <h3 class="rules-label">Rules</h3>
+      <h3 class="rules-label">{{ ruleTitle }}</h3>
+
       <div class="rule-head">
         <div class="rule-title drag-title"></i></div>
-        <div class="rule-title src-title">Source</div>
-        <div class="rule-title dst-title">Destination</div>
-        <div class="rule-title is-regex-title">RegExp</div>
-        <div class="rule-title enable-title">Enable</div>
-        <div class="rule-title is-delete-title">Delete</div>
+        <div class="rule-title src-title">{{ ruleSrc }}</div>
+        <div class="rule-title dst-title">{{ ruleDst }}</div>
+        <div class="rule-title is-regex-title">{{ ruleRegex }}</div>
+        <div class="rule-title enable-title">{{ ruleEnabled }}</div>
+        <div class="rule-title is-delete-title">{{ ruleDelete }}</div>
       </div>
 
       <div>
@@ -62,11 +71,13 @@
     </div>
 
     <div class="general">
-      <h3 class="about-label">About</h3>
-      <p class="about-copyright">Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
-      <p class="about-home"><a target="_blank" href="https://urlautoredirector.github.io/">Official Home Page.</a></p>
-      <p class="about-contribute">Contribute on <a target="_blank" href="https://github.com/UrlAutoRedirector/UrlAutoRedirector">GitHub - UrlAutoRedirector</a>.</p>
-      <p class="about-ideas">Idea inspired by Albert Li.</p>
+      <h3 class="about-label">{{ about }}</h3>
+      <p class="about-copyright">{{ aboutCopyright }} &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2016.</p>
+      <p class="about-home"><a target="_blank" href="https://urlautoredirector.github.io/">{{ aboutHome }}</a></p>
+      <p class="about-contribute">
+        {{ aboutContribute }}
+        <a target="_blank" href="https://github.com/UrlAutoRedirector/UrlAutoRedirector">GitHub - UrlAutoRedirector</a>.</p>
+      <p class="about-ideas">{{ aboutIdeas }}</p>
       <p>
         <div class="btn-share twitter-share">
           <a href="https://twitter.com/share" class="twitter-share-button" data-text="To make browsing quicker and simpler, use URL Auto Redirector to skip the guide page on certain sites." data-url="https://urlautoredirector.github.io/" data-via="crispgm" data-size="large">Tweet</a>
@@ -74,7 +85,6 @@
       </p>
     </div>
   </div>
-
   <script src="lib/vue.min.js"></script>
   <script src="lib/jquery-1.12.2.min.js"></script>
   <script src="lib/jquery-ui/jquery-ui.min.js"></script>
