@@ -7,6 +7,41 @@ var rules = [];
 
 var app = new Vue({
   el: '#main',
+  methods: {
+    addItem: function () {
+        var self = this;
+        self.tmpItem = {
+            src: '',
+            dst: '',
+            isRegex: false,
+            isEnabled: false
+        };
+        self.trData.push(self.tmpItem);
+    },
+    resetItem: function () {
+
+    },
+    toggleRegex: function ($event, item) {
+        item.isRegex = !item.isRegex;
+    },
+    toggleEnable: function ($event, item) {
+        item.isEnabled = !item.isEnabled;
+    },
+    deleteItem: function ($event, item) {
+        var self = this;
+
+        self.trData.$remove(item);
+    },
+    uploadList: function () {
+
+    },
+    importList: function () {
+
+    },
+    exportList: function () {
+
+    }
+  },
   data: {
     extName: chrome.i18n.getMessage('ext_name'),
     title: chrome.i18n.getMessage('options_page_title'),
@@ -30,10 +65,27 @@ var app = new Vue({
     aboutIdeas: chrome.i18n.getMessage('ideas'),
     ruleDrag: chrome.i18n.getMessage('title_drag'),
     rules: rules,
-    isNewTab: isNewTab
+    isNewTab: isNewTab,
+    trData: [{
+        src: 'http://www.google.com',
+        dst: 'http://tieba.baidu.com',
+        isRegex: true,
+        isEnabled: true
+    }, {
+        src: 'http://www.baidu.com',
+        dst: 'http://tieba.*.com',
+        isRegex: true,
+        isEnabled: false
+    }, {
+        src: 'http://*.baidu.com',
+        dst: 'http://tieba.baidu.com',
+        isRegex: false,
+        isEnabled: true
+    }],
+    tmpItem: {}
   },
   created: function(){
-    getOptions();
+    // getOptions();
   }
 });
 
