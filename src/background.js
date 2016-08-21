@@ -32,6 +32,12 @@ var defaultOptions = {
         "isRegex": true,
       },
       {
+        "src": "^http://m.autohome.com.cn/shuoke/(.*).html",
+        "dst": "http://shuoke.autohome.com.cn/article/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
