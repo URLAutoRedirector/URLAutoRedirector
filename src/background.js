@@ -20,7 +20,7 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^http://m.weibo.cn/(.*)$",
+        "src": "^http://m.weibo.cn/([0-9]+)$",
         "dst": "http://weibo.com/$1",
         "isEnabled": true,
         "isRegex": true
@@ -34,6 +34,24 @@ var defaultOptions = {
       {
         "src": "^http://m.autohome.com.cn/shuoke/(.*).html",
         "dst": "http://shuoke.autohome.com.cn/article/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.ziroom.com/BJ/room/(.*).html",
+        "dst": "http://www.ziroom.com/z/vr/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.csdn.net/article/(.*)$",
+        "dst": "http://www.csdn.net/article/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.afwing.com/(.*)$",
+        "dst": "http://www.afwing.com/$1",
         "isEnabled": true,
         "isRegex": true
       },
