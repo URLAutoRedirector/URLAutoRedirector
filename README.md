@@ -3,7 +3,6 @@
 [![Join the chat at https://gitter.im/crispgm/UrlAutoRedirector](https://badges.gitter.im/crispgm/UrlAutoRedirector.svg)](https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Code Climate](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg)](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector)
-[![Stories in Ready](https://badge.waffle.io/UrlAutoRedirector/UrlAutoRedirector.svg?label=ready&title=Ready)](http://waffle.io/UrlAutoRedirector/UrlAutoRedirector)
 
 ## Introduction
 
