@@ -29,7 +29,7 @@ var defaultOptions = {
         "src": "^http://xw.qq.com/sports/(\\d{8})(\\d{6})/(.*)$",
         "dst": "http://sports.qq.com/a/$1/$2.htm",
         "isEnabled": true,
-        "isRegex": true,
+        "isRegex": true
       },
       {
         "src": "^http://m.autohome.com.cn/shuoke/(.*).html",
