@@ -56,6 +56,18 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^http://item.m.jd.com/product/(.*).html",
+        "dst": "http://item.jd.com/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^(https|http)://mitem.jd.hk/ware/view.action\\?wareId=(\\d+)(&.*)",
+        "dst": "https://item.jd.hk/$2.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
@@ -78,8 +90,6 @@ function matchUrl(url) {
     var isRegex = rules[i].isRegex;
     var src = rules[i].src;
     var dst = rules[i].dst;
-    console.log(src);
-    console.log(dst);
 
     if (isEnabled) {
       if (isRegex) {
@@ -113,6 +123,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   if (change.status == "loading") {
     newUrl = matchUrl(change.url);
     if (newUrl) {
+      console.log("Match:" + change.url)
       if (isNewTab == false) {
         lastTabId = tabId;
         chrome.tabs.update({url: newUrl});
