@@ -86,15 +86,14 @@ $(document).ready(function(){
   });
   // rule list drag & sort
   $("#rule-list").sortable({
-    revert: true,
-    cursor: "move",
-    beforeStop: function(event, ui){
+    animation: 150,
+    handle: ".drag-item",
+    onEnd: function(evt){
       gatherRulesOnForm();
-      delete rules[rules.length - 1];
+      // delete rules[rules.length - 1];
       setOptions();
     }
   });
-  $("ul,li").disableSelection();
 });
 
 $(document).on("click", ".is-regex", function(){
