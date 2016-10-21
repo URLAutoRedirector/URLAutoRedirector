@@ -90,7 +90,6 @@ $(document).ready(function(){
     handle: ".drag-item",
     onEnd: function(evt){
       gatherRulesOnForm();
-      // delete rules[rules.length - 1];
       setOptions();
     }
   });
