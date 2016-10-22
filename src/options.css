@@ -115,6 +115,7 @@ li.rule-item{
 .drag-item{
   width: 24px;
   height: 24px;
+  cursor: move;
 }
 .src{
   font-size: 16px;
