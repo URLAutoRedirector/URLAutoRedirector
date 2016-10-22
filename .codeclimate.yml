@@ -13,6 +13,8 @@ engines:
     checks:
       no-alert:
         enabled: false
+      eqeqeq:
+        enabled: false
   fixme:
     enabled: true
 ratings:

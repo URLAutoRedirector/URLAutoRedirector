@@ -85,7 +85,7 @@ function matchUrl(url) {
   if (rules == undefined || url == undefined) {
     return false;
   }
-  for (var i=0; i<rules.length; i++) {
+  for (var i = 0; i < rules.length; i++) {
     var isEnabled = rules[i].isEnabled;
     var isRegex = rules[i].isRegex;
     var src = rules[i].src;
