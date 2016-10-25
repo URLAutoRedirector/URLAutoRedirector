@@ -119,14 +119,19 @@ function getOptions(callback)
   });
 }
 
-chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
-  if (change.status == "loading") {
-    newUrl = matchUrl(change.url);
+chrome.webRequest.onBeforeRequest.addListener(
+  function(request) {
+    newUrl = matchUrl(request.url);
     if (newUrl) {
-      console.log("Match:" + change.url)
+      console.log("Match:" + request.url);
       if (isNewTab == false) {
-        lastTabId = tabId;
-        chrome.tabs.update({url: newUrl});
+        chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+          chrome.tabs.update(tabs[0].id, {url: newUrl}, function(tab){
+            chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
+            chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
+            chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
+          });
+        });
       }
       else {
         chrome.tabs.create({url: newUrl}, function(tab){
@@ -136,14 +141,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
         });
       }
     }
-  }
-  if (change.status == "complete" && tabId == lastTabId) {
-    chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
-    chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
-    chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
-    lastTabId = 0;
-  }
-});
+  },
+  {
+    urls: ["<all_urls>"]
+  },
+  ["blocking"]
+);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
   if (request.type == "syncOptions") {
