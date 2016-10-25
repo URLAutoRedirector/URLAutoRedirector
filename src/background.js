@@ -79,7 +79,6 @@ var defaultOptions = {
 
 var isNewTab;
 var rules;
-var lastTabId = 0;
 
 function matchUrl(url) {
   if (rules == undefined || url == undefined) {
@@ -126,19 +125,11 @@ chrome.webRequest.onBeforeRequest.addListener(
       console.log("Match:" + request.url);
       if (isNewTab == false) {
         chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-          chrome.tabs.update(tabs[0].id, {url: newUrl}, function(tab){
-            chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
-            chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
-            chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
-          });
+          chrome.tabs.update(tabs[0].id, {url: newUrl});
         });
       }
       else {
-        chrome.tabs.create({url: newUrl}, function(tab){
-          chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
-          chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
-          chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
-        });
+        chrome.tabs.create({url: newUrl});
       }
     }
   },
