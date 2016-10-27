@@ -68,6 +68,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https://m.douban.com/note/(.*)/",
+        "dst": "https://www.douban.com/note/$1/",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
