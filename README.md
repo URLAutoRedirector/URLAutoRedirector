@@ -1,10 +1,23 @@
-# [URL Auto Redirector](https://urlautoredirector.github.io/)
+<p align="center">
+  <a href="https://urlautoredirector.github.io/" target="_blank">
+  	<img src="https://raw.githubusercontent.com/UrlAutoRedirector/UrlAutoRedirector/master/src/images/icon-128.png" alt="Logo">
+  </a>
+</p>
 
-[![](https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg)](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
-[![Join the chat at https://gitter.im/crispgm/UrlAutoRedirector](https://badges.gitter.im/crispgm/UrlAutoRedirector.svg)](https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-![](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Code Climate](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg)](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector)
-[![BADGINATOR](https://badginator.herokuapp.com/UrlAutoRedirector/UrlAutoRedirector.svg)](https://github.com/defunctzombie/badginator)
+<p align="center">
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn" target="_blank">
+  	<img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore">
+  </a>
+  <a href="https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" target="_blank">
+  	<img src="https://badges.gitter.im/crispgm/UrlAutoRedirector.svg" alt="Chat on gitter" target="_blank">
+  </a>
+  <a href="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector" target="_blank">
+  	<img src="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg" alt="Code Climate">
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</p>
+
+# [URL Auto Redirector](https://urlautoredirector.github.io/)
 
 ## Introduction
 
