@@ -1,19 +1,13 @@
 <p align="center">
-  <a href="https://urlautoredirector.github.io/" target="_blank">
+  <a href="https://urlautoredirector.github.io/">
   	<img src="https://raw.githubusercontent.com/UrlAutoRedirector/UrlAutoRedirector/master/src/images/icon-128.png" alt="Logo">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn" target="_blank">
-  	<img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore">
-  </a>
-  <a href="https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" target="_blank">
-  	<img src="https://badges.gitter.im/crispgm/UrlAutoRedirector.svg" alt="Chat on gitter" target="_blank">
-  </a>
-  <a href="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector" target="_blank">
-  	<img src="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg" alt="Code Climate">
-  </a>
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn"><img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore"></a>
+  <a href="https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/crispgm/UrlAutoRedirector.svg" alt="Chat on gitter"></a>
+  <a href="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector"><img src="https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg" alt="Code Climate"></a>
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </p>
 
