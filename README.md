@@ -12,10 +12,6 @@
 
 # [URL Auto Redirector](https://urlautoredirector.github.io/)
 
-[![Travis](https://api.travis-ci.org/UrlAutoRedirector/UrlAutoRedirector.svg)](https://travis-ci.org/UrlAutoRedirector/UrlAutoRedirector/)
-[![Code Climate](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/gpa.svg)](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector)
-[![Test Coverage](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/badges/coverage.svg)](https://codeclimate.com/github/UrlAutoRedirector/UrlAutoRedirector/coverage)
-
 ## Introduction
 
 URL Auto Redirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
