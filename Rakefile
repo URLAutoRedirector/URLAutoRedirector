@@ -11,6 +11,8 @@ task :build, [:force] do |t, args|
   version = manifest["version"]
   # generate filename
   filename = "UrlAutoRedirector-#{version}.zip"
+  # make dir
+  sh "mkdir -p dist"
   # check version
   Dir.chdir("dist") do
     if args[:force] != "--force"  && File.exist?(filename)
@@ -18,7 +20,6 @@ task :build, [:force] do |t, args|
       exit 1
     end
   end
-  sh "mkdir -p dist"
   # cleanup .DS_Store
   sh "find ./src -name .DS_Store | xargs rm"
   # zip
