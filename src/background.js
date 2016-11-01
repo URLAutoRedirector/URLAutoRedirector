@@ -74,6 +74,48 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https://h5.ele.me/shop/#id=(\\d+)",
+        "dst": "https://www.ele.me/shop/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^https://mdianying.baidu.com/movie/detail\\?movieId=(\\d+)",
+        "dst": "https://www.nuomi.com/film/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://www.bilibili.com/mobile/video/(av\\d+).html",
+        "dst": "http://www.bilibili.com/video/$1/",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.acfun.tv/v/\\?ac=(\\d+)",
+        "dst": "http://www.acfun.tv/v/ac$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://h5.m.taobao.com/awp/core/detail.htm\\?id=(\\d+)",
+        "dst": "https://item.taobao.com/item.htm?id=$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.qidian.com/book/showbook.aspx\\?bookid=(\\d+)",
+        "dst": "http://book.qidian.com/info/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.yinyuetai.com/video/(.*)",
+        "dst": "http://v.yinyuetai.com/video/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
