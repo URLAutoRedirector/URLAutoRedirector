@@ -8,7 +8,7 @@
   If you are unsure this is a bug in URL Auto Redirector, or this is a bug caused
   by a plugin that isn't directly related to URL Auto Redirector, or if this is just
   a generic usage question, please consider asking your question at
-  https://gitter.im/crispgm/UrlAutoRedirector where non-bug questions go.
+  https://gitter.im/UrlAutoRedirector/UrlAutoRedirector where non-bug questions go.
   
   Thanks!
 -->
@@ -33,3 +33,10 @@
 - [ ] The rules do not work.
 
 ## My Reproduction Steps
+
+<!--
+  Update with your reproduction steps
+-->
+1. Step 1
+2. Step 2
+3. Step 3

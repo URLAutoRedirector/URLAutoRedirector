@@ -16,4 +16,4 @@ Hi there! URL Auto Redirector is an open source project. We'd like to encourage 
 
 ## A thank you
 
-Thanks! Hacking on Jekyll should be fun. If you find any of this hard to figure out, let us know so we can improve our process or documentation!
+Thanks! Hacking on URL Auto Redirector should be fun. If you find any of this hard to figure out, let us know so we can improve our process or documentation!
