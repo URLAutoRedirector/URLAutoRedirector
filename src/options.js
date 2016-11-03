@@ -200,12 +200,12 @@ function newRuleItem(src, dst, isRegex, isEnabled) {
   var title_enable = chrome.i18n.getMessage("title_enable");
   var title_delete = chrome.i18n.getMessage("title_delete");
   var ruleItemHTML = "<li class=\"rule-item\">" +
-                     "<i title=\"Drag item to reorder\" class=\"icon-bars drag-item\"></i>" +
+                     "<div title=\"Drag item to reorder\" class=\"icon icon-bars drag-item\"></div>" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<i data-is-regex=\"" + isRegex + "\" class=\"" + (isRegex ? "icon-check-square-o" : "icon-square-o") + " is-regex\"></i>" +
-                     "<i title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"" + (isEnabled ? "icon-toggle-on" : "icon-toggle-off") + " is-enabled\"></i>" +
-                     "<i title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"icon-ban is-deleted\"></i>" +
+                     "<div data-is-regex=\"" + isRegex + "\" class=\"icon " + (isRegex ? "icon-check-square-o" : "icon-square-o") + " is-regex\"></div>" +
+                     "<div title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"icon " + (isEnabled ? "icon-toggle-on" : "icon-toggle-off") + " is-enabled\"></div>" +
+                     "<div title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"icon icon-ban is-deleted\"></div>" +
                      "</li>";
   return ruleItemHTML;
 }

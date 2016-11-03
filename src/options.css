@@ -75,6 +75,8 @@ li.rule-item{
   border: 0;
   margin: 0;
   padding: 0;
+  display: inline-flex;
+  justify-content: flex-start;
 }
 .rule-head{
   width: 100%;
@@ -84,37 +86,35 @@ li.rule-item{
 }
 .rule-title{
   float: left;
+  height: 24px;
+}
+.icon{
+  padding-top: 8px;
+  font-size: 16px;
 }
 .drag-title{
   margin-right: 4px;
-  width: 24px;
-  height: 24px;
+  width: 20px;
 }
 .src-title{
   margin-right: 16px;
   width: 288px;
-  height: 24px;
 }
 .dst-title{
   margin-right: 8px;
   width: 288px;
-  height: 24px;
 }
 .is-regex-title{
-  width: 60px;
-  height: 24px;
+  width: 64px;
 }
 .enable-title{
-  width: 60px;
-  height: 24px;
+  width: 56px;
 }
 .is-delete-title{
   width: 50px;
-  height: 24px;
 }
 .drag-item{
   width: 24px;
-  height: 24px;
   cursor: move;
 }
 .src{
