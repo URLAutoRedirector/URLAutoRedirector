@@ -98,11 +98,11 @@ $(document).ready(function(){
 $(document).on("click", ".is-regex", function(){
   if ($(this).data("is-regex") == true) {
     $(this).data("is-regex", false);
-    $(this).attr("class", "fa fa-square-o fa-lg is-regex");
+    $(this).attr("class", "icon-square-o is-regex");
   }
   else if ($(this).data("is-regex") == false) {
     $(this).data("is-regex", true);
-    $(this).attr("class", "fa fa-check-square-o fa-lg is-regex");
+    $(this).attr("class", "icon-check-square-o is-regex");
   }
   gatherRulesOnForm();
   setOptions();
@@ -111,11 +111,11 @@ $(document).on("click", ".is-regex", function(){
 $(document).on("click", ".is-enabled", function(){
   if ($(this).data("is-enabled") == true) {
     $(this).data("is-enabled", false);
-    $(this).attr("class", "fa fa-toggle-off fa-lg is-enabled");
+    $(this).attr("class", "icon-toggle-off is-enabled");
   }
   else if ($(this).data("is-enabled") == false) {
     $(this).data("is-enabled", true);
-    $(this).attr("class", "fa fa-toggle-on fa-lg is-enabled");
+    $(this).attr("class", "icon-toggle-on is-enabled");
   }
   gatherRulesOnForm();
   setOptions();
@@ -199,13 +199,13 @@ function showOptions() {
 function newRuleItem(src, dst, isRegex, isEnabled) {
   var title_enable = chrome.i18n.getMessage("title_enable");
   var title_delete = chrome.i18n.getMessage("title_delete");
-  var ruleItemHTML = "<li class=\"ui-state-default rule-item\">" +
-                     "<i title=\"Drag item to reorder\" class=\"fa fa-bars drag-item\"></i>" +
+  var ruleItemHTML = "<li class=\"rule-item\">" +
+                     "<div title=\"Drag item to reorder\" class=\"icon icon-bars drag-item\"></div>" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
-                     "<i data-is-regex=\"" + isRegex + "\" class=\"fa " + (isRegex ? "fa-check-square-o" : "fa-square-o") +" fa-lg is-regex\"></i>" +
-                     "<i title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"fa " + (isEnabled ? "fa-toggle-on" : "fa-toggle-off") + " fa-lg is-enabled\"></i>" +
-                     "<i title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"fa fa-ban fa-lg is-deleted\"></i>" +
+                     "<div data-is-regex=\"" + isRegex + "\" class=\"icon " + (isRegex ? "icon-check-square-o" : "icon-square-o") + " is-regex\"></div>" +
+                     "<div title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"icon " + (isEnabled ? "icon-toggle-on" : "icon-toggle-off") + " is-enabled\"></div>" +
+                     "<div title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"icon icon-ban is-deleted\"></div>" +
                      "</li>";
   return ruleItemHTML;
 }
