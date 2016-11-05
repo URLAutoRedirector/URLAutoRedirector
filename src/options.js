@@ -98,11 +98,11 @@ $(document).ready(function(){
 $(document).on("click", ".is-regex", function(){
   if ($(this).data("is-regex") == true) {
     $(this).data("is-regex", false);
-    $(this).attr("class", "icon-square-o is-regex");
+    $(this).attr("class", "icon icon-square-o is-regex");
   }
   else if ($(this).data("is-regex") == false) {
     $(this).data("is-regex", true);
-    $(this).attr("class", "icon-check-square-o is-regex");
+    $(this).attr("class", "icon icon-check-square-o is-regex");
   }
   gatherRulesOnForm();
   setOptions();
@@ -111,11 +111,11 @@ $(document).on("click", ".is-regex", function(){
 $(document).on("click", ".is-enabled", function(){
   if ($(this).data("is-enabled") == true) {
     $(this).data("is-enabled", false);
-    $(this).attr("class", "icon-toggle-off is-enabled");
+    $(this).attr("class", "icon icon-toggle-off is-enabled");
   }
   else if ($(this).data("is-enabled") == false) {
     $(this).data("is-enabled", true);
-    $(this).attr("class", "icon-toggle-on is-enabled");
+    $(this).attr("class", "icon icon-toggle-on is-enabled");
   }
   gatherRulesOnForm();
   setOptions();
