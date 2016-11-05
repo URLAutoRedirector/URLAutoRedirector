@@ -14,8 +14,7 @@
 
 ## Introduction
 
-URL Auto Redirector is a chrome extension that enables you to skip certain pages, mostly useless referral/ad pages, after you click on affiliate links.
-By doing so, it gets you directly to your destination page.
+URL Auto Redirector is a Chrome Extension that uses for redirecting URLs automatically with Regular Expression presets. It enables you to skip referral/AD pages and adapt mobile pages gracefully, which is time-saving, helps to be more productive and improves web browsing experiences.
 
 ## Usage
 
