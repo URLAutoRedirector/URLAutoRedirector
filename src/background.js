@@ -127,7 +127,6 @@ var defaultOptions = {
 
 var isNewTab;
 var rules;
-var lastTabId = 0;
 
 function matchUrl(url) {
   if (rules == undefined || url == undefined) {
