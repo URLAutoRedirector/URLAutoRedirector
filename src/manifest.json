@@ -1,7 +1,7 @@
 {
   "name": "URL Auto Redirector",
   "short_name": "URLAutoRedirector",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "__MSG_ext_description__",
   "author": "David Zhang",
   "homepage_url": "https://urlautoredirector.github.io/",
@@ -12,19 +12,11 @@
     "32": "images/icon-32.png"
   },
   "permissions": [
+    "notifications",
     "storage",
     "tabs",
-    "activeTab",
     "http://*/",
     "https://*/"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "run_at": "document_idle",
-      "css": ["prompt.css"],
-      "js": ["prompt.js", "lib/jquery-1.12.2.min.js"]
-    }
   ],
   "background": {
     "persistent": false,

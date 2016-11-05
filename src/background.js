@@ -167,6 +167,16 @@ function getOptions(callback)
   });
 }
 
+function notify()
+{
+  chrome.notifications.create({
+    "type": "basic",
+    "iconUrl": chrome.extension.getURL("images/icon-48.png"),
+    "title": chrome.i18n.getMessage("ext_name"),
+    "message": chrome.i18n.getMessage("prompt_msg")
+  });
+}
+
 chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   if (change.status == "loading") {
     newUrl = matchUrl(change.url);
@@ -178,17 +188,13 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
       }
       else {
         chrome.tabs.create({url: newUrl}, function(tab){
-          chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
-          chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
-          chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
+          notify();
         });
       }
     }
   }
   if (change.status == "complete" && tabId == lastTabId) {
-    chrome.tabs.insertCSS(tab.id, {file: "prompt.css"});
-    chrome.tabs.executeScript(tab.id, {file: "lib/jquery-1.12.2.min.js"});
-    chrome.tabs.executeScript(tab.id, {file: "prompt.js"});
+    notify();
     lastTabId = 0;
   }
 });
