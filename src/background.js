@@ -177,10 +177,11 @@ function notify()
   }
 
   chrome.notifications.create({
-    "type": "basic",
+    "type": "progress",
     "iconUrl": chrome.extension.getURL("images/icon-48.png"),
     "title": chrome.i18n.getMessage("ext_name"),
-    "message": chrome.i18n.getMessage("prompt_msg")
+    "message": chrome.i18n.getMessage("prompt_msg"),
+    "progress": 100
   });
 }
 
