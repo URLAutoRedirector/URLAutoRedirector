@@ -3,6 +3,7 @@
 // Idea inspired by Albert Li.
 
 var isNewTab;
+var isNotify;
 var rules;
 
 $(document).ready(function(){
@@ -13,12 +14,14 @@ $(document).ready(function(){
     var tabOption = $("input[name='tabOption']:checked").val();
     if (tabOption == 'newTab') {
       isNewTab = true;
-      setOptions();
     }
     if (tabOption == 'curTab') {
       isNewTab = false;
-      setOptions();
     }
+
+    isNotify = $("input[name='notifyOption']").prop("checked");
+
+    setOptions();
   });
   // new rule button
   $("#new-rule").click(function(){
@@ -163,6 +166,7 @@ function setOptions() {
   var newOptions = {
     "options": {
       "isNewTab": isNewTab,
+      "isNotify": isNotify,
       "rules": rules
     }
   }
@@ -179,6 +183,7 @@ function setOptions() {
 function getOptions(callback) {
   chrome.storage.local.get("options", function(data){
     isNewTab = data.options.isNewTab;
+    isNotify = data.options.isNotify;
     rules = data.options.rules;
     callback();
   });
@@ -186,10 +191,16 @@ function getOptions(callback) {
 
 function showOptions() {
   if (isNewTab) {
-    $("input[type='radio'][name='tabOption'][value='newTab']").attr("checked", "checked");
+    $("input[type='radio'][name='tabOption'][value='newTab']").prop("checked", "checked");
   }
   else {
     $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");
+  }
+  if (isNotify) {
+    $("input[type='checkbox'][name='notifyOption']").prop("checked", true);
+  }
+  else {
+    $("input[type='checkbox'][name='notifyOption']").prop("checked", false);
   }
   for (var i=0; i<rules.length; i++) {
     $("#rule-list").append(newRuleItem(rules[i].src, rules[i].dst, rules[i].isRegex, rules[i].isEnabled));
@@ -213,35 +224,36 @@ function newRuleItem(src, dst, isRegex, isEnabled) {
 function setInterface() {
   // general
   var ext_name = chrome.i18n.getMessage("ext_name");
-  var title = chrome.i18n.getMessage("options_page_title") + " - " + ext_name;
+  var title    = chrome.i18n.getMessage("options_page_title") + " - " + ext_name;
   // general options
-  var general = chrome.i18n.getMessage("options_general");
+  var general         = chrome.i18n.getMessage("options_general");
   var general_new_tab = chrome.i18n.getMessage("options_new_tab");
   var general_cur_tab = chrome.i18n.getMessage("options_cur_tab");
+  var general_notify  = chrome.i18n.getMessage("options_notify");
   // rules
-  var rules = chrome.i18n.getMessage("options_rules");
-  // table
-  var rule_src = chrome.i18n.getMessage("rule_src");
-  var rule_dst = chrome.i18n.getMessage("rule_dst");
-  var rule_regex = chrome.i18n.getMessage("rule_regexp");
+  var rules       = chrome.i18n.getMessage("options_rules");
+  var rule_src    = chrome.i18n.getMessage("rule_src");
+  var rule_dst    = chrome.i18n.getMessage("rule_dst");
+  var rule_regex  = chrome.i18n.getMessage("rule_regexp");
   var rule_enable = chrome.i18n.getMessage("rule_enable");
   var rule_delete = chrome.i18n.getMessage("rule_delete");
   // buttons
-  var btn_new = chrome.i18n.getMessage("btn_new");
-  var btn_reset = chrome.i18n.getMessage("btn_reset");
+  var btn_new    = chrome.i18n.getMessage("btn_new");
+  var btn_reset  = chrome.i18n.getMessage("btn_reset");
   var btn_import = chrome.i18n.getMessage("btn_import");
   var btn_export = chrome.i18n.getMessage("btn_export");
   // about
-  var about = chrome.i18n.getMessage("about");
-  var copyright = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2016.";
-  var home = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>";
+  var about      = chrome.i18n.getMessage("about");
+  var copyright  = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2016.";
+  var home       = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>";
   var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/UrlAutoRedirector/UrlAutoRedirector\">GitHub - UrlAutoRedirector</a>.";
-  var ideas = chrome.i18n.getMessage("ideas");
+  var ideas      = chrome.i18n.getMessage("ideas");
 
   $(document).attr("title", title);
   $(".general-label").text(general);
   $(".general-newtab").text(general_new_tab);
   $(".general-curtab").text(general_cur_tab);
+  $(".general-notify").text(general_notify);
 
   $(".rules-label").text(rules);
   $(".src-title").text(rule_src);
