@@ -17,6 +17,9 @@
   "options_cur_tab": {
     "message": "在当前标签页中跳转"
   },
+  "options_notify": {
+    "message": "当命中规则时发送通知提示"
+  },
   "options_rules": {
     "message": "规则"
   },
