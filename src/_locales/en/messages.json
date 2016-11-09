@@ -3,7 +3,7 @@
     "message": "URL Auto Redirector"
   },
   "ext_description": {
-    "message": "To make browsing quicker and simpler: skip the guide page on certain sites."
+    "message": "Make browsing quicker and simpler by redirecting URLs to skip referral/AD pages and adapt mobile pages gracefully."
   },
   "options_page_title": {
     "message": "Options"
@@ -16,6 +16,9 @@
   },
   "options_cur_tab": {
     "message": "Redirect in current tab"
+  },
+  "options_notify": {
+    "message": "Send notification when a rule is matched"
   },
   "options_rules": {
     "message": "Rules"

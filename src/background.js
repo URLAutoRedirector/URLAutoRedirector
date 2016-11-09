@@ -6,6 +6,7 @@
 var defaultOptions = {
   "options": {
     "isNewTab": false,
+    "isNotify": true,
     "rules": [
       {
         "src": "^http://re.jd.com/cps/item/([0-9]*).html",
@@ -126,6 +127,7 @@ var defaultOptions = {
 };
 
 var isNewTab;
+var isNotify;
 var rules;
 var lastTabId = 0;
 
@@ -162,6 +164,7 @@ function getOptions(callback)
 {
   chrome.storage.local.get("options", function(data){
     isNewTab = data.options.isNewTab;
+    isNotify = data.options.isNotify;
     rules = data.options.rules;
     callback();
   });
@@ -169,6 +172,10 @@ function getOptions(callback)
 
 function notify()
 {
+  if (!isNotify) {
+    return;
+  }
+
   chrome.notifications.create({
     "type": "basic",
     "iconUrl": chrome.extension.getURL("images/icon-48.png"),
@@ -202,12 +209,14 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
   if (request.type == "syncOptions") {
     isNewTab = request["options"]["options"]["isNewTab"];
+    isNotify = request["options"]["options"]["isNotify"];
     rules = request["options"]["options"]["rules"];
   }
   if (request.type == "resetRules") {
     var newOptions = {
       "options": {
         "isNewTab": isNewTab,
+        "isNotify": isNotify,
         "rules": defaultOptions["options"]["rules"]
       }
     }
