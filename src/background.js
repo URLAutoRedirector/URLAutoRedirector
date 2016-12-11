@@ -87,6 +87,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^http://m.youku.com/video/id_(.*).html",
+        "dst": "http://www.youku.com/v_show/id_$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "^http://www.bilibili.com/mobile/video/(av\\d+).html",
         "dst": "http://www.bilibili.com/video/$1/",
         "isEnabled": true,
