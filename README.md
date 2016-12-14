@@ -42,5 +42,5 @@ Alternative: Clone this project, then load ```src``` folder in ```developer mode
 
 * If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/UrlAutoRedirector/UrlAutoRedirector).
 * If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
-* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/UrlAutoRedirector/UrlAutoRedirector/issues/17).
+* If you have useful rules in getting convenience by URL Auto Redictor, contribute to [awesome-rules](https://github.com/UrlAutoRedirector/awesome-rules).
 * PR(Pull Request) is welcomed.
