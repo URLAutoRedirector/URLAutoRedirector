@@ -30,9 +30,9 @@ Download at [__Chrome WebStore__](https://chrome.google.com/webstore/detail/mckf
 
 Alternative: Clone this project, then load ```src``` folder in ```developer mode```.
 
-## User Manual
+## Documentation
 
-[https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki](https://github.com/UrlAutoRedirector/UrlAutoRedirector/wiki)
+See <https://urlautoredirector.github.io/docs.html>.
 
 ## Credit
 
