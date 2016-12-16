@@ -111,6 +111,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https://www.taobao.com/market/lu/findgoods_router.php\\?(.*)",
+        "dst": "https://item.taobao.com/item.htm?$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "^http://m.qidian.com/book/showbook.aspx\\?bookid=(\\d+)",
         "dst": "http://book.qidian.com/info/$1",
         "isEnabled": true,
@@ -119,6 +125,18 @@ var defaultOptions = {
       {
         "src": "^http://m.yinyuetai.com/video/(.*)",
         "dst": "http://v.yinyuetai.com/video/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.lianjia.com/bj/ershoufang/(\\d+).html",
+        "dst": "http://bj.lianjia.com/ershoufang/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.sh.lianjia.com/ershoufang/(.*)",
+        "dst": "http://sh.lianjia.com/ershoufang/$1",
         "isEnabled": true,
         "isRegex": true
       },
