@@ -129,6 +129,18 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^http://m.lianjia.com/bj/ershoufang/(\\d+).html",
+        "dst": "http://bj.lianjia.com/ershoufang/$1.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^http://m.sh.lianjia.com/ershoufang/(.*)",
+        "dst": "http://sh.lianjia.com/ershoufang/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
