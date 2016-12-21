@@ -39,6 +39,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^http://m.autohome.com.cn/news/(.*)/(.*).html",
+        "dst": "http://www.autohome.com.cn/news/$1/$2.html",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "^http://m.ziroom.com/BJ/room/(.*).html",
         "dst": "http://www.ziroom.com/z/vr/$1.html",
         "isEnabled": true,
