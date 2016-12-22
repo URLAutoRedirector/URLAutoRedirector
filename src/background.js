@@ -135,13 +135,13 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^http://m.lianjia.com/bj/ershoufang/(\\d+).html",
+        "src": "^(https|http)://m.lianjia.com/bj/ershoufang/(\\d+).html",
         "dst": "http://bj.lianjia.com/ershoufang/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "src": "^http://m.sh.lianjia.com/ershoufang/(.*)",
+        "src": "^(https|http)://m.sh.lianjia.com/ershoufang/(.*)",
         "dst": "http://sh.lianjia.com/ershoufang/$1",
         "isEnabled": true,
         "isRegex": true
