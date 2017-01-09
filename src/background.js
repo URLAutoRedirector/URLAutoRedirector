@@ -63,8 +63,8 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^http://item.m.jd.com/product/(.*).html",
-        "dst": "http://item.jd.com/$1.html",
+        "src": "^https://item.m.jd.com/product/(.*).html",
+        "dst": "https://item.jd.com/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
