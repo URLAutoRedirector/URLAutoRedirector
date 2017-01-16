@@ -1,0 +1,19 @@
+{
+  "name": "URLAutoRedirector",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrlAutoRedirector/UrlAutoRedirector.git"
+  },
+  "author": "crispgm@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UrlAutoRedirector/UrlAutoRedirector/issues"
+  },
+  "homepage": "https://UrlAutoRedirector.github.io/",
+  "devDependencies": {
+    "mocha": "^3.1.0"
+  }
+}
