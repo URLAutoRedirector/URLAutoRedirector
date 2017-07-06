@@ -9,8 +9,8 @@ var defaultOptions = {
     "isNotify": true,
     "rules": [
       {
-        "src": "^http://re.jd.com/cps/item/([0-9]*).html",
-        "dst": "http://item.jd.com/$1.html",
+        "src": "^https?://re.jd.com/cps/item/([0-9]*).html",
+        "dst": "https://item.jd.com/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
@@ -63,13 +63,13 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^https://item.m.jd.com/product/(.*).html",
+        "src": "^https?://item.m.jd.com/product/(.*).html",
         "dst": "https://item.jd.com/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "src": "^(https|http)://mitem.jd.hk/ware/view.action\\?wareId=(\\d+)(&.*)",
+        "src": "^https?://mitem.jd.hk/ware/view.action\\?wareId=(\\d+)(&.*)",
         "dst": "https://item.jd.hk/$2.html",
         "isEnabled": true,
         "isRegex": true
