@@ -221,6 +221,7 @@ function newRuleItem(src, dst, isRegex, isEnabled) {
   return ruleItemHTML;
 }
 
+/*eslint max-statements: 0*/
 function setInterface() {
   // general
   var ext_name = chrome.i18n.getMessage("ext_name");

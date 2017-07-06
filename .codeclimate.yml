@@ -3,11 +3,7 @@ engines:
   csslint:
     enabled: true
   duplication:
-    enabled: true
-    config:
-      languages:
-      - ruby
-      - javascript
+    enabled: false
   eslint:
     enabled: true
     checks:
