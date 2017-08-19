@@ -159,7 +159,6 @@ var defaultOptions = {
 var isNewTab;
 var isNotify;
 var rules;
-var lastTabId = 0;
 
 function matchUrl(url) {
   if (rules == undefined || url == undefined) {
@@ -215,27 +214,28 @@ function notify()
   });
 }
 
-chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
-  if (change.status == "loading") {
-    newUrl = matchUrl(change.url);
+chrome.webRequest.onBeforeRequest.addListener(
+  function(request) {
+    newUrl = matchUrl(request.url);
     if (newUrl) {
-      console.log("Match:" + change.url)
+      console.log("Match:" + request.url);
       if (isNewTab == false) {
-        lastTabId = tabId;
-        chrome.tabs.update({url: newUrl});
-      }
-      else {
-        chrome.tabs.create({url: newUrl}, function(tab){
-          notify();
+        chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+          chrome.tabs.update(tabs[0].id, {url: newUrl});
         });
       }
+      else {
+        chrome.tabs.create({url: newUrl});
+      }
+      // send Chrome notification
+      notify();
     }
-  }
-  if (change.status == "complete" && tabId == lastTabId) {
-    notify();
-    lastTabId = 0;
-  }
-});
+  },
+  {
+    urls: ["<all_urls>"]
+  },
+  ["blocking"]
+);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
   if (request.type == "syncOptions") {

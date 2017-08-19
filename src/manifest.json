@@ -15,11 +15,12 @@
     "notifications",
     "storage",
     "tabs",
+    "webRequest",
+    "webRequestBlocking",
     "http://*/",
     "https://*/"
   ],
   "background": {
-    "persistent": false,
     "scripts": ["background.js"]
   },
   "content_security_policy": "script-src 'self' https://platform.twitter.com; object-src 'self'",
