@@ -147,6 +147,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "https?://m.you.163.com/item/detail\\?id=(.*)",
+        "dst": "http://you.163.com/item/detail?id=$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
