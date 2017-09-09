@@ -99,8 +99,8 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^http://www.bilibili.com/mobile/video/(av\\d+).html",
-        "dst": "http://www.bilibili.com/video/$1/",
+        "src": "^https?://www.bilibili.com/mobile/video/(av\\d+).html",
+        "dst": "https://www.bilibili.com/video/$1/",
         "isEnabled": true,
         "isRegex": true
       },
@@ -111,7 +111,7 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^http://h5.m.taobao.com/awp/core/detail.htm\\?id=(\\d+)",
+        "src": "^https?://h5.m.taobao.com/awp/core/detail.htm\\?id=(\\d+)",
         "dst": "https://item.taobao.com/item.htm?id=$1",
         "isEnabled": true,
         "isRegex": true
@@ -135,20 +135,26 @@ var defaultOptions = {
         "isRegex": true
       },
       {
-        "src": "^(https|http)://m.lianjia.com/bj/ershoufang/(\\d+).html",
+        "src": "^https?://m.lianjia.com/bj/ershoufang/(\\d+).html",
         "dst": "http://bj.lianjia.com/ershoufang/$1.html",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "src": "^(https|http)://m.sh.lianjia.com/ershoufang/(.*)",
+        "src": "^https?://m.sh.lianjia.com/ershoufang/(.*)",
         "dst": "http://sh.lianjia.com/ershoufang/$1",
         "isEnabled": true,
         "isRegex": true
       },
       {
-        "src": "https?://m.you.163.com/item/detail\\?id=(.*)",
+        "src": "^https?://m.you.163.com/item/detail\\?id=(.*)",
         "dst": "http://you.163.com/item/detail?id=$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^https?://m.thepaper.cn/(.*)",
+        "dst": "http://www.thepaper.cn/$1",
         "isEnabled": true,
         "isRegex": true
       },
@@ -226,6 +232,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
     newUrl = matchUrl(change.url);
     if (newUrl) {
       console.log("Match:" + change.url)
+      console.log("Target:" + newUrl)
       if (isNewTab == false) {
         lastTabId = tabId;
         chrome.tabs.update({url: newUrl});
