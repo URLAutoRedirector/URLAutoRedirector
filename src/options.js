@@ -1,5 +1,5 @@
 // UrlAutoRedirector
-// Copyright (c) David Zhang, 2016
+// Copyright (c) David Zhang, 2017
 // Idea inspired by Albert Li.
 
 var isNewTab;

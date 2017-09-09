@@ -1,5 +1,5 @@
 // UrlAutoRedirector
-// Copyright (c) David Zhang, 2016
+// Copyright (c) David Zhang, 2017
 // Idea inspired by Albert Li.
 
 // default options
@@ -155,6 +155,12 @@ var defaultOptions = {
       {
         "src": "^https?://m.thepaper.cn/(.*)",
         "dst": "http://www.thepaper.cn/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^https?://m.zhibo8.cc/news/web/zuqiu/(.*)",
+        "dst": "https://news.zhibo8.cc/zuqiu/$1",
         "isEnabled": true,
         "isRegex": true
       },
