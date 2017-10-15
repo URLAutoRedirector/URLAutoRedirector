@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   color: #484848;
@@ -98,11 +98,11 @@ ul{
 }
 .src-title{
   margin-right: 16px;
-  width: 288px;
+  width: 280px;
 }
 .dst-title{
   margin-right: 8px;
-  width: 288px;
+  width: 280px;
 }
 .is-regex-title{
   width: 64px;
@@ -111,7 +111,7 @@ ul{
   width: 56px;
 }
 .is-delete-title{
-  width: 50px;
+  width: 60px;
 }
 .drag-item{
   width: 24px;
@@ -120,7 +120,7 @@ ul{
 .src{
   font-size: 16px;
   margin-right: 12px;
-  width: 288px;
+  width: 280px;
   height: 24px;
   border-top: 0;
   border-left: 0;
@@ -129,7 +129,7 @@ ul{
 }
 .dst{
   font-size: 16px;
-  width: 288px;
+  width: 280px;
   height: 24px;
   border-top: 0;
   border-left: 0;
