@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://urlautoredirector.github.io/">
-  	<img src="https://raw.githubusercontent.com/UrlAutoRedirector/UrlAutoRedirector/master/src/images/icon-128.png" alt="Logo">
+  	<img src="https://raw.githubusercontent.com/URLAutoRedirector/URLAutoRedirector/master/src/images/icon-128.png" alt="Logo">
   </a>
 </p>
 
@@ -18,9 +18,9 @@ URL Auto Redirector is a Chrome Extension that uses for redirecting URLs automat
 
 ## Usage
 
-* Mid-Pages Skipping \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/midpage-skipping.png)\]
-* Mobile Adaption \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/mobile-adaption.png)\]
-* Site Blocker \[[Screenshot](https://raw.githubusercontent.com/UrlAutoRedirector/brand/master/promotion/site-blocker.png)\]
+* Mid-Pages Skipping \[[Screenshot](https://raw.githubusercontent.com/URLAutoRedirector/brand/master/promotion/midpage-skipping.png)\]
+* Mobile Adaption \[[Screenshot](https://raw.githubusercontent.com/URLAutoRedirector/brand/master/promotion/mobile-adaption.png)\]
+* Site Blocker \[[Screenshot](https://raw.githubusercontent.com/URLAutoRedirector/brand/master/promotion/site-blocker.png)\]
 
 ## Installation
 
@@ -41,6 +41,6 @@ See <https://urlautoredirector.github.io/docs.html>.
 ## Contributing
 
 * If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/UrlAutoRedirector/UrlAutoRedirector).
-* If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
-* If you have useful rules in getting convenience by URL Auto Redictor, contribute to [awesome-rules](https://github.com/UrlAutoRedirector/awesome-rules).
+* If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/URLAutoRedirector/issues/new).
+* If you have useful rules in getting convenience by URL Auto Redictor, contribute to [awesome-rules](https://github.com/URLAutoRedirector/awesome-rules).
 * PR(Pull Request) is welcomed.

@@ -4,15 +4,15 @@ Hi there! URL Auto Redirector is an open source project. We'd like to encourage 
 
 ## Where to get help or report a problem
 
-* If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/UrlAutoRedirector/UrlAutoRedirector).
-* If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/UrlAutoRedirector/issues/new).
-* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/UrlAutoRedirector/UrlAutoRedirector/issues/17).
+* If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/URLAutoRedirector/URLAutoRedirector).
+* If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/URLAutoRedirector/issues/new).
+* If you have useful rules in getting convenience by URL Auto Redictor, comment in the [Collection of awesome rules](https://github.com/URLAutoRedirector/URLAutoRedirector/issues/17).
 * PR(Pull Request) is welcomed.
 
 ## How to contribute
 
 * Find an open issue (especially those labeled help-wanted), and submit a proposed fix. If it's your first pull request, we promise we won't bite, and are glad to answer any questions.
-* The project of URL Auto Redirector is managed and tracked with [GitHub Projects](https://github.com/UrlAutoRedirector/UrlAutoRedirector/projects). You might have a look at the view of developing progress and pick an issue to work with.
+* The project of URL Auto Redirector is managed and tracked with [GitHub Projects](https://github.com/URLAutoRedirector/URLAutoRedirector/projects). You might have a look at the view of developing progress and pick an issue to work with.
 
 ## A thank you
 

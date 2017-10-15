@@ -1,4 +1,4 @@
-// UrlAutoRedirector
+// URLAutoRedirector
 // Copyright (c) David Zhang, 2017
 // Idea inspired by Albert Li.
 
