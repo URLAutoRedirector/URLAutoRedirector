@@ -165,6 +165,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https?://live.bilibili.com/h5/(.*)",
+        "dst": "https://live.bilibili.com/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
