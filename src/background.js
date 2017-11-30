@@ -171,6 +171,12 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https?://m.autohome.com.cn/news/(.*)",
+        "dst": "https://www.autohome.com.cn/news/$1",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
