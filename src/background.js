@@ -208,8 +208,7 @@ function matchUrl(url) {
           newUrl = url.replace(re, dst);
           return newUrl;
         }
-      }
-      else {
+      } else {
         if (url == src) {
           return dst;
         }
@@ -220,8 +219,7 @@ function matchUrl(url) {
   return false;
 }
 
-function getOptions(callback)
-{
+function getOptions(callback) {
   chrome.storage.local.get("options", function(data){
     isNewTab = data.options.isNewTab;
     isNotify = data.options.isNotify;
@@ -230,8 +228,7 @@ function getOptions(callback)
   });
 }
 
-function notify()
-{
+function notify() {
   if (!isNotify) {
     return;
   }
@@ -254,8 +251,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
       if (isNewTab == false) {
         lastTabId = tabId;
         chrome.tabs.update({url: newUrl});
-      }
-      else {
+      } else {
         chrome.tabs.create({url: newUrl}, function(tab){
           notify();
         });
@@ -268,7 +264,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, change, tab) {
   }
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.type == "syncOptions") {
     isNewTab = request["options"]["options"]["isNewTab"];
     isNotify = request["options"]["options"]["isNotify"];
@@ -287,16 +283,16 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     var msg = {
       type: "reloadOptions"
     };
-    chrome.runtime.sendMessage(msg, function(response){
+    chrome.runtime.sendMessage(msg, function(response) {
       console.log("Send msg[reloadOptions]");
     });
   }
 });
 
-getOptions(function(){
+getOptions(function() {
   console.log("getOption Done");
 });
 
-chrome.runtime.onInstalled.addListener(function(){
+chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.local.set(defaultOptions);
 });

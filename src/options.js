@@ -6,11 +6,11 @@ var isNewTab;
 var isNotify;
 var rules;
 
-$(document).ready(function(){
+$(document).ready(function() {
   // i18n UI
   setInterface();
   // tab option
-  $(".tabOption").change(function(){
+  $(".tabOption").change(function() {
     var tabOption = $("input[name='tabOption']:checked").val();
     if (tabOption == 'newTab') {
       isNewTab = true;
@@ -24,11 +24,11 @@ $(document).ready(function(){
     setOptions();
   });
   // new rule button
-  $("#new-rule").click(function(){
+  $("#new-rule").click(function() {
     $("#rule-list").append(newRuleItem("", "", false, true, true));
   });
   // reset rule button
-  $("#reset-rule").click(function(){
+  $("#reset-rule").click(function() {
     var confirmReset = chrome.i18n.getMessage("confirm_reset");
     var r = confirm(confirmReset);
     if (r == true) {
@@ -36,19 +36,18 @@ $(document).ready(function(){
       var msg = {
         type: "resetRules"
       };
-      chrome.runtime.sendMessage(msg, function(response){
+      chrome.runtime.sendMessage(msg, function(response) {
         console.log("Send msg[resetRules]");
       });
     }
   });
   // import rule button
-  $("#import-rule").click(function(){
+  $("#import-rule").click(function() {
     var importedFile = $("#upload-rule").prop("files");
     if (importedFile.length == 0) {
       alert(chrome.i18n.getMessage("import_error_no_file"));
       return;
-    }
-    else {
+    } else {
       var reader = new FileReader();
       reader.readAsText(importedFile[0], "UTF-8");
       reader.onload = function(evt) {
@@ -76,7 +75,7 @@ $(document).ready(function(){
     }
   });
   // export rule button
-  $("#export-rule").click(function(){
+  $("#export-rule").click(function() {
     var rulesString = JSON.stringify(rules);
     var blob = new Blob([rulesString]);
 
@@ -91,19 +90,18 @@ $(document).ready(function(){
   $("#rule-list").sortable({
     animation: 150,
     handle: ".drag-item",
-    onEnd: function(evt){
+    onEnd: function(evt) {
       gatherRulesOnForm();
       setOptions();
     }
   });
 });
 
-$(document).on("click", ".is-regex", function(){
+$(document).on("click", ".is-regex", function() {
   if ($(this).data("is-regex") == true) {
     $(this).data("is-regex", false);
     $(this).attr("class", "icon icon-square-o is-regex");
-  }
-  else if ($(this).data("is-regex") == false) {
+  } else if ($(this).data("is-regex") == false) {
     $(this).data("is-regex", true);
     $(this).attr("class", "icon icon-check-square-o is-regex");
   }
@@ -111,12 +109,11 @@ $(document).on("click", ".is-regex", function(){
   setOptions();
 });
 
-$(document).on("click", ".is-enabled", function(){
+$(document).on("click", ".is-enabled", function() {
   if ($(this).data("is-enabled") == true) {
     $(this).data("is-enabled", false);
     $(this).attr("class", "icon icon-toggle-off is-enabled");
-  }
-  else if ($(this).data("is-enabled") == false) {
+  } else if ($(this).data("is-enabled") == false) {
     $(this).data("is-enabled", true);
     $(this).attr("class", "icon icon-toggle-on is-enabled");
   }
@@ -136,12 +133,12 @@ $(document).on("click", ".is-deleted", function(){
   }
 });
 
-$(document).on("change", ".rule-item>input[type='text']", function(){
+$(document).on("change", ".rule-item>input[type='text']", function() {
   gatherRulesOnForm();
   setOptions();
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.type == "reloadOptions") {
     getOptions(showOptions);
   }
@@ -192,14 +189,12 @@ function getOptions(callback) {
 function showOptions() {
   if (isNewTab) {
     $("input[type='radio'][name='tabOption'][value='newTab']").prop("checked", "checked");
-  }
-  else {
+  } else {
     $("input[type='radio'][name='tabOption'][value='curTab']").attr("checked", "checked");
   }
   if (isNotify) {
     $("input[type='checkbox'][name='notifyOption']").prop("checked", true);
-  }
-  else {
+  } else {
     $("input[type='checkbox'][name='notifyOption']").prop("checked", false);
   }
   for (var i=0; i<rules.length; i++) {
