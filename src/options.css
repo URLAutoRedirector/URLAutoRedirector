@@ -8,6 +8,7 @@ body{
   text-align: center;
   background-color: white;
 }
+
 nav {
   margin-left: auto;
   margin-right: auto;
@@ -18,10 +19,12 @@ nav {
   background-color: #ff5a5f;
   color: #fff;
 }
+
 #banner {
   height: 70px;
   font-size: 40px;
 }
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -33,29 +36,36 @@ nav {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .general {
   text-align: left;
   width: 100%;
 }
+
 a{
   text-decoration: none;
   color: #ff5a5f;
 }
+
 a:hover{
   text-decoration: underline;
 }
+
 footer {
   font-size: 14px;
   margin-top: 20px;
   margin-bottom: 20px;
   color: #ff5a5f;
 }
+
 h3{
   font-size: 24px;
 }
+
 input{
   padding-left: 4px;
 }
+
 .btn-rule{
   margin-top: 12px;
   height: 30px;
@@ -65,11 +75,13 @@ input{
   font-size: 14px;
   background-color: #ff5a5f;
 }
+
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 .rule-item{
   background-color: #ffffff;
   border: 0;
@@ -78,45 +90,56 @@ ul{
   display: inline-flex;
   justify-content: flex-start;
 }
+
 .rule-head{
   width: 100%;
   height: 30px;
   font-size: 16px;
   font-weight: bold;
 }
+
 .rule-title{
   float: left;
   height: 24px;
 }
+
 .icon{
   padding-top: 8px;
   font-size: 16px;
 }
+
 .drag-title{
   margin-right: 4px;
   width: 20px;
 }
+
 .src-title{
   margin-right: 16px;
   width: 280px;
 }
+
 .dst-title{
   margin-right: 8px;
   width: 280px;
 }
+
 .is-regex-title{
   width: 64px;
 }
+
 .enable-title{
   width: 56px;
 }
+
 .is-delete-title{
   width: 60px;
 }
+
 .drag-item{
   width: 24px;
   cursor: move;
 }
+
 .src{
   font-size: 16px;
   margin-right: 12px;
@@ -127,6 +150,7 @@ ul{
   border-right: 0;
   border-bottom: 1px solid #ff5a5f;
 }
+
 .dst{
   font-size: 16px;
   width: 280px;
@@ -136,28 +160,34 @@ ul{
   border-right: 0;
   border-bottom: 1px solid #ff5a5f;
 }
+
 .is-regex{
   width: 66px;
   height: 24px;
   text-align: center;
 }
+
 .is-enabled{
   width: 50px;
   height: 24px;
   text-align: center;
 }
+
 .is-deleted{
   width: 60px;
   height: 24px;
   text-align: center;
 }
+
 #upload-rule{
   width: 244px;
 }
+
 .btn-share{
   margin-right: 10px;
   float: left;
 }
+
 .weibo-share{
   padding-top: 1px;
 }
