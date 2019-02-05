@@ -221,9 +221,11 @@ function matchUrl(url) {
 
 function getOptions(callback) {
   chrome.storage.local.get("options", function(data){
-    isNewTab = data.options.isNewTab;
-    isNotify = data.options.isNotify;
-    rules = data.options.rules;
+    if (data.options) {
+      isNewTab = data.options.isNewTab;
+      isNotify = data.options.isNotify;
+      rules = data.options.rules;
+    }
     callback();
   });
 }
@@ -294,5 +296,9 @@ getOptions(function() {
 });
 
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.local.set(defaultOptions);
+  chrome.storage.local.get("options", function(data){
+    if (!data.options) {
+      chrome.storage.local.set(defaultOptions);
+    }
+  });
 });
