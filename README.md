@@ -38,6 +38,11 @@ See <https://urlautoredirector.github.io/docs.html>.
 
 * Idea inspired by [Albert Li](https://github.com/lzb)
 
+## Donation
+
+* [Buy Me A Coffee](https://www.buymeacoffee.com/crispgm)
+* [PayPal](https://www.paypal.me/crispgm)
+
 ## Contributing
 
 * If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/UrlAutoRedirector/UrlAutoRedirector).
