@@ -5,9 +5,16 @@
 </p>
 
 <p align="center">
-  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn"><img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore"></a>
-  <a href="https://gitter.im/crispgm/UrlAutoRedirector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/crispgm/UrlAutoRedirector.svg" alt="Chat on gitter"></a>
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
+    <img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore">
+  </a>
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
+    <img src="https://img.shields.io/chrome-web-store/users/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Users" />
+  </a>
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
+    <img src="https://img.shields.io/chrome-web-store/rating/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Rating" />
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
 </p>
 
 # [URL Auto Redirector](https://urlautoredirector.github.io/)
