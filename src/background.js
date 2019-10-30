@@ -206,7 +206,9 @@ function matchUrl(url) {
         var re = new RegExp(src);
         if (url.search(re) != -1) {
           newUrl = url.replace(re, dst);
-          return newUrl;
+          if (url != newUrl) {
+            return newUrl;
+          }
         }
       } else {
         if (url == src) {
