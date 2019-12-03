@@ -77,14 +77,11 @@ $(document).ready(function() {
   // export rule button
   $("#export-rule").click(function() {
     var rulesString = JSON.stringify(rules);
-    var blob = new Blob([rulesString]);
-
-    var aLink = document.createElement('a');
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("click", false, false);
-    aLink.download = "redirecting-rules.json";
-    aLink.href = URL.createObjectURL(blob);
-    aLink.dispatchEvent(evt);
+    var blob = new Blob([rulesString], { type: "application/json" });
+    var newLink = document.createElement("a");
+    newLink.download = "redirecting-rules.json";
+    newLink.href = window.URL.createObjectURL(blob);
+    newLink.click();
   });
   // rule list drag & sort
   $("#rule-list").sortable({
