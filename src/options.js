@@ -200,15 +200,15 @@ function showOptions() {
 }
 
 function newRuleItem(src, dst, isRegex, isEnabled) {
-  var title_enable = chrome.i18n.getMessage("title_enable");
-  var title_delete = chrome.i18n.getMessage("title_delete");
+  var titleEnable = chrome.i18n.getMessage("title_enable");
+  var titleDelete = chrome.i18n.getMessage("title_delete");
   var ruleItemHTML = "<li class=\"rule-item\">" +
                      "<div title=\"Drag item to reorder\" class=\"icon icon-bars drag-item\"></div>" +
                      "<input type=\"text\" class=\"src\" value=" + src + ">" +
                      "<input type=\"text\" class=\"dst\" value=" + dst + ">" +
                      "<div data-is-regex=\"" + isRegex + "\" class=\"icon " + (isRegex ? "icon-check-square-o" : "icon-square-o") + " is-regex\"></div>" +
-                     "<div title=\"" + title_enable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"icon " + (isEnabled ? "icon-toggle-on" : "icon-toggle-off") + " is-enabled\"></div>" +
-                     "<div title=\"" + title_delete + "\" data-is-deleted=\"false\" class=\"icon icon-ban is-deleted\"></div>" +
+                     "<div title=\"" + titleEnable + "\" data-is-enabled=\"" + isEnabled + "\" class=\"icon " + (isEnabled ? "icon-toggle-on" : "icon-toggle-off") + " is-enabled\"></div>" +
+                     "<div title=\"" + titleDelete + "\" data-is-deleted=\"false\" class=\"icon icon-ban is-deleted\"></div>" +
                      "</li>";
   return ruleItemHTML;
 }
@@ -216,25 +216,26 @@ function newRuleItem(src, dst, isRegex, isEnabled) {
 /*eslint max-statements: 0*/
 function setInterface() {
   // general
-  var ext_name = chrome.i18n.getMessage("ext_name");
-  var title    = chrome.i18n.getMessage("options_page_title") + " - " + ext_name;
+  var extName = chrome.i18n.getMessage("ext_name");
+  var title   = chrome.i18n.getMessage("options_page_title") + " - " + extName;
   // general options
   var general         = chrome.i18n.getMessage("options_general");
-  var general_new_tab = chrome.i18n.getMessage("options_new_tab");
-  var general_cur_tab = chrome.i18n.getMessage("options_cur_tab");
-  var general_notify  = chrome.i18n.getMessage("options_notify");
+  var generalNewTab = chrome.i18n.getMessage("options_new_tab");
+  var generalCurTab = chrome.i18n.getMessage("options_cur_tab");
+  var generalNotify  = chrome.i18n.getMessage("options_notify");
   // rules
   var rules       = chrome.i18n.getMessage("options_rules");
-  var rule_src    = chrome.i18n.getMessage("rule_src");
-  var rule_dst    = chrome.i18n.getMessage("rule_dst");
-  var rule_regex  = chrome.i18n.getMessage("rule_regexp");
-  var rule_enable = chrome.i18n.getMessage("rule_enable");
-  var rule_delete = chrome.i18n.getMessage("rule_delete");
+  var ruleSrc    = chrome.i18n.getMessage("rule_src");
+  var ruleDst    = chrome.i18n.getMessage("rule_dst");
+  var ruleRegex  = chrome.i18n.getMessage("rule_regexp");
+  var ruleEnable = chrome.i18n.getMessage("rule_enable");
+  var ruleDelete = chrome.i18n.getMessage("rule_delete");
+  var ruleMisconf = chrome.i18n.getMessage("rule_misconf");
   // buttons
-  var btn_new    = chrome.i18n.getMessage("btn_new");
-  var btn_reset  = chrome.i18n.getMessage("btn_reset");
-  var btn_import = chrome.i18n.getMessage("btn_import");
-  var btn_export = chrome.i18n.getMessage("btn_export");
+  var btnNew    = chrome.i18n.getMessage("btn_new");
+  var btnReset  = chrome.i18n.getMessage("btn_reset");
+  var btnImport = chrome.i18n.getMessage("btn_import");
+  var btnExport = chrome.i18n.getMessage("btn_export");
   // about
   var about      = chrome.i18n.getMessage("about");
   var copyright  = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2020.";
@@ -244,21 +245,22 @@ function setInterface() {
 
   $(document).attr("title", title);
   $(".general-label").text(general);
-  $(".general-newtab").text(general_new_tab);
-  $(".general-curtab").text(general_cur_tab);
-  $(".general-notify").text(general_notify);
+  $(".general-newtab").text(generalNewTab);
+  $(".general-curtab").text(generalCurTab);
+  $(".general-notify").text(generalNotify);
 
   $(".rules-label").text(rules);
-  $(".src-title").text(rule_src);
-  $(".dst-title").text(rule_dst);
-  $(".is-regex-title").text(rule_regex);
-  $(".enable-title").text(rule_enable);
-  $(".is-delete-title").text(rule_delete);
+  $(".src-title").text(ruleSrc);
+  $(".dst-title").text(ruleDst);
+  $(".is-regex-title").text(ruleRegex);
+  $(".enable-title").text(ruleEnable);
+  $(".is-delete-title").text(ruleDelete);
+  $(".hint-misconf").text(ruleMisconf);
 
-  $("#new-rule").val(btn_new);
-  $("#reset-rule").val(btn_reset);
-  $("#import-rule").val(btn_import);
-  $("#export-rule").val(btn_export);
+  $("#new-rule").val(btnNew);
+  $("#reset-rule").val(btnReset);
+  $("#import-rule").val(btnImport);
+  $("#export-rule").val(btnExport);
 
   $(".about-label").text(about);
   $(".about-copyright").html(copyright);
