@@ -65,6 +65,9 @@
   "title_delete": {
     "message": "删除规则"
   },
+  "rule_misconf": {
+    "message": "提示：错误的配置可能会导致页面加载失败。"
+  },
   "prompt_msg": {
     "message": "通过 URL Auto Redirector 跳转"
   },

@@ -183,6 +183,10 @@ ul{
   width: 244px;
 }
 
+.hint-misconf {
+  font-style: italic;
+}
+
 .btn-share{
   margin-right: 10px;
   float: left;

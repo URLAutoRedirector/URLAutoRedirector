@@ -65,6 +65,9 @@
   "title_delete": {
     "message": "Delete Rule"
   },
+  "rule_misconf": {
+    "message": "Hint: misconfiguration may cause error on page loading."
+  },
   "prompt_msg": {
     "message": "Redirected by URL Auto Redirector"
   },
