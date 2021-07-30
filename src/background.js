@@ -177,6 +177,30 @@ var defaultOptions = {
         "isRegex": true
       },
       {
+        "src": "^https://www.amazon.cn/dp/([a-zA-Z0-9]+)/(.*)",
+        "dst": "https://www.amazon.cn/dp/$1/",
+        "isEnabled": true,
+        "isRegex": true
+      },
+      {
+        "src": "^https?:\/\/(cpfd|www)\.cnki\.com\.cn\/Article\/([A-Z]{4})((?i)total)-(\w+)\.htm.*$",
+        "dst": "https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$4",
+        "isEnabled": false,
+        "isRegex": true
+      },
+      {
+        "src": "^https?:\/\/cdmd\.cnki\.com\.cn\/Article\/([A-Z]{4})-\d+-(\d+)\.htm.*$",
+        "dst": "https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$1&filename=$2.nh",
+        "isEnabled": false,
+        "isRegex": true
+      },
+      {
+        "src": "^https?:\/\/\S*\.cnki\.net\/((?i)kcms)\/detail\/detail\.aspx\?(?=.*dbcode\=(\w+))(?=.*filename\=([\w\.]+)).*$",
+        "dst": "https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$3",
+        "isEnabled": false,
+        "isRegex": true
+      },
+      {
         "src": "https://www.baidu.com/",
         "dst": "https://www.google.com/",
         "isEnabled": false,
