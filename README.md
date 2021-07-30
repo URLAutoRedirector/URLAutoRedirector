@@ -33,8 +33,6 @@ URL Auto Redirector is a Chrome Extension that uses for redirecting URLs automat
 
 Download at [**Chrome WebStore**](https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn)
 
-Alternative: Clone this project, then load `src` folder in `developer mode`.
-
 ## Documentation
 
 See <https://urlautoredirector.github.io/docs.html>.
@@ -46,7 +44,6 @@ See <https://urlautoredirector.github.io/docs.html>.
 ## Donation
 
 - [Buy Me A Coffee](https://www.buymeacoffee.com/crispgm)
-- [PayPal](https://www.paypal.me/crispgm)
 
 ## Contributing
 
