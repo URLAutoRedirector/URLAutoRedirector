@@ -238,7 +238,7 @@ function setInterface() {
   var btnExport = chrome.i18n.getMessage("btn_export");
   // about
   var about      = chrome.i18n.getMessage("about");
-  var copyright  = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2020.";
+  var copyright  = chrome.i18n.getMessage("copyright") + " &copy; <a target=\"_blank\" href=\"https://crispgm.com/\">David Zhang</a>, 2021.";
   var home       = "<a target=\"_blank\" href=\"https://urlautoredirector.github.io/\">" + chrome.i18n.getMessage("official_page") + "</a>";
   var contribute = chrome.i18n.getMessage("contribute") + " <a target=\"_blank\" href=\"https://github.com/URLAutoRedirector/URLAutoRedirector\">GitHub - UrlAutoRedirector</a>.";
   var ideas      = chrome.i18n.getMessage("ideas");
