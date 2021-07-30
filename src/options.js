@@ -76,7 +76,7 @@ $(document).ready(function() {
   });
   // export rule button
   $("#export-rule").click(function() {
-    var rulesString = JSON.stringify(rules);
+    var rulesString = JSON.stringify(rules, null, 2);
     var blob = new Blob([rulesString], { type: "application/json" });
     var newLink = document.createElement("a");
     newLink.download = "redirecting-rules.json";
