@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -191,8 +191,4 @@ ul {
 .btn-share {
   margin-right: 10px;
   float: left;
-}
-
-.weibo-share {
-  padding-top: 1px;
 }

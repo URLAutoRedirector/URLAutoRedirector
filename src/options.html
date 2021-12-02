@@ -1,88 +1,122 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Options - URLAutoRedirector</title>
+    <link href="options.css" rel="stylesheet" />
+    <link href="font/icon.css" rel="stylesheet" />
+    <meta charset="utf8" />
+  </head>
 
-<head>
-  <title>Options - URLAutoRedirector</title>
-  <link href="options.css" rel="stylesheet">
-  <link href="font/icon.css" rel="stylesheet">
-  <meta charset="utf8">
-  <meta name="twitter:widgets:csp" content="on">
-</head>
+  <body>
+    <nav>
+      <div id="banner">URL Auto Redirector</div>
+    </nav>
 
-<body>
-  <nav>
-    <div id="banner">
-      URL Auto Redirector
-    </div>
-  </nav>
+    <div id="content">
+      <div class="general">
+        <h3 class="general-label">General</h3>
+        <div>
+          <form>
+            <input
+              type="radio"
+              class="tabOption"
+              name="tabOption"
+              value="newTab"
+            /><span class="general-newtab">Redirect in new tab</span><br />
+            <input
+              type="radio"
+              class="tabOption"
+              name="tabOption"
+              value="curTab"
+            /><span class="general-curtab">Redirect in current tab</span><br />
+            <input
+              type="checkbox"
+              class="tabOption"
+              name="notifyOption"
+              checked
+            /><span class="general-notify"
+              >Send notification when a rule is matched</span
+            >
+          </form>
+        </div>
+      </div>
 
-  <div id="content">
-    <div class="general">
-      <h3 class="general-label">General</h3>
-      <div>
-        <form>
-          <input type="radio" class="tabOption" name="tabOption" value="newTab"><span class="general-newtab">Redirect in
-            new tab</span><br>
-          <input type="radio" class="tabOption" name="tabOption" value="curTab"><span class="general-curtab">Redirect in
-            current tab</span><br>
-          <input type="checkbox" class="tabOption" name="notifyOption" checked><span class="general-notify">Send
-            notification when a rule is matched</span>
-        </form>
+      <div class="general">
+        <h3 class="rules-label">Rules</h3>
+
+        <div class="rule-head">
+          <div class="rule-title drag-title"></div>
+          <div class="rule-title src-title">Source</div>
+          <div class="rule-title dst-title">Destination</div>
+          <div class="rule-title is-regex-title">RegExp</div>
+          <div class="rule-title enable-title">Enable</div>
+          <div class="rule-title is-delete-title">Delete</div>
+        </div>
+
+        <div>
+          <ul id="rule-list"></ul>
+        </div>
+        <div>
+          <form id="upload-form" enctype="multipart/form-data">
+            <input type="button" class="btn-rule" id="new-rule" value="New" />
+            <input
+              type="button"
+              class="btn-rule"
+              id="reset-rule"
+              value="Reset"
+            />
+            <input
+              type="file"
+              id="upload-rule"
+              name="upload-rule"
+              accept="application/json"
+            />
+            <input
+              type="button"
+              class="btn-rule"
+              id="import-rule"
+              value="Import"
+            />
+            <input
+              type="button"
+              class="btn-rule"
+              id="export-rule"
+              value="Export"
+            />
+          </form>
+        </div>
+        <div>
+          <p class="hint-misconf">
+            Notice: misconfiguration may cause error on page loading
+          </p>
+        </div>
+      </div>
+
+      <div class="general">
+        <h3 class="about-label">About</h3>
+        <p class="about-copyright">
+          Copyright &copy;
+          <a target="_blank" href="https://crisp.dev/">David Zhang</a>, 2021.
+        </p>
+        <p class="about-home">
+          <a target="_blank" href="https://urlautoredirector.github.io/"
+            >Official Home Page.</a
+          >
+        </p>
+        <p class="about-contribute">
+          Contribute on
+          <a
+            target="_blank"
+            href="https://github.com/URLAutoRedirector/URLAutoRedirector"
+            >GitHub - URLAutoRedirector</a
+          >.
+        </p>
+        <p class="about-ideas">Idea inspired by Albert Li.</p>
       </div>
     </div>
 
-    <div class="general">
-      <h3 class="rules-label">Rules</h3>
-
-      <div class="rule-head">
-        <div class="rule-title drag-title"></div>
-        <div class="rule-title src-title">Source</div>
-        <div class="rule-title dst-title">Destination</div>
-        <div class="rule-title is-regex-title">RegExp</div>
-        <div class="rule-title enable-title">Enable</div>
-        <div class="rule-title is-delete-title">Delete</div>
-      </div>
-
-      <div>
-        <ul id="rule-list">
-        </ul>
-      </div>
-      <div>
-        <form id="upload-form" enctype="multipart/form-data">
-          <input type="button" class="btn-rule" id="new-rule" value="New">
-          <input type="button" class="btn-rule" id="reset-rule" value="Reset">
-          <input type="file" id="upload-rule" name="upload-rule" accept="application/json">
-          <input type="button" class="btn-rule" id="import-rule" value="Import">
-          <input type="button" class="btn-rule" id="export-rule" value="Export">
-        </form>
-      </div>
-      <div>
-        <p class="hint-misconf">Notice: misconfiguration may cause error on page loading</p>
-      </div>
-    </div>
-
-    <div class="general">
-      <h3 class="about-label">About</h3>
-      <p class="about-copyright">Copyright &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2021.
-      </p>
-      <p class="about-home"><a target="_blank" href="https://urlautoredirector.github.io/">Official Home Page.</a></p>
-      <p class="about-contribute">Contribute on <a target="_blank"
-          href="https://github.com/URLAutoRedirector/URLAutoRedirector">GitHub - URLAutoRedirector</a>.</p>
-      <p class="about-ideas">Idea inspired by Albert Li.</p>
-      <p>
-      <div class="btn-share twitter-share">
-        <a href="https://twitter.com/share" class="twitter-share-button"
-          data-text="I am using URLAutoRedirector to make web browsing better. Skip referral/AD and adapt mobile page."
-          data-url="https://urlautoredirector.github.io/" data-via="crispgm" data-size="large">Tweet</a>
-      </div>
-      </p>
-    </div>
-  </div>
-
-  <script src="lib/jquery-1.12.2.min.js"></script>
-  <script src="lib/jquery.fn.sortable.min.js"></script>
-  <script src="options.js"></script>
-  <script src="lib/twitter.js"></script>
-</body>
-
+    <script src="lib/jquery-1.12.2.min.js"></script>
+    <script src="lib/jquery.fn.sortable.min.js"></script>
+    <script src="options.js"></script>
+  </body>
 </html>
