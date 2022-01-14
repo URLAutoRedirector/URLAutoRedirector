@@ -50,6 +50,9 @@
   "btn_export": {
     "message": "Export"
   },
+  "btn_clear": {
+    "message": "Clear List"
+  },
   "import_error_no_file": {
     "message": "Error: Please choose a file."
   },
@@ -76,6 +79,9 @@
   },
   "confirm_reset": {
     "message": "Are you sure to reset?\nIf you have confirmed the reset, all the rules would be deleted and reset to initial status."
+  },
+  "confirm_clear": {
+    "message": "Are you sure you want to clear the whole list?\nThis action is irreversible."
   },
   "about": {
     "message": "About"
