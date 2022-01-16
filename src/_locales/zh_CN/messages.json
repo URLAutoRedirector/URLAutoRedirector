@@ -44,6 +44,9 @@
   "btn_reset": {
     "message": "重置"
   },
+  "btn_clear": {
+    "message": "TODO"
+  },
   "btn_import": {
     "message": "导入"
   },
@@ -76,6 +79,9 @@
   },
   "confirm_reset": {
     "message": "确认重置全部规则？\n当您确认执行完本次操作后，所有现有规则将会被删除，并重置成初始安装的状态。"
+  },
+  "confirm_clear": {
+    "message": "TODO"
   },
   "about": {
     "message": "关于"

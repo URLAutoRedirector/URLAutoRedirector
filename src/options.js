@@ -88,6 +88,16 @@ $(document).ready(function () {
     newLink.href = window.URL.createObjectURL(blob);
     newLink.click();
   });
+  // clear rule button
+  $('#clear-rule').click(function () {
+    var confirmClear = chrome.i18n.getMessage('confirm_clear');
+    var r = confirm(confirmClear);
+    if (r == true) {
+      $('.rule-item').remove();
+      rules = [];
+      setOptions();
+    }
+  });
   // rule list drag & sort
   $('#rule-list').sortable({
     animation: 150,
@@ -271,6 +281,7 @@ function setInterface() {
   var btnReset = chrome.i18n.getMessage('btn_reset');
   var btnImport = chrome.i18n.getMessage('btn_import');
   var btnExport = chrome.i18n.getMessage('btn_export');
+  var btnClear = chrome.i18n.getMessage('btn_clear');
   // about
   var about = chrome.i18n.getMessage('about');
   var copyright =
@@ -303,6 +314,7 @@ function setInterface() {
   $('#reset-rule').val(btnReset);
   $('#import-rule').val(btnImport);
   $('#export-rule').val(btnExport);
+  $('#clear-rule').val(btnClear);
 
   $('.about-label').text(about);
   $('.about-copyright').html(copyright);
