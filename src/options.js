@@ -150,7 +150,11 @@ $(document).on('change', ".rule-item>input[type='text']", function () {
   setOptions();
 });
 
-chrome.runtime.onMessage.addListener(function (request, _sender, _sendResponse) {
+chrome.runtime.onMessage.addListener(function (
+  request,
+  _sender,
+  _sendResponse,
+) {
   if (request.type == 'reloadOptions') {
     getOptions(showOptions);
   }
@@ -179,7 +183,7 @@ function setOptions() {
       rules: rules,
     },
   };
-  chrome.storage.local.set(newOptions);
+  chrome.storage.sync.set(newOptions);
   var msg = {
     type: 'syncOptions',
     options: newOptions,
@@ -190,7 +194,7 @@ function setOptions() {
 }
 
 function getOptions(callback) {
-  chrome.storage.local.get('options', function (data) {
+  chrome.storage.sync.get('options', function (data) {
     isNewTab = data.options.isNewTab;
     isNotify = data.options.isNotify;
     rules = data.options.rules;

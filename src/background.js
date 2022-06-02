@@ -251,7 +251,7 @@ function matchUrl(url) {
 }
 
 function getOptions(callback) {
-  chrome.storage.local.get('options', function (data) {
+  chrome.storage.sync.get('options', function (data) {
     if (data.options) {
       isNewTab = data.options.isNewTab;
       isNotify = data.options.isNotify;
@@ -297,7 +297,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
   }
 });
 
-chrome.runtime.onMessage.addListener(function (request, _sender, _sendResponse) {
+chrome.runtime.onMessage.addListener(function (
+  request,
+  _sender,
+  _sendResponse,
+) {
   if (request.type == 'syncOptions') {
     isNewTab = request['options']['options']['isNewTab'];
     isNotify = request['options']['options']['isNotify'];
@@ -312,7 +316,7 @@ chrome.runtime.onMessage.addListener(function (request, _sender, _sendResponse) 
       },
     };
     rules = defaultOptions['options']['rules'];
-    chrome.storage.local.set(newOptions);
+    chrome.storage.sync.set(newOptions);
     var msg = {
       type: 'reloadOptions',
     };
@@ -326,10 +330,24 @@ getOptions(function () {
   console.log('getOption Done');
 });
 
-chrome.runtime.onInstalled.addListener(function () {
-  chrome.storage.local.get('options', function (data) {
-    if (!data.options) {
-      chrome.storage.local.set(defaultOptions);
-    }
-  });
+chrome.runtime.onInstalled.addListener(function (details) {
+  if (details.reason == 'update') {
+    // try loading from local
+    chrome.storage.local.get('options', function (data) {
+      // if present, then set to sync and clear
+      if (data.options) {
+        console.log('found local options');
+        chrome.storage.local.clear();
+        chrome.storage.sync.set(data);
+      } else {
+        chrome.storage.sync.set(defaultOptions);
+      }
+    });
+  } else {
+    chrome.storage.sync.get('options', function (data) {
+      if (!data.options) {
+        chrome.storage.sync.set(defaultOptions);
+      }
+    });
+  }
 });
