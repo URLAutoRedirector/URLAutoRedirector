@@ -275,7 +275,7 @@ function notify() {
   });
 }
 
-chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
+chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
   if (change.status == 'loading') {
     newUrl = matchUrl(change.url);
     if (newUrl) {
@@ -285,7 +285,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
         lastTabId = tabId;
         chrome.tabs.update({url: newUrl});
       } else {
-        chrome.tabs.create({url: newUrl}, function (tab) {
+        chrome.tabs.create({url: newUrl}, function (_tab) {
           notify();
         });
       }
