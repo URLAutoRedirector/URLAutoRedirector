@@ -218,7 +218,6 @@ var defaultOptions = {
 var isNewTab;
 var isNotify;
 var rules;
-var lastTabId = 0;
 
 function matchUrl(url) {
   if (rules == undefined || url == undefined) {
@@ -234,7 +233,7 @@ function matchUrl(url) {
       if (isRegex) {
         var re = new RegExp(src);
         if (url.search(re) != -1) {
-          newUrl = url.replace(re, dst);
+          var newUrl = url.replace(re, dst);
           if (url != newUrl) {
             return newUrl;
           }
@@ -275,27 +274,28 @@ function notify() {
   });
 }
 
-chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
-  if (change.status == 'loading') {
-    newUrl = matchUrl(change.url);
+chrome.webRequest.onBeforeRequest.addListener(
+  function (request) {
+    var newUrl = matchUrl(request.url);
     if (newUrl) {
-      console.log('Match:' + change.url);
-      console.log('Target:' + newUrl);
+      console.log('Match:' + request.url);
+      console.log('Redirect:' + newUrl);
       if (isNewTab == false) {
-        lastTabId = tabId;
-        chrome.tabs.update({url: newUrl});
-      } else {
-        chrome.tabs.create({url: newUrl}, function (_tab) {
-          notify();
+        chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
+          chrome.tabs.update(tabs[0].id, {url: newUrl});
         });
+      } else {
+        chrome.tabs.create({url: newUrl});
       }
+      notify();
     }
-  }
-  if (change.status == 'complete' && tabId == lastTabId) {
-    notify();
-    lastTabId = 0;
-  }
-});
+  },
+  {
+    types: ['main_frame'],
+    urls: ['<all_urls>'],
+  },
+  [],
+);
 
 chrome.runtime.onMessage.addListener(function (
   request,
