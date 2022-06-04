@@ -1,5 +1,5 @@
 // URLAutoRedirector
-// Copyright (c) David Zhang, 2021
+// Copyright (c) David Zhang, 2022
 // Idea inspired by Albert Li.
 
 // default options

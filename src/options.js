@@ -1,5 +1,5 @@
 // URLAutoRedirector
-// Copyright (c) David Zhang, 2021
+// Copyright (c) David Zhang, 2022
 // Idea inspired by Albert Li.
 
 var isNewTab;
@@ -62,7 +62,7 @@ $(document).ready(function () {
           var src = rulesJSON[i].src;
           var dst = rulesJSON[i].dst;
           var isRegex = rulesJSON[i].isRegex;
-          var isDeleted = false;
+          // var isDeleted = false;
           var isEnabled = rulesJSON[i].isEnabled;
 
           rules.push({
@@ -290,7 +290,7 @@ function setInterface() {
   var about = chrome.i18n.getMessage('about');
   var copyright =
     chrome.i18n.getMessage('copyright') +
-    ' &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2021.';
+    ' &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2022.';
   var home =
     '<a target="_blank" href="https://urlautoredirector.github.io/">' +
     chrome.i18n.getMessage('official_page') +
