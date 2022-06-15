@@ -37,7 +37,7 @@ $(document).ready(function () {
         type: 'resetRules',
       };
       chrome.runtime.sendMessage(msg, function (_response) {
-        console.log('Send msg[resetRules]');
+        console.log('[msg:send] resetRules');
       });
     }
   });
@@ -189,7 +189,7 @@ function setOptions() {
     options: newOptions,
   };
   chrome.runtime.sendMessage(msg, function (_response) {
-    console.log('Send msg[syncOptions]');
+    console.log('[msg:send] syncOptions');
   });
 }
 
