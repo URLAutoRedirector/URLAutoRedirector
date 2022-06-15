@@ -278,8 +278,8 @@ chrome.webRequest.onBeforeRequest.addListener(
   function (request) {
     var newUrl = matchUrl(request.url);
     if (newUrl) {
-      console.log('Match:' + request.url);
-      console.log('Redirect:' + newUrl);
+      console.log('[notice] matched:' + request.url);
+      console.log('[notice] redirecting to:' + newUrl);
       if (isNewTab == false) {
         chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
           chrome.tabs.update(tabs[0].id, {url: newUrl});
@@ -321,32 +321,27 @@ chrome.runtime.onMessage.addListener(function (
       type: 'reloadOptions',
     };
     chrome.runtime.sendMessage(msg, function (_response) {
-      console.log('Send msg[reloadOptions]');
+      console.log('[msg:send] reloadOptions');
     });
   }
 });
 
 getOptions(function () {
-  console.log('getOption Done');
+  console.log('[notice] getOption Done');
 });
 
 chrome.runtime.onInstalled.addListener(function (details) {
-  if (details.reason == 'update') {
+  if (details.reason == 'install') {
+    console.log('[event:onInstalled] set default options')
+    chrome.storage.sync.set(defaultOptions);
+  } else if (details.reason == 'update') {
     // try loading from local
     chrome.storage.local.get('options', function (data) {
       // if present, then set to sync and clear
       if (data.options) {
-        console.log('found local options');
+        console.log('[event:onInstalled] found local options and migrating');
         chrome.storage.local.clear();
         chrome.storage.sync.set(data);
-      } else {
-        chrome.storage.sync.set(defaultOptions);
-      }
-    });
-  } else {
-    chrome.storage.sync.get('options', function (data) {
-      if (!data.options) {
-        chrome.storage.sync.set(defaultOptions);
       }
     });
   }
@@ -354,5 +349,5 @@ chrome.runtime.onInstalled.addListener(function (details) {
 
 // Chrome service worker (inactive) workaround from: https://stackoverflow.com/questions/66618136/persistent-service-worker-in-chrome-extension
 chrome.webNavigation.onHistoryStateUpdated.addListener(function (_details) {
-  console.log('webNavigation: history status updated');
+  console.log('[event:onHistoryStateUpdated] history status updated');
 });
