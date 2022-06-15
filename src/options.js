@@ -155,6 +155,7 @@ chrome.runtime.onMessage.addListener(function (
   _sender,
   _sendResponse,
 ) {
+  console.log('[msg:recv] ' + request.type);
   if (request.type == 'reloadOptions') {
     getOptions(showOptions);
   }
@@ -183,13 +184,14 @@ function setOptions() {
       rules: rules,
     },
   };
-  chrome.storage.sync.set(newOptions);
-  var msg = {
-    type: 'syncOptions',
-    options: newOptions,
-  };
-  chrome.runtime.sendMessage(msg, function (_response) {
-    console.log('[msg:send] syncOptions');
+  chrome.storage.sync.set(newOptions, function () {
+    var msg = {
+      type: 'syncOptions',
+      options: newOptions,
+    };
+    chrome.runtime.sendMessage(msg, function (_response) {
+      console.log('[msg:send] syncOptions');
+    });
   });
 }
 

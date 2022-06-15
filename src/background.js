@@ -302,6 +302,7 @@ chrome.runtime.onMessage.addListener(function (
   _sender,
   _sendResponse,
 ) {
+  console.log('[msg:recv] ' + request.type);
   if (request.type == 'syncOptions') {
     isNewTab = request['options']['options']['isNewTab'];
     isNotify = request['options']['options']['isNotify'];
@@ -316,12 +317,13 @@ chrome.runtime.onMessage.addListener(function (
       },
     };
     rules = defaultOptions['options']['rules'];
-    chrome.storage.sync.set(newOptions);
-    var msg = {
-      type: 'reloadOptions',
-    };
-    chrome.runtime.sendMessage(msg, function (_response) {
-      console.log('[msg:send] reloadOptions');
+    chrome.storage.sync.set(newOptions, function () {
+      var msg = {
+        type: 'reloadOptions',
+      };
+      chrome.runtime.sendMessage(msg, function (_response) {
+        console.log('[msg:send] reloadOptions');
+      });
     });
   }
 });
@@ -332,7 +334,7 @@ getOptions(function () {
 
 chrome.runtime.onInstalled.addListener(function (details) {
   if (details.reason == 'install') {
-    console.log('[event:onInstalled] set default options')
+    console.log('[event:onInstalled] set default options');
     chrome.storage.sync.set(defaultOptions);
   } else if (details.reason == 'update') {
     // try loading from local
