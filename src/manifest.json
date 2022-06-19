@@ -11,7 +11,7 @@
     "48": "images/icon-48.png",
     "32": "images/icon-32.png"
   },
-  "permissions": ["notifications", "storage", "tabs", "webNavigation", "webRequest"],
+  "permissions": ["notifications", "storage", "tabs", "webRequest"],
   "host_permissions": ["http://*/", "https://*/"],
   "background": {
     "service_worker": "background.js"

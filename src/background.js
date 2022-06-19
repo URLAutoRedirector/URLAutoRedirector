@@ -348,8 +348,3 @@ chrome.runtime.onInstalled.addListener(function (details) {
     });
   }
 });
-
-// Chrome service worker (inactive) workaround from: https://stackoverflow.com/questions/66618136/persistent-service-worker-in-chrome-extension
-chrome.webNavigation.onHistoryStateUpdated.addListener(function (_details) {
-  console.log('[event:onHistoryStateUpdated] history status updated');
-});
