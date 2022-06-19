@@ -218,6 +218,7 @@ var defaultOptions = {
 var isNewTab;
 var isNotify;
 var rules;
+var lastTabId = 0;
 
 function matchUrl(url) {
   if (rules == undefined || url == undefined) {
@@ -274,12 +275,36 @@ function notify() {
   });
 }
 
+chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
+  if (change.status == 'loading') {
+    var newUrl = matchUrl(change.url);
+    if (newUrl) {
+      console.log('[notice] matching with tabs event')
+      console.log('[notice] matched: ' + request.url);
+      console.log('[notice] redirecting to: ' + newUrl);
+      if (isNewTab == false) {
+        lastTabId = tabId;
+        chrome.tabs.update({url: newUrl});
+      } else {
+        chrome.tabs.create({url: newUrl}, function (_tab) {
+          notify();
+        });
+      }
+    }
+  }
+  if (change.status == 'complete' && tabId == lastTabId) {
+    notify();
+    lastTabId = 0;
+  }
+});
+
 chrome.webRequest.onBeforeRequest.addListener(
   function (request) {
     var newUrl = matchUrl(request.url);
     if (newUrl) {
-      console.log('[notice] matched:' + request.url);
-      console.log('[notice] redirecting to:' + newUrl);
+      console.log('[notice] matching with webRequest event')
+      console.log('[notice] matched :' + request.url);
+      console.log('[notice] redirecting to: ' + newUrl);
       if (isNewTab == false) {
         chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
           chrome.tabs.update(tabs[0].id, {url: newUrl});
