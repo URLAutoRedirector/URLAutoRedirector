@@ -280,7 +280,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
     var newUrl = matchUrl(change.url);
     if (newUrl) {
       console.log('[notice] matching with tabs event')
-      console.log('[notice] matched: ' + request.url);
+      console.log('[notice] matched: ' + change.url);
       console.log('[notice] redirecting to: ' + newUrl);
       if (isNewTab == false) {
         lastTabId = tabId;
