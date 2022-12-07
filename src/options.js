@@ -292,14 +292,14 @@ function setInterface() {
   var about = chrome.i18n.getMessage('about');
   var copyright =
     chrome.i18n.getMessage('copyright') +
-    ' &copy; <a target="_blank" href="https://crispgm.com/">David Zhang</a>, 2022.';
+    ' &copy; <a target="_blank" href="https://crisp.dev/">David Zhang</a>, 2022.';
   var home =
     '<a target="_blank" href="https://urlautoredirector.github.io/">' +
     chrome.i18n.getMessage('official_page') +
     '</a>';
   var contribute =
     chrome.i18n.getMessage('contribute') +
-    ' <a target="_blank" href="https://github.com/URLAutoRedirector/URLAutoRedirector">GitHub - UrlAutoRedirector</a>.';
+    ' <a target="_blank" href="https://github.com/URLAutoRedirector/URLAutoRedirector">GitHub - URLAutoRedirector</a>.';
   var ideas = chrome.i18n.getMessage('ideas');
 
   $(document).attr('title', title);
