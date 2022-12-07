@@ -183,25 +183,20 @@ var defaultOptions = {
         isRegex: true,
       },
       {
-        src:
-          '^https?://(cpfd|www).cnki.com.cn/Article/([A-Z]{4})((?i)total)-(w+).htm.*$',
-        dst:
-          'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$4',
+        src: '^https?://(cpfd|www).cnki.com.cn/Article/([A-Z]{4})((?i)total)-(w+).htm.*$',
+        dst: 'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$4',
         isEnabled: false,
         isRegex: true,
       },
       {
         src: '^https?://cdmd.cnki.com.cn/Article/([A-Z]{4})-d+-(d+).htm.*$',
-        dst:
-          'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$1&filename=$2.nh',
+        dst: 'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$1&filename=$2.nh',
         isEnabled: false,
         isRegex: true,
       },
       {
-        src:
-          '^https?://S*.cnki.net/((?i)kcms)/detail/detail.aspx?(?=.*dbcode=(w+))(?=.*filename=([w.]+)).*$',
-        dst:
-          'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$3',
+        src: '^https?://S*.cnki.net/((?i)kcms)/detail/detail.aspx?(?=.*dbcode=(w+))(?=.*filename=([w.]+)).*$',
+        dst: 'https://chn.oversea.cnki.net/kcms/detail/detail.aspx?dbcode=$2&filename=$3',
         isEnabled: false,
         isRegex: true,
       },
@@ -365,7 +360,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // try loading from local
     chrome.storage.local.get('options', function (data) {
       // if present, then set to sync and clear
-      if (data.options) {
+      if (data.options && data.options.rules && data.options.rules.length > 0) {
         console.log('[event:onInstalled] found local options and migrating');
         chrome.storage.local.clear();
         chrome.storage.sync.set(data);
