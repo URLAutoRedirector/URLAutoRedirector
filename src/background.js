@@ -8,6 +8,7 @@ var defaultOptions = {
     isNewTab: false,
     isNotify: true,
     rules: [
+      // default rules {{{
       {
         src: '^https?://re.jd.com/cps/item/([0-9]*).html',
         dst: 'https://item.jd.com/$1.html',
@@ -206,6 +207,7 @@ var defaultOptions = {
         isEnabled: false,
         isRegex: false,
       },
+      // }}}
     ],
   },
 };
@@ -274,7 +276,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
   if (change.status == 'loading') {
     var newUrl = matchUrl(change.url);
     if (newUrl) {
-      console.log('[notice] matching with tabs event')
+      console.log('[notice] matching with tabs event');
       console.log('[notice] matched: ' + change.url);
       console.log('[notice] redirecting to: ' + newUrl);
       if (isNewTab == false) {
@@ -292,30 +294,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
     lastTabId = 0;
   }
 });
-
-chrome.webRequest.onBeforeRequest.addListener(
-  function (request) {
-    var newUrl = matchUrl(request.url);
-    if (newUrl) {
-      console.log('[notice] matching with webRequest event')
-      console.log('[notice] matched :' + request.url);
-      console.log('[notice] redirecting to: ' + newUrl);
-      if (isNewTab == false) {
-        chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
-          chrome.tabs.update(tabs[0].id, {url: newUrl});
-        });
-      } else {
-        chrome.tabs.create({url: newUrl});
-      }
-      notify();
-    }
-  },
-  {
-    types: ['main_frame'],
-    urls: ['<all_urls>'],
-  },
-  [],
-);
 
 chrome.runtime.onMessage.addListener(function (
   request,
