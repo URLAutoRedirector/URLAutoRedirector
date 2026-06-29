@@ -281,7 +281,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, _tab) {
       console.log('[notice] redirecting to: ' + newUrl);
       if (isNewTab == false) {
         lastTabId = tabId;
-        chrome.tabs.update({url: newUrl});
+        chrome.tabs.update(tabId, {url: newUrl});
       } else {
         chrome.tabs.create({url: newUrl}, function (_tab) {
           notify();
