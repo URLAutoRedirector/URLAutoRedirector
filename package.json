@@ -1,0 +1,19 @@
+{
+  "name": "urlautoredirector",
+  "version": "1.18.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "release:build": "node scripts/release.mjs build",
+    "release:tag": "node scripts/release.mjs tag",
+    "release:changelog": "node scripts/release.mjs changelog",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "yaml": "^2.8.1"
+  }
+}
