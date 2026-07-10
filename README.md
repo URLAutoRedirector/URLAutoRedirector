@@ -37,6 +37,15 @@ Download at [**Chrome WebStore**](https://chrome.google.com/webstore/detail/mckf
 
 See <https://urlautoredirector.github.io/docs.html>.
 
+## Development
+
+```sh
+npm install
+npm run release:build
+npm run release:changelog -- --count 3
+npm run release:tag
+```
+
 ## Credit
 
 - Idea inspired by [Albert Li](https://github.com/lzb)
