@@ -42,7 +42,7 @@ See <https://urlautoredirector.github.io/docs.html>.
 ```sh
 npm install
 npm run release:build
-npm run release:changelog -- --count 3
+npm run release:changelog
 npm run release:tag
 ```
 

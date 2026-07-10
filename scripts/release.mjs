@@ -16,7 +16,7 @@ export async function extensionVersion(projectDir = rootDir) {
 }
 
 export function parseArgs(argv) {
-  const options = { command: argv[0], force: false, count: 1 };
+  const options = { command: argv[0], force: false };
 
   for (let index = 1; index < argv.length; index += 1) {
     const argument = argv[index];
@@ -31,7 +31,7 @@ export function parseArgs(argv) {
     }
   }
 
-  if (!Number.isInteger(options.count) || options.count < 1) {
+  if (options.count !== undefined && (!Number.isInteger(options.count) || options.count < 1)) {
     throw new Error("--count must be a positive integer");
   }
   return options;
@@ -86,10 +86,25 @@ export async function tag({ projectDir = rootDir } = {}) {
   return version;
 }
 
-export function recentChanges({ projectDir = rootDir, count = 1 } = {}) {
+export function recentChanges({ projectDir = rootDir, count } = {}) {
+  let lastTag;
+  try {
+    lastTag = execFileSync("git", ["describe", "--tags", "--abbrev=0"], {
+      cwd: projectDir,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+  } catch {
+    // A repository without tags uses its complete history.
+  }
+
+  const args = ["log"];
+  if (count !== undefined) args.push("-n", String(count));
+  if (lastTag) args.push(`${lastTag}..HEAD`);
+  args.push("--pretty=format:%h%x00%s");
   const output = execFileSync(
     "git",
-    ["log", "-n", String(count), "--pretty=format:%h%x00%s"],
+    args,
     { cwd: projectDir, encoding: "utf8" },
   );
   if (!output) return [];
@@ -102,7 +117,7 @@ export function recentChanges({ projectDir = rootDir, count = 1 } = {}) {
 export async function changelog({
   projectDir = rootDir,
   websiteDir = process.env.UAR_WEBSITE_DIR ?? path.resolve(rootDir, "../urlautoredirector.github.io"),
-  count = 1,
+  count,
 } = {}) {
   const version = await extensionVersion(projectDir);
   const changelogPath = path.join(websiteDir, "_data/changelog.yml");
