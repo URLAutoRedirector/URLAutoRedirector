@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { execFileSync } from "node:child_process";
-import { build, changelog, parseArgs } from "../scripts/release.mjs";
+import { build, changelog, parseArgs, recentChanges } from "../scripts/release.mjs";
 
 async function fixture() {
   const directory = await mkdtemp(path.join(os.tmpdir(), "uar-release-"));
@@ -28,8 +28,27 @@ async function fixture() {
 }
 
 test("parseArgs accepts release options", () => {
-  assert.deepEqual(parseArgs(["build", "--force"]), { command: "build", force: true, count: 1 });
+  assert.deepEqual(parseArgs(["build", "--force"]), { command: "build", force: true });
   assert.deepEqual(parseArgs(["changelog", "-n", "3"]), { command: "changelog", force: false, count: 3 });
+});
+
+test("recentChanges returns only commits after the latest tag", async () => {
+  const { projectDir } = await fixture();
+  execFileSync("git", ["tag", "1.0.0"], { cwd: projectDir });
+  await writeFile(path.join(projectDir, "after-tag.txt"), "first");
+  execFileSync("git", ["add", "."], { cwd: projectDir });
+  execFileSync("git", ["commit", "-qm", "feat: first after tag"], { cwd: projectDir });
+  await writeFile(path.join(projectDir, "after-tag.txt"), "second");
+  execFileSync("git", ["commit", "-qam", "fix: second after tag"], { cwd: projectDir });
+
+  assert.deepEqual(
+    recentChanges({ projectDir }).map(({ text }) => text),
+    ["fix: second after tag", "feat: first after tag"],
+  );
+  assert.deepEqual(
+    recentChanges({ projectDir, count: 1 }).map(({ text }) => text),
+    ["fix: second after tag"],
+  );
 });
 
 test("build creates a versioned extension archive", async () => {
