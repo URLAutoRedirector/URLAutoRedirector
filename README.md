@@ -14,6 +14,9 @@
   <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
     <img src="https://img.shields.io/chrome-web-store/rating/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Rating" />
   </a>
+  <a href="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml">
+    <img src="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml/badge.svg" alt="Test status" />
+  </a>
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
 </p>
 
