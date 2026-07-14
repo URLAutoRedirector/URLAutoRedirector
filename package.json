@@ -10,7 +10,7 @@
     "release:build": "node scripts/release.mjs build",
     "release:tag": "node scripts/release.mjs tag",
     "release:changelog": "node scripts/release.mjs changelog",
-    "check": "node --check src/options.js && node --check scripts/release.mjs",
+    "check": "node --check src/background.js && node --check src/options.js && node --check scripts/release.mjs",
     "test": "node --test"
   },
   "devDependencies": {
