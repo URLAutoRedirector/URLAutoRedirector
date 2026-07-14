@@ -7,6 +7,7 @@ import vm from "node:vm";
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const source = await readFile(path.resolve(testDir, "../src/background.js"), "utf8");
+const defaultOptionsSource = await readFile(path.resolve(testDir, "../src/default-options.js"), "utf8");
 
 function clone(value) {
   return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
@@ -76,6 +77,10 @@ function createBackground({ options, localData = {}, syncSetError = false } = {}
       },
     },
     console: { log() {} },
+  };
+  context.importScripts = (file) => {
+    assert.equal(file, "default-options.js");
+    vm.runInNewContext(defaultOptionsSource, context, { filename: file });
   };
 
   vm.runInNewContext(source, context, { filename: "background.js" });
