@@ -330,19 +330,33 @@ getOptions(function () {
   console.log('[notice] getOption Done');
 });
 
+function hasValidOptions(options) {
+  return options && Array.isArray(options.rules);
+}
+
 chrome.runtime.onInstalled.addListener(function (details) {
-  if (details.reason == 'install') {
-    console.log('[event:onInstalled] set default options');
-    chrome.storage.sync.set(defaultOptions);
-  } else if (details.reason == 'update') {
-    // try loading from local
-    chrome.storage.local.get('options', function (data) {
-      // if present, then set to sync and clear
-      if (data.options && data.options.rules && data.options.rules.length > 0) {
+  if (details.reason != 'install' && details.reason != 'update') {
+    return;
+  }
+
+  chrome.storage.sync.get('options', function (syncData) {
+    if (hasValidOptions(syncData.options)) {
+      console.log('[event:onInstalled] found sync options');
+      return;
+    }
+
+    chrome.storage.local.get('options', function (localData) {
+      if (hasValidOptions(localData.options)) {
         console.log('[event:onInstalled] found local options and migrating');
-        chrome.storage.local.clear();
-        chrome.storage.sync.set(data);
+        chrome.storage.sync.set(localData, function () {
+          if (!chrome.runtime.lastError) {
+            chrome.storage.local.clear();
+          }
+        });
+      } else {
+        console.log('[event:onInstalled] set default options');
+        chrome.storage.sync.set(defaultOptions);
       }
     });
-  }
+  });
 });

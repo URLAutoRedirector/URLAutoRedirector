@@ -12,7 +12,7 @@ function clone(value) {
   return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
 }
 
-function createBackground({ options, localData = {} } = {}) {
+function createBackground({ options, localData = {}, syncSetError = false } = {}) {
   let storedOptions = clone(options);
   const listeners = {};
   const api = {
@@ -24,6 +24,15 @@ function createBackground({ options, localData = {} } = {}) {
     tabUpdates: [],
   };
 
+  const runtime = {
+    getURL: (path) => `chrome-extension://test/${path}`,
+    onInstalled: { addListener: (listener) => (listeners.installed = listener) },
+    onMessage: { addListener: (listener) => (listeners.message = listener) },
+    sendMessage(message, callback) {
+      api.runtimeMessages.push(clone(message));
+      callback?.();
+    },
+  };
   const context = {
     chrome: {
       i18n: { getMessage: (key) => `message:${key}` },
@@ -32,15 +41,7 @@ function createBackground({ options, localData = {} } = {}) {
           api.notifications.push(clone(details));
         },
       },
-      runtime: {
-        getURL: (path) => `chrome-extension://test/${path}`,
-        onInstalled: { addListener: (listener) => (listeners.installed = listener) },
-        onMessage: { addListener: (listener) => (listeners.message = listener) },
-        sendMessage(message, callback) {
-          api.runtimeMessages.push(clone(message));
-          callback?.();
-        },
-      },
+      runtime,
       storage: {
         local: {
           clear() {
@@ -57,7 +58,9 @@ function createBackground({ options, localData = {} } = {}) {
           set(value, callback) {
             api.syncSets.push(clone(value));
             storedOptions = clone(value.options);
+            if (syncSetError) runtime.lastError = { message: "sync quota exceeded" };
             callback?.();
+            delete runtime.lastError;
           },
         },
       },
@@ -186,4 +189,45 @@ test("installation saves defaults and updates migrate legacy local options", () 
   update.listeners.installed({ reason: "update" });
   assert.equal(update.api.localClears, 1);
   assert.deepEqual(update.api.syncSets, [legacyOptions]);
+});
+
+test("installation and updates preserve synced options over stale local options", () => {
+  const syncedOptions = {
+    isNewTab: false,
+    isNotify: true,
+    rules: [{ src: "https://sync.example", dst: "https://target.example", isEnabled: true, isRegex: false }],
+  };
+  const localData = {
+    options: {
+      isNewTab: true,
+      isNotify: false,
+      rules: [{ src: "https://stale.example", dst: "https://target.example", isEnabled: true, isRegex: false }],
+    },
+  };
+
+  for (const reason of ["install", "update"]) {
+    const background = createBackground({ options: syncedOptions, localData });
+    background.listeners.installed({ reason });
+    assert.deepEqual(background.storedOptions(), syncedOptions);
+    assert.deepEqual(background.api.syncSets, []);
+    assert.equal(background.api.localClears, 0);
+  }
+});
+
+test("an empty local rule list is migrated as a valid configuration", () => {
+  const options = { isNewTab: false, isNotify: false, rules: [] };
+  const background = createBackground({ localData: { options } });
+  background.listeners.installed({ reason: "update" });
+
+  assert.deepEqual(background.storedOptions(), options);
+  assert.deepEqual(background.api.syncSets, [{ options }]);
+  assert.equal(background.api.localClears, 1);
+});
+
+test("failed local-to-sync migrations retain the local backup", () => {
+  const options = { isNewTab: true, isNotify: false, rules: [] };
+  const background = createBackground({ localData: { options }, syncSetError: true });
+  background.listeners.installed({ reason: "update" });
+
+  assert.equal(background.api.localClears, 0);
 });
