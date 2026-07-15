@@ -1,5 +1,5 @@
 // URLAutoRedirector
-// Copyright (c) David Zhang, 2022
+// Copyright (c) David Zhang, 2026
 // Idea inspired by Albert Li.
 
 importScripts('default-options.js');

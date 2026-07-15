@@ -1,23 +1,14 @@
 <p align="center">
   <a href="https://urlautoredirector.github.io/">
-  	<img src="https://raw.githubusercontent.com/URLAutoRedirector/URLAutoRedirector/master/src/images/icon-128.png" alt="Logo">
+  	<img src="https://raw.githubusercontent.com/URLAutoRedirector/URLAutoRedirector/master/logo.png" alt="Logo" width="128px">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
-    <img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore">
-  </a>
-  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
-    <img src="https://img.shields.io/chrome-web-store/users/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Users" />
-  </a>
-  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn">
-    <img src="https://img.shields.io/chrome-web-store/rating/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Rating" />
-  </a>
-  <a href="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml">
-    <img src="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml/badge.svg" alt="Test status" />
-  </a>
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn"><img src="https://img.shields.io/chrome-web-store/v/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Chrome WebStore"></a>
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn"><img src="https://img.shields.io/chrome-web-store/users/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Users" /></a>
+  <a href="https://chrome.google.com/webstore/detail/mckfcfnegaimgcgepikhdnajpkkhdnkn"><img src="https://img.shields.io/chrome-web-store/rating/mckfcfnegaimgcgepikhdnajpkkhdnkn.svg" alt="Rating" /></a>
+  <a href="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml"><img src="https://github.com/URLAutoRedirector/URLAutoRedirector/actions/workflows/test.yml/badge.svg" alt="Test status" /></a>
 </p>
 
 # [URL Auto Redirector](https://urlautoredirector.github.io/)

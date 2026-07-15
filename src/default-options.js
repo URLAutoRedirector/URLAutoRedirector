@@ -1,4 +1,6 @@
 // URLAutoRedirector default rules. Loaded synchronously by background.js.
+// Copyright (c) David Zhang, 2026
+
 var defaultOptions = {
   options: {
     isNewTab: false,
