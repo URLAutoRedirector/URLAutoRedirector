@@ -111,9 +111,8 @@ chrome.runtime.onMessage.addListener(function (
       var msg = {
         type: 'reloadOptions',
       };
-      chrome.runtime.sendMessage(msg, function (_response) {
-        console.log('[msg:send] reloadOptions');
-      });
+      chrome.runtime.sendMessage(msg);
+      console.log('[msg:send] reloadOptions');
     });
   }
 });

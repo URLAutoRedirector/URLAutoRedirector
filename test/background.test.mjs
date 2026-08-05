@@ -20,6 +20,7 @@ function createBackground({ options, localData = {}, syncSetError = false } = {}
     localClears: 0,
     notifications: [],
     runtimeMessages: [],
+    runtimeMessageCallbacks: [],
     syncSets: [],
     tabCreates: [],
     tabUpdates: [],
@@ -31,7 +32,7 @@ function createBackground({ options, localData = {}, syncSetError = false } = {}
     onMessage: { addListener: (listener) => (listeners.message = listener) },
     sendMessage(message, callback) {
       api.runtimeMessages.push(clone(message));
-      callback?.();
+      api.runtimeMessageCallbacks.push(callback);
     },
   };
   const context = {
@@ -175,6 +176,7 @@ test("sync and reset messages update active rules and persist defaults", () => {
 
   background.listeners.message({ type: "resetRules" });
   assert.deepEqual(background.api.runtimeMessages, [{ type: "reloadOptions" }]);
+  assert.deepEqual(background.api.runtimeMessageCallbacks, [undefined]);
   assert.deepEqual(background.storedOptions().rules, clone(background.context.defaultOptions.options.rules));
 });
 

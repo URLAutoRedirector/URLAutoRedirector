@@ -31,9 +31,8 @@ function setOptions() {
     },
   };
   chrome.storage.sync.set(newOptions, function () {
-    chrome.runtime.sendMessage({type: 'syncOptions', options: newOptions}, function () {
-      console.log('[msg:send] syncOptions');
-    });
+    chrome.runtime.sendMessage({type: 'syncOptions', options: newOptions});
+    console.log('[msg:send] syncOptions');
   });
 }
 
@@ -192,9 +191,8 @@ function bindInterfaceEvents() {
   query('#reset-rule').addEventListener('click', function () {
     if (!confirm(chrome.i18n.getMessage('confirm_reset'))) return;
     ruleList.replaceChildren();
-    chrome.runtime.sendMessage({type: 'resetRules'}, function () {
-      console.log('[msg:send] resetRules');
-    });
+    chrome.runtime.sendMessage({type: 'resetRules'});
+    console.log('[msg:send] resetRules');
   });
   query('#import-rule').addEventListener('click', importRules);
   query('#export-rule').addEventListener('click', exportRules);

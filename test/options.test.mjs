@@ -13,6 +13,7 @@ const script = await readFile(path.join(sourceDir, "options.js"), "utf8");
 function createPage(options) {
   let storedOptions = structuredClone(options);
   const sentMessages = [];
+  const sendMessageCallbacks = [];
   const dom = new JSDOM(html, {
     runScripts: "outside-only",
     url: "https://extension.test/options.html",
@@ -24,7 +25,7 @@ function createPage(options) {
     runtime: {
       sendMessage(message, callback) {
         sentMessages.push(message);
-        if (callback) callback();
+        sendMessageCallbacks.push(callback);
       },
       onMessage: { addListener() {} },
     },
@@ -51,6 +52,7 @@ function createPage(options) {
     close: () => dom.window.close(),
     document: window.document,
     sentMessages,
+    sendMessageCallbacks,
     storedOptions: () => structuredClone(storedOptions),
     window,
   };
@@ -97,6 +99,7 @@ test("options page renders and persists native rule edits", () => {
     assert.equal(regex.classList.contains("icon-check-square-o"), true);
     assert.equal(page.storedOptions().rules[0].isRegex, true);
     assert.equal(page.sentMessages.at(-1).type, "syncOptions");
+    assert.equal(page.sendMessageCallbacks.at(-1), undefined);
   } finally {
     page.close();
   }
