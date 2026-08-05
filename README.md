@@ -50,7 +50,6 @@ npm run release:tag
 
 ## Contributing
 
-- If you have a question about using URL Auto Redirector, start a discussion on [Gitter](https://gitter.im/UrlAutoRedirector/UrlAutoRedirector).
 - If you think you've found a bug with URL Auto Redirector, [open an issue](https://github.com/crispgm/URLAutoRedirector/issues/new).
 - If you have useful rules in getting convenience by URL Auto Redictor, contribute to [awesome-rules](https://github.com/URLAutoRedirector/awesome-rules).
 - PR(Pull Request) is welcomed.
