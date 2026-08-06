@@ -15,7 +15,7 @@
 
 ## Introduction
 
-URL Auto Redirector is a Chrome Extension that uses for redirecting URLs automatically with Regular Expression presets. It enables you to skip referral/AD pages and adapt mobile pages gracefully, which is time-saving, helps to be more productive and improves web browsing experiences.
+URL Auto Redirector is a powerful Chrome extension that automatically redirects URLs based on customizable Regular Expression (Regex) rules. Whether you want to bypass referral or advertisement pages, convert mobile URLs to desktop versions, or apply your own URL transformations, URL Auto Redirector handles it seamlessly. With reusable redirect presets, you can automate repetitive browsing tasks, save time, and enjoy a faster, more productive web experience.
 
 ## Usage
 
